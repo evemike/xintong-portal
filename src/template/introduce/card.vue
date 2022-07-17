@@ -47,24 +47,33 @@ const { mode, icon, title, subhead, desc, content } = toRefs(props)
 <style lang="scss">
 ._content-card {
     background-color: #fff;
+    padding:24px;
+    height:100%;
+    box-sizing: border-box;
     > ._header {
         display: flex;
         align-items: center;
+        padding-bottom:24px;
         .h-icon {
             width: 38px;
             height: 38px;
+            margin-right:8px;
+            svg{
+                width:100%;
+                height:100%;
+            }
         }
         .h-text {
             .title {
                 font-size: 16px;
-                font-weight: 500;
+                font-weight: 600;
             }
             .subhead {
                 font-size: 16px;
             }
             .desc {
                 font-size: 14px;
-                line-height: 26px;
+                line-height: 28px;
             }
         }
     }
@@ -81,6 +90,7 @@ const { mode, icon, title, subhead, desc, content } = toRefs(props)
     &.mode-list {
         width:100%;
         > ._content {
+            padding-top:24px;
             .c-item {
                 display: block;
                 &::before {

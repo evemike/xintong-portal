@@ -48,12 +48,18 @@ const handleGo = (path: string) => {
     </div>
     <!-- items -->
     <template v-for="(item, i) in items" :key="`items-${i}`">
-      <div :class="['_item', `_item-${i}`, `mode-${item.mode}`]">
+      <div :class="['_panel', `_item-${i}`, `mode-${item.mode}`]">
         <!-- tabs -->
-        <div v-if="item.mode == 'tabs'" class="_item-tabs">
-          <el-tabs>
+        <div v-if="item.mode == 'tabs'" class="item-tabs panel-item">
+        <!-- title -->
+          <div class="_header">
+            <div v-if="item.title" class="title">{{ item.title }}</div>
+            <div v-if="item.subhead" class="subhead">{{ item.subhead }}</div>
+            <div v-if="item.desc" class="desc">{{ item.desc }}</div>
+          </div>
+          <el-tabs :model-value="item.data[0].title">
             <el-tab-pane v-for="id in item.data" :key="id.title" :label="id.title" :name="id.title">
-              <div v-if="id.data && id.mode != 'tabs'" :class="['_tab-data', '_data']">
+              <div v-if="id.data && id.mode != 'tabs'" :class="['_tab-data', 'cards']">
                 <div
                   v-for="(d, j) in id.data"
                   :key="`data-tab-${j}`"
@@ -66,15 +72,15 @@ const handleGo = (path: string) => {
           </el-tabs>
         </div>
         <!--  -->
-        <div v-else class="_item-card">
+        <div v-else class="item-card panel-item">
           <!-- title -->
-          <div class="_text _header">
-            <div v-if="item.title" class="_title">{{ item.title }}</div>
-            <div v-if="item.subhead" class="_subhead">{{ item.subhead }}</div>
-            <div v-if="item.desc" class="_desc">{{ item.desc }}</div>
+          <div class="_header">
+            <div v-if="item.title" class="title">{{ item.title }}</div>
+            <div v-if="item.subhead" class="subhead">{{ item.subhead }}</div>
+            <div v-if="item.desc" class="desc">{{ item.desc }}</div>
           </div>
           <!-- data -->
-          <div v-if="item.data" :class="['_data']">
+          <div v-if="item.data" :class="['cards']">
             <div
               v-for="(d, j) in item.data"
               :key="`data-item-${j}`"
@@ -95,13 +101,15 @@ const handleGo = (path: string) => {
     height: 322px;
     color: #fff;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding:0 10%;
+    // min-width:1140px;
     > ._text {
-      width: 500px;
+      width: 600px;
       > ._title {
         font-size: 32px;
-        font-weight: 500;
+        font-weight: 600;
       }
       > ._subhead {
       }
@@ -130,43 +138,55 @@ const handleGo = (path: string) => {
       }
     }
   }
-  > ._item {
+  > ._panel {
     padding: 56px 0;
-    &.mode-card {
-      > ._data {
-        display: flex;
+    background:#F0F2F5;
+    padding:56px 10%;
+    // min-width:1140px;
+    color:#333;
+    &:nth-child(2n){
+      background:#fff;
+    }
+    .item-card{
+      .cards{
+        padding-top:24px;
+      }
+    }
+    .item-tabs{
+      .el-tabs{
+        margin-top:24px;
+      }
+      .el-tabs__nav-scroll{
+        display:flex;
+        justify-content: center;
+      }
+      .el-tabs__item{
+        font-size: 18px;
+        &.is-active{
+          font-weight: 600;
+        }
+      }
+    }
+    .panel-item{
+      >._header{
+        
+        .title{
+          font-size: 32px;
+          font-weight: 600;
+          text-align: center;
+        }
+        .desc{
+          margin-top:22px;
+          font-size: 14px;
+          line-height: 28px;
+        }
+      }
+      .cards{
+        display:flex;
         flex-wrap: wrap;
-        justify-content: space-around;
-        .data-item {
-          width: 364px;
-          background: #fff;
-        }
-      }
-    }
-    > ._text {
-      text-align: center;
-      > ._title {
-        color: rgba(51, 51, 51, 1);
-        font-size: 32px;
-        font-weight: 500;
-      }
-      > ._subhead {
-      }
-      > ._desc {
-      }
-    }
-    > ._data {
-      margin-top: 24px;
-      .data-item {
-        padding: 24px 32px;
-        > ._header {
-          ._icon {
-            width: 33px;
-            height: 33px;
-          }
-        }
-        > ._body {
-        }
+        gap: 24px;
+        justify-content: space-between;
+        height:100%;
       }
     }
   }

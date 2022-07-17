@@ -11,7 +11,7 @@ export const getJsonFileData = async (name: string) => {
     method: "get",
   });
   if (res.data) {
-    return typeof res.data == 'string' ? JSON.parse(res.data.replace(/\/\/.*/g, "")) : res.data;
+    return typeof res.data == 'string' ? JSON.parse(res.data.replace(/\/\/\s+.*/g, "")) : res.data;
   }
   return Promise.reject(res);
 };
