@@ -1,0 +1,3 @@
+[
+  {"path":"introduce/:name","name":"Introduce","component":"introduce/index.vue","meta":{}}
+]

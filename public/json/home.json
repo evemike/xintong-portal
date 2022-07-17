@@ -1,0 +1,77 @@
+{
+  // 轮播图 走马灯 图片 ， 当数组长度是 0 的时候，走马灯模块将会不显示
+  "CAROUSEL":["banner1","banner2","banner3"],
+  // 页面显示内容的顺序 , 内容具体配置在下方
+  "CONTENTS": [
+    "BIG-DATA",
+    "IOT",
+    "BIDDING",
+    "COMPARISON",
+    "INDUSTRIAL-CITY",
+    "AI",
+    "APP-FACTORY",
+    "LOW-CODE",
+    "INDUSTRIAL-CONFIGURATION",
+    "INDUSTRIAL-SAFE"
+  ],
+  // 大数据平台
+  "BIG-DATA": {
+    "background": "#014ACA",
+    "title": "工业大数据平台",
+    "desc": "主要基于Hadoop体系构建，针对工业企业缺乏数据基础、元数据管理、海量数据存储、工业机理通过大数据进行故障分析、预测维修等困难进行技术攻破，降低工业企业应用大数据的成本和门槛。"
+  },
+  // 工业物联网平台 IOT
+  "IOT": {
+    "background": "#FFF",
+    "title": "工业物联网平台",
+    "desc": ""
+  },
+  // 招投标
+  "BIDDING": {
+    "background": "#0190CA",
+    "title": "招投标",
+    "desc": ""
+  },
+  // 询比价
+  "COMPARISON": {
+    "background": "#FFF",
+    "title": "询比价",
+    "desc": ""
+  },
+  // 工业品超市
+  "INDUSTRIAL-CITY": {
+    "background": "#014ACA",
+    "title": "工业品超市",
+    "desc": ""
+  },
+  // 工业AI平台
+  "AI": {
+    "background": "#FFF",
+    "title": "工业AI平台",
+    "desc": "工业AI平台为工业用户提供多种经典机器学习算法和工业算法组件， 支持工业用户以拖拽算法组件及其依赖组件的形式快速构建算法流程并，配置数据源，一键启动执行算法并生成可视化算法输出结果。"
+  },
+  // 工业应用工厂
+  "APP-FACTORY": {
+    "background": "#014ACA",
+    "title": "工业应用工厂",
+    "desc": "工业应用工厂为工业用户提供基于容器技术的企业级Paa平台，基于Docker和Kubernetes提供对应用“开发态”、“部署态”、“运行态”的应用全生命周期管理能力，利用可视化、可配置、自动化持续集成，帮助企业用户快速构建工业应用。"
+  },
+  // 低代码服务
+  "LOW-CODE": {
+    "background": "#FFF",
+    "title": "低代码服务",
+    "desc": "低代码开发平台提供零代码或低代码方式快速交付工业应用的能力，使具有不同经验水平的开发人员通过图形化设计器以拖拽组件和模型驱动的逻辑方式快速构建工业应用。"
+  },
+  // 工业组态
+  "INDUSTRIAL-CONFIGURATION": {
+    "background": "#014ACA",
+    "title": "工业组态",
+    "desc": "工业组态为工业用户提供丰富的可视化组态设计器，涵盖多行业及领域的工业组件、常用非工业组件并提供自定义组件服务，以拖拽组件并配置数据源及告警策略的方式快速构建工业组态及数据大屏等。"
+  },
+  // 工业安全
+  "INDUSTRIAL-SAFE": {
+    "background": "#FFF",
+    "title": "工业安全",
+    "desc": "检测所有在平台上传和下载的文件，保证其安全性，并在此页面中做统一展示。可以直观查看与平台相关的所有文件的安全状态。另外我们连接公共漏洞库，即时展示工控安全范畴内的实时安全情报，结合安全热词和TOP5的风险进行整体态势的感知和主动式防护。"
+  }
+}

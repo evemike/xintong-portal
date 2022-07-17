@@ -1,0 +1,108 @@
+{
+  // 需要显示的详情页，这回影响首页上面的跳转按钮
+  "SHOW": [
+    "BIG-DATA",
+    "IOT",
+    "BIDDING",
+    "COMPARISON",
+    "INDUSTRIAL-CITY",
+    "AI",
+    "APP-FACTORY",
+    "LOW-CODE",
+    "INDUSTRIAL-CONFIGURATION",
+    "INDUSTRIAL-SAFE"
+  ],
+  // 大数据平台
+  "BIG-DATA": {},
+  // 工业物联网平台 IOT
+  "IOT": {
+    "layout":[],
+    "header":{
+      "background":"",
+      "title":"",
+      "desc":"",
+      "link":"",
+      "linkText":""
+    },
+    "introduce":{
+      "mode":"list",
+      "title":"",
+      "desc":"",
+      "data":[
+        {
+          "icon":"",
+          "title":"",
+          "subhead":"",
+          "content":[]
+        },
+        {
+          "icon":"",
+          "title":"",
+          "subhead":"",
+          "content":[]
+        },
+        {
+          "icon":"",
+          "title":"",
+          "subhead":"",
+          "content":[]
+        }
+      ]
+    }
+  },
+  // 招投标
+  "BIDDING": {},
+  // 询比价
+  "COMPARISON": {
+    "layout":["features"],
+    "header":{
+      "background":"",
+      "title":"询比价",
+      "desc":"询比价双方可以直接使用本电子询比价平台，在线发布询价项目，并可随时使用专家和供应企业资源，保障高质量完成询价工作。 同时，本平台提供准确的行业讯息和高效的决策分析功能，方便各级领导和监管部门随时掌握业务动态。 本专业平台快捷实现电子询价，帮助询价方专注核心业务，节约管理成本。",
+      "link":"1111"
+    },
+    "features":{
+      "mode":"card",
+      "title":"功能特性",
+      "data":[
+        {
+          "icon":"",
+          "title":"丰富的询比价信息",
+          "subhead":"",
+          "content":["平台提供丰富的询比价信息，报价方也可直接浏览进行报价申请加入。"]
+        },
+        {
+          "icon":"",
+          "title":"公平公正的流程",
+          "subhead":"",
+          "content":["本系统的优势是提供了公平公正的流程，并符合国家的法规，以及安全监管，权限隔离，并提供多种询比价模式。"]
+        },
+        {
+          "icon":"",
+          "title":"提供更丰富的功能和接口",
+          "subhead":"",
+          "content":["在全流程的基础上，提供更丰富的功能和接口， 能满足不同行业的询比价需求。"]
+        }
+      ]
+    },
+    "test":{
+      "mode":"tabs",
+      "title":"",
+      "subhead":"",
+      "desc":"",
+      "data":[{"title":"","data":[]}]
+    }
+  },
+  // 工业品超市
+  "INDUSTRIAL-CITY": {},
+  // 工业AI平台
+  "AI": {},
+  // 工业应用工厂
+  "APP-FACTORY": {},
+  // 低代码服务
+  "LOW-CODE": {},
+  // 工业组态
+  "INDUSTRIAL-CONFIGURATION": {},
+  // 工业安全
+  "INDUSTRIAL-SAFE": {}
+}

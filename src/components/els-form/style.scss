@@ -1,0 +1,23 @@
+.els-form{
+    .els-form--tip-button{
+        margin-left:8px;
+        color:silver;
+        transition:color ease-in-out .5s;
+    }
+    .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label-wrap>.el-form-item__label:before, .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before{
+        content:'✽'
+    }
+    .el-select,.el-cascader{
+        width:100%;
+    }
+}
+
+.els-form--tip-popover-popper.el-popover.el-popper{
+    padding:8px;
+    .el-alert--info{
+        &:not(:last-child){
+            margin-bottom: 2px;
+        }
+    }
+}
+
