@@ -1,7 +1,9 @@
 import { ref } from "vue"
 import { createStore } from "vuex";
-import { saveLocal, getLocal,clearLocal } from "@/utils/storage";
+import { saveLocal, getLocal, clearLocal } from "@/utils/storage";
 import createPersistedState from "vuex-persistedstate";
+import { getJsonFileData } from "@/api/base/json";
+import i18n from "@/i18n";
 
 export default createStore({
   state: {
@@ -12,7 +14,7 @@ export default createStore({
     userInfo: {},
     menus: [], // 需要渲染的菜单数据
     tentTitle: "",
-    subEquipWs:undefined,
+    subEquipWs: undefined,
   },
   getters: {
     token: (state) => state.token ?? getLocal("token"),
@@ -57,8 +59,12 @@ export default createStore({
     },
   },
   actions: {
+    initWebsiteData:async ({state}) => {
+      const data = await getJsonFileData('website')
+      console.log(data)
+    },
     // resetToken() {},
-    logout({state}) {
+    logout({ state }) {
       clearLocal();
     },
   },

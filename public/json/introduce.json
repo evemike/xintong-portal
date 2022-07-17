@@ -13,7 +13,17 @@
     "INDUSTRIAL-SAFE"
   ],
   // 大数据平台
-  "BIG-DATA": {},
+  "BIG-DATA": {
+    "layout":[],
+    "header":{
+      "background":"",
+      "title":"",
+      "desc":"",
+      "link":"",
+      "linkText":""
+    },
+    "introduce":""
+  },
   // 工业物联网平台 IOT
   "IOT": {
     "layout":[],

@@ -1,6 +1,6 @@
-<!-- <script lang="ts">
+<script lang="ts">
 export default {
-  name: "els-menu",
+  name: "els-route-menu",
 };
 </script>
 <script lang="ts" setup>
@@ -10,8 +10,6 @@ import { ElMenu } from "element-plus";
 import ElsMenuBase from "./base.vue";
 import { isMenuItem, isMenuSub, isMenuGroup, getMenuLabel } from "./utils";
 
-type MenuItem = {label:string,path:string,children?:MenuItem[],show?:boolean} & Record<string,any>
-
 interface Props {
   isMenuItem?: (node: RouteRecordNormalized | RouteRecordRaw) => boolean;
   isMenuSub?: (node: RouteRecordNormalized | RouteRecordRaw) => boolean;
@@ -19,7 +17,6 @@ interface Props {
   getMenuLabel?: (node: RouteRecordNormalized | RouteRecordRaw) => string;
   collapse?: boolean;
   selectChange?: (path: string, paths: string[], item: any) => void;
-  menuTree?:MenuItem[]
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -37,7 +34,7 @@ const {
   getMenuLabel: getLabel,
   selectChange,
 } = props;
-const { menuTree,collapse } = toRefs(props);
+const { collapse } = toRefs(props);
 
 const router = useRouter();
 const currentRoute = router.currentRoute;
@@ -100,7 +97,7 @@ const handleSelect = (path: string, paths: string[], item: any = {}) => {
   }
 };
 
-const getNodeType = (node: RouteRecordNormalized | RouteRecordRaw) => {
+const getNodeType = (node: any) => {
   if (isGroup(node)) {
     return "group";
   }
@@ -116,6 +113,8 @@ const getNodeType = (node: RouteRecordNormalized | RouteRecordRaw) => {
   }
   return undefined;
 };
+
+const getNodeAttr = (node:any) => node.meta ?? {}
 </script>
 
 <template>
@@ -126,7 +125,7 @@ const getNodeType = (node: RouteRecordNormalized | RouteRecordRaw) => {
     @select="handleSelect"
   >
     <template v-for="(node, i) in menus" :key="`els-menu--${i}`">
-      <els-menu-base :node="node" :get-type="getNodeType"></els-menu-base>
+      <els-menu-base :node="node" :get-type="getNodeType" :get-node-attr="getNodeAttr"></els-menu-base>
     </template>
   </el-menu>
 </template>
@@ -141,4 +140,4 @@ const getNodeType = (node: RouteRecordNormalized | RouteRecordRaw) => {
     height: 40px;
   }
 }
-</style> -->
+</style>

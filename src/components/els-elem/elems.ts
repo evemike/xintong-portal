@@ -16,29 +16,24 @@ import {
   resolveComponent,
 } from "vue";
 import {
-  ElemChilds,
   ElemRenderContext,
   SetupResp,
   Elem,
   ElemProps,
   Context,
-  Hooks,
-  Scope,
 } from "./index";
 
 import {
-  createAttrs,
   getProps,
   getChazhi,
-  getContext,
-  isSpecialElem,
   specialRender,
   getSlotScopeValue,
   getSlotName,
   parseElem,
   parseDirective,
 } from "./config";
-import { has, get, isObject, kebabCase, assign, mapValues } from "lodash";
+// 
+import { kebabCase, assign, mapValues } from "lodash";
 import { isHtmlTag } from "@/utils/util";
 export default function createElem(props: ElemProps, ctx: SetupContext) {
   //

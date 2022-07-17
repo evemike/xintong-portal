@@ -15,13 +15,20 @@ const props = withDefaults(defineProps<Props>(), {
   carousel: () => [],
   items: () => [],
 });
-//
+// 
 const { carousel, items } = toRefs(props);
 // 添加动画
-
 onUpdated(() => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.utils.toArray("._item").forEach((e: any, i: number) => {
+    const scrollTrigger = {
+      trigger: e,
+      start: "top 75%",
+      end: "bottom bottom",
+      // markers: true,
+      toggleActions: "restart none none reverse",
+    }
+    // 
     gsap.fromTo(
       e.children[0],
       {
@@ -33,16 +40,10 @@ onUpdated(() => {
         y: 0,
         opacity: 1,
         duration: 2,
-        scrollTrigger: {
-          trigger: e,
-          start: "top 70%",
-          end: "bottom bottom",
-          // markers: true,
-          toggleActions: "restart none none reverse",
-        },
+        scrollTrigger,
       }
     );
-
+    //
     gsap.fromTo(
       e.children[1],
       {
@@ -54,13 +55,7 @@ onUpdated(() => {
         y: 0,
         opacity: 1,
         duration: 2,
-        scrollTrigger: {
-          trigger: e,
-          start: "top 70%",
-          end: "bottom bottom",
-          // markers: true,
-          toggleActions: "restart none none reverse",
-        },
+        scrollTrigger,
       }
     );
   });
@@ -104,12 +99,11 @@ const handleGo = (path: string) => {
           <!-- desc -->
           <div class="_desc">{{ item.desc }}</div>
           <!-- link -->
-          <div
-            v-if="item.link"
-            class="_link"
-            @click.stop="() => handleGo(item.link)"
-          >
-            <span>了解更多</span><el-icon><right /></el-icon>
+          <div v-if="item.link" class="_link" @click.stop="() => handleGo(item.link)">
+            <span>了解更多</span>
+            <el-icon>
+              <right />
+            </el-icon>
           </div>
         </div>
         <div v-if="i % 2 != 0" class="_img right">

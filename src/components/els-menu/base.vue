@@ -7,16 +7,18 @@ export default {
 import { computed } from "vue";
 import { ElMenuItemGroup, ElMenuItem, ElSubMenu, ElIcon } from "element-plus";
 import { RouteRecordNormalized, RouteRecordRaw } from "vue-router";
+import { MenuItem } from "./inter"
 import SvgIcon from "../svg-icon";
+type Node = RouteRecordNormalized | RouteRecordRaw | MenuItem
 interface Props {
-  node: RouteRecordNormalized | RouteRecordRaw;
-  getType: (node: RouteRecordNormalized | RouteRecordRaw) => string | undefined;
+  node: Node;
+  getType: (node: Node) => string | undefined;
+  getNodeAttr:(node : Node) => {icon?:string,label?:string} & Record<string,any>
   path?: string;
 }
 const props = defineProps<Props>();
-const { node, getType, path } = props;
-const meta: any = node.meta || {};
-const { icon, label, ...others } = meta;
+const { node, getType, path , getNodeAttr } = props;
+const { icon, label, ...others } = getNodeAttr(node);
 const attr = {
   index: /^(\/|http)/.test(node.path) ? node.path : path + "/" + node.path,
   ...others,
@@ -32,6 +34,7 @@ const nodeType = getType(node);
         :node="n"
         :get-type="getType"
         :path="attr.index"
+        :get-node-attr="getNodeAttr"
       ></els-menu-base>
     </template>
   </el-menu-item-group>
@@ -47,6 +50,7 @@ const nodeType = getType(node);
         :node="n"
         :get-type="getType"
         :path="attr.index"
+        :get-node-attr="getNodeAttr"
       ></els-menu-base>
     </template>
   </el-sub-menu>
@@ -57,11 +61,12 @@ const nodeType = getType(node);
     <span v-if="label">{{ label }}</span>
   </el-menu-item>
   <template v-else>
-    <template v-for="(n, i) in node.children" :key="`els-menu-item--${i}`">
+    <template v-for="(n, i) in node?.children" :key="`els-menu-item--${i}`">
       <els-menu-base
         :node="n"
         :get-type="getType"
         :path="attr.index"
+        :get-node-attr="getNodeAttr"
       ></els-menu-base>
     </template>
   </template>

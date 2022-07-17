@@ -6,8 +6,14 @@ import page401 from "@/views/error/401.vue";
 import i18n from "@/i18n";
 import { saveLocal, getLocal } from "@/utils/storage";
 import LayoutBase from "@/layout/base/index.vue";
+import Empty from "@/layout/empty/index.vue";
 import { getJsonFileData } from "@/api/base/json";
 import { isArray } from "lodash";
+import {treeFind,treeFilter,treeMap} from "@/utils/tree"
+// vite 先静态加载所有 vue 文件
+const PAGES = import.meta.glob("@/views/pages/**/*.vue")
+const PATHS = Object.keys(PAGES);
+const NAMES = PATHS.map(k => k.replace(/.*?pages\//,''))
 //
 let isAddDynamic = false; // 锁 用来锁定状态，防止重复添加路由
 //
@@ -69,11 +75,17 @@ const addRoutes = (data: any[]) => {
   if (isAddDynamic) {
     return;
   }
-  for (const d of data) {
-    const { component: c, ...t } = d;
-    const component = () => import(`/src/views/pages/${c}`);
-    router.addRoute("BASE_ROUTER", { ...t, component });
-  }
+  treeMap(data,(node,l,ins,pNode) => {
+    const { component: c, name,path,redirect,meta } = node;
+    const i = NAMES.indexOf(c);
+    const component = i != -1 ? PAGES[PATHS[i]] : Empty
+    const d:RouteRecordRaw = {name,path,redirect,meta,component};
+    if(pNode && pNode.name){
+      router.addRoute(pNode.name, d);
+    }else{
+      router.addRoute("BASE_ROUTER", d);
+    }
+  })
   isAddDynamic = true;
 };
 // 初始化 本地缓存路由
@@ -110,7 +122,6 @@ router.beforeEach((to, from, next) => {
   if (to.fullPath === from.fullPath) {
     return;
   }
-  //  console.log("-----------", to, locale.value, from);
   next();
 });
 export default router;
@@ -118,8 +129,10 @@ export default router;
 // 从 JSON 加载 路由对象并添加到 router 中
 const initRouter = async () => {
   try {
-    const data = await getJsonFileData("router");
-    if (isArray(data)) {
+    const menu = await getJsonFileData("menu");
+    if (isArray(menu)) {
+      saveLocal("DYNAMIC_MENUS", menu);
+      const data = treeFilter(menu,n => n.type == 'route')
       saveLocal("DYNAMIC_ROUTERS", data);
       addRoutes(data);
     }

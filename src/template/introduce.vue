@@ -5,9 +5,8 @@ import { ElImage, ElButton, ElTabs, ElTabPane } from "element-plus";
 // import { Right } from "@element-plus/icons-vue";
 import SvgIcon from "@/components/svg-icon";
 // import { gsap, ScrollTrigger } from "gsap/all";
-//
 const router = useRouter();
-//
+// props
 interface Props {
   header: Record<string, any> | undefined;
   items: Record<string, any>[];
@@ -15,9 +14,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
 });
-//
+// items
 const { header, items } = toRefs(props);
-
 // tools
 const handleGo = (path: string) => {
   if (/^http/.test(path)) {

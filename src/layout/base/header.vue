@@ -1,6 +1,11 @@
 <template>
   <div class="layout--header">
-
+    <!-- logo -->
+    <div class="_logo"></div>
+    <!-- title -->
+    <div class="_title"></div>
+    <!-- menu -->
+    <els-menu :menu-tree="menuTree" prefix="/:lang/platform"></els-menu>
   </div>
 </template>
 <script setup lang="ts">
@@ -9,7 +14,7 @@ import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { saveLocal, getLocal } from "@/utils/storage";
 import { useI18n } from "vue-i18n";
-
+import ElsMenu from "@/components/els-menu"
 const router = useRouter();
 const store = useStore();
 const options = [
@@ -23,6 +28,8 @@ const options = [
   },
 ];
 const { t } = useI18n();
+//
+const menuTree = getLocal('DYNAMIC_MENUS',true)
 const changeLan = (v: string) => {
   saveLocal("i18nLocal", v);
   const str = router.currentRoute.value.fullPath;
@@ -40,8 +47,7 @@ const handleCommand = (v: string | number | object) => {
 </script>
 <style lang="scss">
 .layout--header {
-  background: #2150e0;
-  border-radius: 0px 0px 12px 12px;
+  
   position: relative;
 }
 </style>

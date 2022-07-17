@@ -8,7 +8,7 @@ import ContentView from "./content.vue";
 
 
 <template>
-  <div class="layout-base">
+  <div class="layout-base theme-chenyujiao">
     <header-view></header-view>
     <content-view></content-view>
     <footer-view></footer-view>

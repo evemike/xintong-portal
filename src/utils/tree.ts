@@ -93,11 +93,20 @@ export const treeFilter = <T extends Record<string, any>>(
   const f: TreeCallFn<T> = (n, l, i, pn, ins) => {
     const bool = fn(n, l, i, pn, ins);
     if (!bool) {
+      (n as any)._DEL = true;
+      (n as any)._LIST = l;
+      (n as any)._PNODE = pn;
       const it = l.indexOf(n);
       l.splice(it, 1);
       if (pn && pn[ck] && pn[ck].length == 0) {
         delete pn[ck];
       }
+    }else if (pn && (pn as any)._DEL){
+      while(pn && (pn as any)._DEL){
+        l = (pn as any)._LIST
+        pn = (pn as any)._PNODE
+      }
+      l.push(n)
     }
   };
   return treeMap<T>(tree, f, cfg);
