@@ -103,4 +103,16 @@
       color:#fff;
     }
   }
+
+
+  
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+body::-webkit-scrollbar-thumb {
+  width: 0;
+  height: 0;
 }

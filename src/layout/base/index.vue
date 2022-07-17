@@ -4,7 +4,7 @@ import "@/assets/style/layout.scss";
 import HeaderView from "./header.vue";
 import FooterView from "./footer.vue";
 import ContentView from "./content.vue";
-import {ElBacktop} from "element-plus"
+import { ElBacktop } from "element-plus"
 </script>
 
 
@@ -18,8 +18,9 @@ import {ElBacktop} from "element-plus"
 </template>
 <style scoped lang="scss">
 .layout-base {
-  // width: 100vw;
+  width: 100vw;
   // height: 100vh;
   position: relative;
+  
 }
 </style>

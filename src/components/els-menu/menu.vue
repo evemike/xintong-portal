@@ -51,8 +51,12 @@ const { menuTree,collapse } = toRefs(props);
 const route = useRoute();
 const router = useRouter();
 const sourcePath = computed(() => {
-  const { path } = route;
+  const { path, params } = route;
   let p = path;
+  Object.keys(params).forEach((k) => {
+    const v: string = params[k] + "";
+    p = p.replace(v, ":" + k);
+  });
   return p;
 });
 //
