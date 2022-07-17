@@ -15,6 +15,7 @@ export default createStore({
     menus: [], // 需要渲染的菜单数据
     tentTitle: "",
     subEquipWs: undefined,
+    website:{}, // 站点配置文件
   },
   getters: {
     token: (state) => state.token ?? getLocal("token"),
@@ -24,8 +25,10 @@ export default createStore({
     userInfo: (state) => state.userInfo ?? getLocal("userInfo", true),
     getMenus: (state) => state.menus ?? getLocal("menus"),
     subEquipWs: (state) => state.subEquipWs,
+    website: (state) => state.website,
   },
   mutations: {
+    setWebsite(state,val:any){ state.website = val },
     setToken(state, val: string) {
       state.token = val;
       saveLocal("token", val);
@@ -61,7 +64,7 @@ export default createStore({
   actions: {
     initWebsiteData:async ({state}) => {
       const data = await getJsonFileData('website')
-      console.log(data)
+      state.website = data;
     },
     // resetToken() {},
     logout({ state }) {

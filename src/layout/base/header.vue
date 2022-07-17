@@ -1,14 +1,17 @@
 <template>
   <div class="layout--header">
     <!-- logo -->
-    <div class="_logo"></div>
+    <div class="logo" v-if="website.logo">
+      <img :src="`/image/logo/${transImgName(website.logo)}`"/>
+    </div>
     <!-- title -->
-    <div class="_title"></div>
+    <div class="title" v-if="website.title">{{ website.title }}</div>
     <!-- menu -->
     <els-menu :menu-tree="menuTree" prefix="/:lang/platform"></els-menu>
   </div>
 </template>
 <script setup lang="ts">
+import { computed } from "vue"
 import { ArrowDown } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
@@ -29,7 +32,17 @@ const options = [
 ];
 const { t } = useI18n();
 //
+const website = computed(() => store.getters.website);
+//
 const menuTree = getLocal('DYNAMIC_MENUS',true)
+// 图片名称处理
+const transImgName = (name: string) => {
+  const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
+  if (!reg.test(name)) {
+    return name + ".png";
+  }
+  return name;
+};
 const changeLan = (v: string) => {
   saveLocal("i18nLocal", v);
   const str = router.currentRoute.value.fullPath;
