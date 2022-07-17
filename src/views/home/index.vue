@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, computed, unref } from "vue";
-import TempHome from "@/template/home.vue";
+import TempHome from "@/template/home/index.vue";
 // api
 import { getJsonFileData } from "@/api/base/json";
 

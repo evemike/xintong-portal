@@ -3,7 +3,7 @@ import { ref, computed, unref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import { ElButton } from "element-plus";
-import TempIntroduce from "@/template/introduce.vue";
+import TempIntroduce from "@/template/introduce/index.vue";
 // api
 import { getJsonFileData } from "@/api/base/json";
 
