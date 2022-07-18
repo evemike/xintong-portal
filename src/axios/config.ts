@@ -52,7 +52,7 @@ export const throttleExecutor = (
     // 配置过期自动删除 过期时间 300 豪秒
     setTimeout(() => {
       requestCache.has(key) && requestCache.delete(key);
-    }, 300);
+    }, 30);
   }
 };
 

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, unref } from "vue";
+import { ref, computed, unref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import { ElButton } from "element-plus";
@@ -10,17 +10,18 @@ import { getJsonFileData } from "@/api/base/json";
 const router = useRouter();
 const route = useRoute();
 //
-const pageName = route.params.name + "";
+const pageName = computed(() => route.params.name + "");
 const pageData = ref<Record<string, any>>({});
 // init Data
 const initPageData = async () => {
+  const pn = unref(pageName);
   try {
     const data = await getJsonFileData("introduce");
     const { SHOW: show } = data;
-    if (!show.includes(pageName)) {
+    if (!show.includes(pn)) {
       return router.go(-1);
     }
-    pageData.value = data[pageName];
+    pageData.value = data[pn];
   } catch (e) {
     console.error(e);
   }
@@ -31,8 +32,17 @@ const init = () => {
 };
 //
 init();
+
+//
+watch(pageName, (v) => {
+  if (v && route.path.includes('/introduce')) {
+    initPageData();
+  }
+});
 //
 const header = computed(() => {
+  const pn = unref(pageName);
+
   const d = unref(pageData)?.header || {};
   if (!d.linkText) {
     d.linkText = "进入控制台";
@@ -40,18 +50,18 @@ const header = computed(() => {
   if (!d.background) {
     d.background = "#014ACA";
   }
-  if(!d.img) {
-    d.img = pageName
+  if (!d.img) {
+    d.img = pn;
   }
-  d.img = '/image/page/introduce/' + transImgName(d.img)
+  d.img = "/image/page/introduce/" + transImgName(d.img);
   return d;
 });
 
 const items = computed(() => {
-  const d = unref(pageData)
-  const layout = d.layout || []
-  return layout.map((k:string) => ({...(d[k] || {})}))
-})
+  const d = unref(pageData);
+  const layout = d.layout || [];
+  return layout.map((k: string) => ({ ...(d[k] || {}) }));
+});
 
 // 图片名称处理
 const transImgName = (name: string) => {
@@ -65,6 +75,6 @@ const transImgName = (name: string) => {
 
 <template>
   <div class="page-introduce">
-    <temp-introduce :header="header" :items="items" ></temp-introduce>
+    <temp-introduce :header="header" :items="items"></temp-introduce>
   </div>
 </template>

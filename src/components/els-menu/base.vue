@@ -18,7 +18,7 @@ interface Props {
 }
 const props = defineProps<Props>();
 const { node, getType, path , getNodeAttr } = props;
-const { icon, label, ...others } = getNodeAttr(node);
+const { icon, label,children, ...others } = getNodeAttr(node);
 const attr = {
   index: /^(\/|http)/.test(node.path) ? node.path : path + "/" + node.path,
   ...others,

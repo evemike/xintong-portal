@@ -4,7 +4,7 @@ import { useRouter } from "vue-router";
 import { ElImage, ElButton, ElTabs, ElTabPane } from "element-plus";
 // import { Right } from "@element-plus/icons-vue";
 import SvgIcon from "@/components/svg-icon";
-import ContentCard from "./card.vue"
+import ContentCard from "./card.vue";
 // import { gsap, ScrollTrigger } from "gsap/all";
 const router = useRouter();
 // props
@@ -30,15 +30,17 @@ const handleGo = (path: string) => {
 <template>
   <div class="template-introduce">
     <!-- header -->
-    <div v-if="header" class="_header" :style="{ background: header.background }">
+    <div
+      v-if="header"
+      class="_header"
+      :style="{ background: header.background }"
+    >
       <div class="_text">
         <div class="_title">{{ header.title }}</div>
         <div class="_desc">{{ header.desc }}</div>
         <div v-if="header.link" class="_link">
           <el-button @click.stop="() => handleGo(header?.link)">
-            {{
-              header.linkText
-            }}
+            {{ header.linkText }}
           </el-button>
         </div>
       </div>
@@ -51,15 +53,23 @@ const handleGo = (path: string) => {
       <div :class="['_panel', `_item-${i}`, `mode-${item.mode}`]">
         <!-- tabs -->
         <div v-if="item.mode == 'tabs'" class="item-tabs panel-item">
-        <!-- title -->
+          <!-- title -->
           <div class="_header">
             <div v-if="item.title" class="title">{{ item.title }}</div>
             <div v-if="item.subhead" class="subhead">{{ item.subhead }}</div>
             <div v-if="item.desc" class="desc">{{ item.desc }}</div>
           </div>
           <el-tabs :model-value="item.data[0].title">
-            <el-tab-pane v-for="id in item.data" :key="id.title" :label="id.title" :name="id.title">
-              <div v-if="id.data && id.mode != 'tabs'" :class="['_tab-data', 'cards']">
+            <el-tab-pane
+              v-for="id in item.data"
+              :key="id.title"
+              :label="id.title"
+              :name="id.title"
+            >
+              <div
+                v-if="id.data && id.mode != 'tabs'"
+                :class="['_tab-data', 'cards']"
+              >
                 <div
                   v-for="(d, j) in id.data"
                   :key="`data-tab-${j}`"
@@ -103,7 +113,7 @@ const handleGo = (path: string) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0 10%;
+    padding: 0 10%;
     // min-width:1140px;
     > ._text {
       width: 600px;
@@ -140,53 +150,71 @@ const handleGo = (path: string) => {
   }
   > ._panel {
     padding: 56px 0;
-    background:#F0F2F5;
-    padding:56px 10%;
+    background: #f0f2f5;
+    padding: 56px 10%;
     // min-width:1140px;
-    color:#333;
-    &:nth-child(2n){
-      background:#fff;
+    color: #333;
+    &:nth-child(2n) {
+      background: #fff;
     }
-    .item-card{
-      .cards{
-        padding-top:24px;
+    &.mode-list{
+      background: #fff;
+      &:nth-child(2n) {
+        background: #f0f2f5;
+      }
+      .panel-item{
+        .cards{
+          display:block;
+          >div{
+            &:not(:first-child){
+              margin-top:20px;
+            }
+          }
+        }
       }
     }
-    .item-tabs{
-      .el-tabs{
-        margin-top:24px;
+    .item-card {
+      .cards {
+        padding-top: 24px;
       }
-      .el-tabs__nav-scroll{
-        display:flex;
+    }
+    .item-tabs {
+      .el-tabs {
+        margin-top: 24px;
+      }
+      .el-tabs__nav-scroll {
+        display: flex;
         justify-content: center;
       }
-      .el-tabs__item{
+      .el-tabs__item {
         font-size: 18px;
-        &.is-active{
+        &.is-active {
           font-weight: 600;
         }
       }
     }
-    .panel-item{
-      >._header{
-        
-        .title{
+    .panel-item {
+      > ._header {
+        .title {
           font-size: 32px;
           font-weight: 600;
           text-align: center;
         }
-        .desc{
-          margin-top:22px;
+        .desc {
+          margin-top: 22px;
           font-size: 14px;
           line-height: 28px;
         }
       }
-      .cards{
-        display:flex;
-        flex-wrap: wrap;
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(364px, 1fr));
         gap: 24px;
-        justify-content: space-between;
-        height:100%;
+        // justify-content: space-between;
+        height: 100%;
+        > div {
+          min-width: 364px;
+        }
       }
     }
   }

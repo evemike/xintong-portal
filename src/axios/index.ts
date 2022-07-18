@@ -66,8 +66,8 @@ http.interceptors.response.use(
     let isJump = false;
     // console.error(resp);
     //
-    const msg = `[ ${data.status ?? resp.status} ] [ ${data.errorCode} ] [${
-      data.message ?? resp.statusText
+    const msg = `[ ${data?.status ?? resp?.status} ] [ ${data?.errorCode} ] [${
+      data?.message ?? resp?.statusText
     }] [${resp?.request?.responseURL}] `;
 
     if (msg.includes("/auth/token")) {

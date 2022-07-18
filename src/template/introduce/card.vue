@@ -3,12 +3,12 @@ import { toRefs } from "vue"
 import SvgIcon from "@/components/svg-icon"
 
 interface Props {
-    icon: string,
-    title: string,
-    subhead: string,
-    desc: string,
-    content: string[],
-    mode: string
+    icon?: string,
+    title?: string,
+    subhead?: string,
+    desc?: string,
+    content?: string[],
+    mode?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -56,8 +56,10 @@ const { mode, icon, title, subhead, desc, content } = toRefs(props)
         padding-bottom:24px;
         .h-icon {
             width: 38px;
+            min-width: 38px;
             height: 38px;
-            margin-right:8px;
+            min-height: 38px;
+            margin-right:16px;
             svg{
                 width:100%;
                 height:100%;
@@ -85,10 +87,13 @@ const { mode, icon, title, subhead, desc, content } = toRefs(props)
     }
 
     &.mode-card {
-        width:364px;
+        min-width:364px;
     }
     &.mode-list {
         width:100%;
+        > ._header{
+          border-bottom:1px solid #ddd;
+        }
         > ._content {
             padding-top:24px;
             .c-item {
@@ -99,6 +104,9 @@ const { mode, icon, title, subhead, desc, content } = toRefs(props)
                     height: 4px;
                     background: #0091ff;
                     border-radius: 4px;
+                    display:inline-block;
+                    margin-right:8px;
+                    margin-bottom:3px;
                 }
             }
         }

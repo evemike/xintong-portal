@@ -9,11 +9,11 @@ import LayoutBase from "@/layout/base/index.vue";
 import Empty from "@/layout/empty/index.vue";
 import { getJsonFileData } from "@/api/base/json";
 import { isArray } from "lodash";
-import {treeFind,treeFilter,treeMap} from "@/utils/tree"
+import { treeFind, treeFilter, treeMap } from "@/utils/tree";
 // vite 先静态加载所有 vue 文件
-const PAGES = import.meta.glob("@/views/pages/**/*.vue")
+const PAGES = import.meta.glob("@/views/pages/**/*.vue");
 const PATHS = Object.keys(PAGES);
-const NAMES = PATHS.map(k => k.replace(/.*?pages\//,''))
+const NAMES = PATHS.map((k) => k.replace(/.*?pages\//, ""));
 //
 let isAddDynamic = false; // 锁 用来锁定状态，防止重复添加路由
 //
@@ -75,17 +75,17 @@ const addRoutes = (data: any[]) => {
   if (isAddDynamic) {
     return;
   }
-  treeMap(data,(node,l,ins,pNode) => {
-    const { component: c, name,path,redirect,meta } = node;
+  treeMap(data, (node, l, ins, pNode) => {
+    const { component: c, name, path, redirect, meta } = node;
     const i = NAMES.indexOf(c);
-    const component = i != -1 ? PAGES[PATHS[i]] : Empty
-    const d:RouteRecordRaw = {name,path,redirect,meta,component};
-    if(pNode && pNode.name){
+    const component = i != -1 ? PAGES[PATHS[i]] : Empty;
+    const d: RouteRecordRaw = { name, path, redirect, meta, component };
+    if (pNode && pNode.name) {
       router.addRoute(pNode.name, d);
-    }else{
+    } else {
       router.addRoute("BASE_ROUTER", d);
     }
-  })
+  });
   isAddDynamic = true;
 };
 // 初始化 本地缓存路由
@@ -98,6 +98,7 @@ const initCacheRoutes = () => {
 initCacheRoutes();
 //路由守护
 router.beforeEach((to, from, next) => {
+  // console.log(to,from)
   const { availableLocales, locale } = i18n.global;
   const lang: any = to.params?.lang;
   // 国际化解析规则
@@ -132,7 +133,7 @@ const initRouter = async () => {
     const menu = await getJsonFileData("menu");
     if (isArray(menu)) {
       saveLocal("DYNAMIC_MENUS", menu);
-      const data = treeFilter(menu,n => n.type == 'route')
+      const data = treeFilter(menu, (n) => n.type == "route");
       saveLocal("DYNAMIC_ROUTERS", data);
       addRoutes(data);
     }

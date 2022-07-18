@@ -3,7 +3,8 @@ import { toRefs, onUpdated } from "vue";
 import { useRouter } from "vue-router";
 import { ElCarousel, ElCarouselItem, ElIcon, ElImage } from "element-plus";
 import { Right } from "@element-plus/icons-vue";
-import { gsap, ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 //
 const router = useRouter();
 //
@@ -15,7 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
   carousel: () => [],
   items: () => [],
 });
-// 
+//
 const { carousel, items } = toRefs(props);
 // 添加动画
 onUpdated(() => {
@@ -28,7 +29,7 @@ onUpdated(() => {
       // markers: true,
       toggleActions: "restart none none reverse",
     }
-    // 
+    //
     gsap.fromTo(
       e.children[0],
       {

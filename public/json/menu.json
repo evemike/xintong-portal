@@ -1,23 +1,21 @@
 [
     // 首页
     {"label":"首页","path":"/:lang/home"},
+    {"label":"供应链协同平台","path":"http://123.178.235.110:8086/main/workBoard"},
+    {"label":"工业品超时","path":"/:lang/platform/introduce/INDUSTRIAL-CITY"},
+    {"label":"案例实践","path":"/:lang/home/2"},
+    {"label":"企业中心","path":"/:lang/home/3"},
     // 产品
-    {"label":"产品介绍","path":"introduce/:name","type":"route","name":"Introduce","component":"introduce/index.vue","children":[
-        {"label":"大数据平台","path":"BIG-DATA"},
-        {"label":"工业物联网平台","path":"IOT"},
-        {"label":"招投标","path":"BIDDING"},
-        {"label":"询比价","path":"COMPARISON"},
-        {"label":"工业品超市","path":"INDUSTRIAL-CITY"},
-        {"label":"工业AI平台","path":"AI"},
-        {"label":"工业应用工厂","path":"APP-FACTORY"},
-        {"label":"低代码服务","path":"LOW-CODE"},
-        {"label":"工业组态","path":"INDUSTRIAL-CONFIGURATION"},
-        {"label":"工业安全","path":"INDUSTRIAL-SAFE"}
-    ]},
-    {"label":"首页1","path":"","children":[
-        {"label":"首页2","path":"","children":[
-            {"label":"test","type":"route","path":"test","show":false}
-        ]}
-        
-    ]}
+    {"label":"介绍","path":"introduce/:name","type":"route","name":"Introduce","component":"introduce/index.vue","show":false }
+    //     {"label":"大数据平台","path":"BIG-DATA"},
+    //     {"label":"工业物联网平台","path":"IOT"},
+    //     {"label":"招投标","path":"BIDDING"},
+    //     {"label":"询比价","path":"COMPARISON"},
+    //     {"label":"工业品超市","path":"INDUSTRIAL-CITY"},
+    //     {"label":"工业AI平台","path":"AI"},
+    //     {"label":"工业应用工厂","path":"APP-FACTORY"},
+    //     {"label":"低代码服务","path":"LOW-CODE"},
+    //     {"label":"工业组态","path":"INDUSTRIAL-CONFIGURATION"},
+    //     {"label":"工业安全","path":"INDUSTRIAL-SAFE"}
+    // ]},
 ]
