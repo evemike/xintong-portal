@@ -154,14 +154,11 @@ const handleGo = (path: string) => {
     padding: 56px 10%;
     // min-width:1140px;
     color: #333;
+    background: #fff;
     &:nth-child(2n) {
-      background: #fff;
+      background: #f0f2f5;
     }
     &.mode-list{
-      background: #fff;
-      &:nth-child(2n) {
-        background: #f0f2f5;
-      }
       .panel-item{
         .cards{
           display:block;

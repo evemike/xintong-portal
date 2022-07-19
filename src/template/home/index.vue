@@ -3,6 +3,7 @@ import { toRefs, onUpdated } from "vue";
 import { useRouter } from "vue-router";
 import { ElCarousel, ElCarouselItem, ElIcon, ElImage } from "element-plus";
 import { Right } from "@element-plus/icons-vue";
+import SvgIcon from "@/components/svg-icon";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 //
@@ -11,13 +12,15 @@ const router = useRouter();
 interface Props {
   carousel: string[];
   items: Record<string, any>[];
+  layer: Record<string, any>;
 }
 const props = withDefaults(defineProps<Props>(), {
   carousel: () => [],
   items: () => [],
+  layer: () => ({}),
 });
 //
-const { carousel, items } = toRefs(props);
+const { carousel, items, layer } = toRefs(props);
 // 添加动画
 onUpdated(() => {
   gsap.registerPlugin(ScrollTrigger);
@@ -28,7 +31,7 @@ onUpdated(() => {
       end: "bottom bottom",
       // markers: true,
       toggleActions: "restart none none reverse",
-    }
+    };
     //
     gsap.fromTo(
       e.children[0],
@@ -63,6 +66,9 @@ onUpdated(() => {
 });
 // 跳转
 const handleGo = (path: string) => {
+  if (!path) {
+    return;
+  }
   if (/^http/.test(path)) {
     window.open(path, "_blank");
   } else {
@@ -82,6 +88,27 @@ const handleGo = (path: string) => {
           </el-carousel-item>
         </template>
       </el-carousel>
+      <!-- layer -->
+      <div
+        v-if="layer.show"
+        class="_layer"
+        :style="{ background: layer?.background || '#33333373' }"
+      >
+        <!-- title -->
+        <div v-if="layer.title" class="title">{{ layer.title }}</div>
+        <!-- icons -->
+        <div v-if="layer.icons" class="icons">
+          <div
+            v-for="(d, i) in layer.icons"
+            :key="i"
+            :class="['icons-item', { 'is-link': d.link }]"
+            @click.stop="handleGo(d.link)"
+          >
+            <img v-if="d.img" :src="d.img" />
+            <span v-if="d.text">{{ d.text }}</span>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- items -->
     <div class="_items">
@@ -100,7 +127,11 @@ const handleGo = (path: string) => {
           <!-- desc -->
           <div class="_desc">{{ item.desc }}</div>
           <!-- link -->
-          <div v-if="item.link" class="_link" @click.stop="() => handleGo(item.link)">
+          <div
+            v-if="item.link"
+            class="_link"
+            @click.stop="() => handleGo(item.link)"
+          >
             <span>了解更多</span>
             <el-icon>
               <right />
@@ -130,6 +161,7 @@ const handleGo = (path: string) => {
   width: 100%;
   // overflow: auto;
   > ._carousel {
+    position: relative;
     height: 472px;
     > .el-carousel {
       .el-carousel__container {
@@ -138,6 +170,45 @@ const handleGo = (path: string) => {
       .el-image {
         width: 100%;
         height: 472px;
+      }
+    }
+    >._layer{
+      padding:40px 32px 27px 32px;
+      position:absolute;
+      top:130px;
+      right:10%;
+      color:#fff;
+      border-radius: 8px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      .title{
+        font-size: 28px;
+        font-weight: 400;
+      }
+      .icons{
+        margin-top:30px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:5px;
+        .icons-item{
+          margin-top:10px;
+          width:70px;
+          height:70px;
+          transition:all .1s ease-in-out;
+          &.is-link{
+            &:hover{
+              cursor:pointer;
+              width:80px;
+              height:80px;
+              margin-top:0;
+            }
+          }
+          >img{
+            width:100%;
+            height:100%;
+          }
+        }
       }
     }
   }

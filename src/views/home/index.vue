@@ -29,17 +29,36 @@ const init = () => {
 init();
 // 图片名称处理
 const transImgName = (name: string) => {
-  const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
-  if (!reg.test(name)) {
-    return name + ".png";
+  if (!name) {
+    return undefined;
   }
-  return name;
+  let res = name;
+  const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
+  if (!reg.test(res)) {
+    res = res + ".png";
+  }
+  if (!/^\//.test(res) && !/^http/.test(res)) {
+    res = "/image/home/" + res;
+  }
+  return res;
 };
 // 生成首页轮播
 const carousel = computed(() => {
   const data = unref(homeData);
   const { CAROUSEL = [] } = data;
-  return CAROUSEL.map((k: string) => `/image/home/${transImgName(k)}`);
+  return CAROUSEL.map((k: string) => transImgName(k));
+});
+// 生成悬浮图层
+const layer = computed(() => {
+  const data = unref(homeData);
+  const { LAYER = { show: false } } = data;
+  if (LAYER.icons) {
+    LAYER.icons = LAYER.icons.map(({ img, ...t }: any) => ({
+      ...t,
+      img: transImgName(img),
+    }));
+  }
+  return LAYER;
 });
 // 生成首页信息
 const items = computed(() => {
@@ -56,7 +75,7 @@ const items = computed(() => {
 
 <template>
   <div class="page-home">
-    <temp-home :carousel="carousel" :items="items"></temp-home>
+    <temp-home :carousel="carousel" :layer="layer" :items="items"></temp-home>
   </div>
 </template>
 

@@ -53,7 +53,7 @@ const header = computed(() => {
   if (!d.img) {
     d.img = pn;
   }
-  d.img = "/image/page/introduce/" + transImgName(d.img);
+  d.img = transImgName(d.img);
   return d;
 });
 
@@ -65,11 +65,18 @@ const items = computed(() => {
 
 // 图片名称处理
 const transImgName = (name: string) => {
-  const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
-  if (!reg.test(name)) {
-    return name + ".png";
+  if (!name) {
+    return undefined;
   }
-  return name;
+  let res = name;
+  const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
+  if (!reg.test(res)) {
+    res = res + ".png";
+  }
+  if (!/^\//.test(res) && !/^http/.test(res)) {
+    res = "/image/page/introduce/" + res;
+  }
+  return res;
 };
 </script>
 
