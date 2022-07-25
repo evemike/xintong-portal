@@ -1,18 +1,17 @@
 <template>
   <div class="layout--header">
     <!-- logo -->
-    <div class="logo" v-if="website.logo">
+    <div v-if="website.logo" class="logo" >
       <img :src="`/image/logo/${transImgName(website.logo)}`"/>
     </div>
     <!-- title -->
-    <div class="title" v-if="website.title">{{ website.title }}</div>
+    <div v-if="website.title" class="title" >{{ website.title }}</div>
     <!-- menu -->
     <els-menu :menu-tree="menuTree" prefix="/:lang/platform"></els-menu>
   </div>
 </template>
 <script setup lang="ts">
 import { computed } from "vue"
-import { ArrowDown } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { saveLocal, getLocal } from "@/utils/storage";
@@ -34,7 +33,7 @@ const { t } = useI18n();
 //
 const website = computed(() => store.getters.website);
 //
-const menuTree = getLocal('DYNAMIC_MENUS',true)
+const menuTree = computed(() => store.getters.menuTree || []);
 // 图片名称处理
 const transImgName = (name: string) => {
   const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
@@ -60,7 +59,7 @@ const handleCommand = (v: string | number | object) => {
 </script>
 <style lang="scss">
 .layout--header {
-  
+
   position: relative;
 }
 </style>

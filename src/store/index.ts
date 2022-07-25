@@ -1,4 +1,4 @@
-import { ref } from "vue"
+import { ref } from "vue";
 import { createStore } from "vuex";
 import { saveLocal, getLocal, clearLocal } from "@/utils/storage";
 import createPersistedState from "vuex-persistedstate";
@@ -15,7 +15,9 @@ export default createStore({
     menus: [], // 需要渲染的菜单数据
     tentTitle: "",
     subEquipWs: undefined,
-    website:{}, // 站点配置文件
+    menuTree: undefined,
+    routeData:undefined,
+    website: {}, // 站点配置文件
   },
   getters: {
     token: (state) => state.token ?? getLocal("token"),
@@ -26,9 +28,13 @@ export default createStore({
     getMenus: (state) => state.menus ?? getLocal("menus"),
     subEquipWs: (state) => state.subEquipWs,
     website: (state) => state.website,
+    menuTree: (state) => state.menuTree ?? getLocal("menuTree", true),
+    routeData: (state) => state.routeData ?? getLocal("routeData", true),
   },
   mutations: {
-    setWebsite(state,val:any){ state.website = val },
+    setWebsite(state, val: any) {
+      state.website = val;
+    },
     setToken(state, val: string) {
       state.token = val;
       saveLocal("token", val);
@@ -60,10 +66,18 @@ export default createStore({
     setSubEquipWs(state, val) {
       state.subEquipWs = val;
     },
+    setMenuTree(state, val) {
+      state.menuTree = val;
+      saveLocal("menuTree", val);
+    },
+    setRouteData(state, val) {
+      state.routeData = val;
+      saveLocal("routeData", val);
+    },
   },
   actions: {
-    initWebsiteData:async ({state}) => {
-      const data = await getJsonFileData('website')
+    initWebsiteData: async ({ state }) => {
+      const data = await getJsonFileData("website");
       state.website = data;
     },
     // resetToken() {},

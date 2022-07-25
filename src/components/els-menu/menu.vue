@@ -53,17 +53,17 @@ const { menuTree, collapse } = toRefs(props);
 const route = useRoute();
 const router = useRouter();
 const sourcePath = computed(() => {
-  const { path, params } = route;
-  let p = path;
-  Object.keys(params).forEach((k) => {
-    const v: string = params[k] + "";
-    p = p.replace(v, ":" + k);
-  });
-  return p;
+  const { path } = route;
+  const {params} = router.resolve({ path });
+  // console.log('----',router.resolve({ path }))
+  // 消除国际化带来的影响
+  if (params.lang) {
+    return path.replace(params.lang + '', ":lang");
+  }
+  return path;
 });
 //
 const handleSelect = (path: string, paths: string[], item: any = {}) => {
-  console.log('========',path, sourcePath.value,item);
   if (selectChange) {
     selectChange(path, paths, item);
   } else if (path) {

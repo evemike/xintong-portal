@@ -279,7 +279,7 @@
       "background":"#014ACA",
       "title":"工业品超市",
       "desc":"工业品超市是数构工业互联网公司打造的工业品品牌产品在线采购平台，超市汇聚8大主要分类、千余个品牌、上万款产品，为客户提供一站式采购解决方案。",
-      "link":""
+      "link":"http://123.178.235.110:8086/main/purchasingMall/shoppingIndex"
     },
     "features":{
       "mode":"card",
@@ -456,5 +456,38 @@
     }
   },
   // 工业安全
-  "INDUSTRIAL-SAFE": {}
+  "INDUSTRIAL-SAFE": {
+    "layout":["features"],
+    "header":{
+      "background":"",
+      "title":"工业安全",
+      "desc":"检测所有在平台上传和下载的文件，保证其安全性，并在此页面中做统一展示。可以直观查看与平台相关的所有文件的安全状态。另外我们连接公共漏洞库，即时展示工控安全范畴内的实时安全情报，结合安全热词和TOP5的风险进行整体态势的感知和主动式防护。",
+      "link":"",
+      "linkText":""
+    },
+    "features":{
+      "mode":"card",
+      "title":"功能特性",
+      "data":[
+        {
+          "icon":"icon-introduce-55",
+          "title":"文件检测",
+          "subhead":"",
+          "content":["可以检测文件，并依据检测结果将文件分为 含风险文件、需复检文件、安全文件 三类"]
+        },
+        {
+          "icon":"icon-introduce-56",
+          "title":"漏洞扫描",
+          "subhead":"",
+          "content":["定时扫描漏洞，即时报告以修复漏洞"]
+        },
+        {
+          "icon":"icon-introduce-47",
+          "title":"实时情报",
+          "subhead":"",
+          "content":["实时报告服务运行状态"]
+        }
+      ]
+    }
+  }
 }

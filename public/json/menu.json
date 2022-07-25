@@ -3,8 +3,8 @@
     {"label":"首页","path":"/:lang/home"},
     {"label":"供应链协同平台","path":"http://123.178.235.110:8086/main/workBoard"},
     {"label":"工业品超市","path":"/:lang/platform/introduce/INDUSTRIAL-CITY"},
-    {"label":"案例实践","path":"/:lang/home/2"},
-    {"label":"企业中心","path":"/:lang/home/3"},
+    // {"label":"案例实践","path":"/:lang/home/2"},
+    // {"label":"企业中心","path":"/:lang/home/3"},
     // 产品
     {"label":"介绍","path":"introduce/:name","type":"route","name":"Introduce","component":"introduce/index.vue","show":false }
     //     {"label":"大数据平台","path":"BIG-DATA"},

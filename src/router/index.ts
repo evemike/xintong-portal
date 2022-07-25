@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import store from "@/store";
 import Login from "@/views/login/login.vue";
 import Home from "@/views/home/index.vue";
 import page404 from "@/views/error/404.vue";
@@ -9,7 +10,7 @@ import LayoutBase from "@/layout/base/index.vue";
 import Empty from "@/layout/empty/index.vue";
 import { getJsonFileData } from "@/api/base/json";
 import { isArray } from "lodash";
-import { treeFind, treeFilter, treeMap } from "@/utils/tree";
+import { treeFilter, treeMap } from "@/utils/tree";
 // vite 先静态加载所有 vue 文件
 const PAGES = import.meta.glob("@/views/pages/**/*.vue");
 const PATHS = Object.keys(PAGES);
@@ -39,7 +40,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/:lang/platform",
     component: LayoutBase,
     name: "BASE_ROUTER",
-    children: [],
   },
   {
     path: "/:lang/404",
@@ -70,8 +70,10 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // 始终滚动到顶部
-    return { top: 0 }
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { top: 0 };
   },
 });
 //
@@ -94,30 +96,25 @@ const addRoutes = (data: any[]) => {
 };
 // 初始化 本地缓存路由
 const initCacheRoutes = () => {
-  const data = getLocal("DYNAMIC_ROUTERS", true);
+  const data = store.getters.routeData;
   if (isArray(data)) {
     addRoutes(data);
   }
 };
 initCacheRoutes();
 //路由守护
-router.beforeEach((to, from, next) => {
-  // console.log(to,from)
+router.beforeEach((to, from) => {
+  // console.log(">>>>>>>", to,router.getRoutes());
   const { availableLocales, locale } = i18n.global;
-  const lang: any = to.params?.lang;
+  let lang: any = to.params?.lang;
   // 国际化解析规则
   if (lang && lang != locale.value) {
     if (!availableLocales.includes(lang)) {
+      lang = locale.value;
       // 替换
-      const { params, name, query } = to;
-      // to.params.lang = locale.value;
-      // 解析参数 生成新的路径
-      router.push({
-        name: name || "",
-        params: { ...params, lang: locale.value },
-        query,
-      });
-      return;
+      to.params.lang = lang;
+      return router.resolve(to).fullPath;
+      // return to.fullPath.replace(/^\/.*?\//,`/${lang}/`);
     }
     // 修改 本地 locale
     locale.value = lang;
@@ -125,9 +122,9 @@ router.beforeEach((to, from, next) => {
   }
   //
   if (to.fullPath === from.fullPath) {
-    return;
+    return false;
   }
-  next();
+  return true;
 });
 export default router;
 
@@ -136,9 +133,9 @@ const initRouter = async () => {
   try {
     const menu = await getJsonFileData("menu");
     if (isArray(menu)) {
-      saveLocal("DYNAMIC_MENUS", menu);
-      const data = treeFilter(menu, (n) => n.type == "route");
-      saveLocal("DYNAMIC_ROUTERS", data);
+      store.commit("setMenuTree", menu);
+      const data = treeFilter(menu, (n) => n.type === "route");
+      store.commit("setRouteData", data);
       addRoutes(data);
     }
   } catch (e) {

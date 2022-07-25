@@ -24,8 +24,8 @@
     "AI",
     "APP-FACTORY",
     "LOW-CODE",
-    "INDUSTRIAL-CONFIGURATION"
-    // "INDUSTRIAL-SAFE"
+    "INDUSTRIAL-CONFIGURATION",
+    "INDUSTRIAL-SAFE"
   ],
   // 大数据平台
   "BIG-DATA": {
