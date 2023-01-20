@@ -115,7 +115,7 @@ const handleGo = (path: string) => {
       <div
         v-for="(item, i) in items"
         :key="`_item-a-${i}`"
-        :class="['_item', `_item-${i}`]"
+        :class="['_item', `_item-${i}`,item.class ?? '']"
         :style="{ background: item.background || '#fff' }"
       >
         <div v-if="i % 2 == 0" class="_img left">

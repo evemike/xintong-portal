@@ -5,12 +5,14 @@ import HeaderView from "./header.vue";
 import FooterView from "./footer.vue";
 import ContentView from "./content.vue";
 import { ElBacktop } from "element-plus"
+import cardHeader from "../card/header.vue"
 </script>
 
 
 <template>
   <div class="layout-base theme-chenyujiao">
-    <header-view></header-view>
+    <!-- <header-view></header-view> -->
+    <card-header></card-header>
     <content-view></content-view>
     <footer-view></footer-view>
     <el-backtop></el-backtop>

@@ -368,7 +368,7 @@ export const getChazhi = (str: string, scope: Scope): string => {
   }
   let res = str;
   if (REG_CHAZHI.test(str)) {
-    const [t, v] = REG_CHAZHI.exec(str) || [];
+    const [t = "", v] = REG_CHAZHI.exec(str) || [];
     let val = doEval(v, scope, true) ?? "";
     if (typeof val === "object") {
       try {

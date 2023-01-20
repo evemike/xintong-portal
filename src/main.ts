@@ -12,7 +12,8 @@ import zhLocale from "element-plus/es/locale/lang/zh-cn";
 import enLocale from "element-plus/es/locale/lang/en";
 import 'virtual:svg-icons-register'
 /*  */
-
+import "uno.css"
+//
 const app = createApp(App);
 
 let locale = "";

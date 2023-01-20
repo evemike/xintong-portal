@@ -2,7 +2,11 @@ import { defineConfig } from "vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
+// unocss
+import Unocss from "unocss/vite"
+import { presetUno,presetAttributify,presetIcons } from "unocss"
 
+//
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -22,6 +26,14 @@ export default defineConfig({
       inject: "body-last",
       customDomId: "__svg__icons__dom__",
     }),
+    Unocss({
+      // root
+      presets:[
+        presetUno(),
+        presetAttributify(),
+        presetIcons()
+      ]
+    })
   ],
   server: {
     // 代理配置
