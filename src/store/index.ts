@@ -18,6 +18,7 @@ export default createStore({
     menuTree: undefined,
     routeData:undefined,
     website: {}, // 站点配置文件
+    language:"",
   },
   getters: {
     token: (state) => state.token ?? getLocal("token"),

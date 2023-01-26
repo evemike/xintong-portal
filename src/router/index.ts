@@ -20,12 +20,12 @@ let isAddDynamic = false; // 锁 用来锁定状态，防止重复添加路由
 //
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/:lang/login",
+    path: "/login",
     name: "Login",
     component: Login,
   },
   {
-    path: "/:lang/home",
+    path: "/home",
     component: LayoutBase,
     children: [
       {
@@ -37,32 +37,32 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
-    path: "/:lang/platform",
+    path: "/platform",
     component: LayoutBase,
     name: "BASE_ROUTER",
   },
   {
-    path: "/:lang/404",
+    path: "/404",
     name: "404",
     component: page404,
   },
   {
-    path: "/:lang/401",
+    path: "/401",
     name: "401",
     component: page401,
   },
-  { path: "/home", redirect: "/:lang/home" },
+  { path: "/home", redirect: "/home" },
   {
     path: "/",
-    redirect: "/:lang/login",
+    redirect: "/login",
   },
   {
-    path: "/:lang",
-    redirect: "/:lang/login",
+    path: "/",
+    redirect: "/login",
   },
   {
     path: "/*",
-    redirect: "/:lang/404",
+    redirect: "/404",
   },
 ];
 
@@ -105,21 +105,21 @@ initCacheRoutes();
 //路由守护
 router.beforeEach((to, from) => {
   // console.log(">>>>>>>", to,router.getRoutes());
-  const { availableLocales, locale } = i18n.global;
-  let lang: any = to.params?.lang;
-  // 国际化解析规则
-  if (lang && lang != locale.value) {
-    if (!availableLocales.includes(lang)) {
-      lang = locale.value;
-      // 替换
-      to.params.lang = lang;
-      return router.resolve(to).fullPath;
-      // return to.fullPath.replace(/^\/.*?\//,`/${lang}/`);
-    }
-    // 修改 本地 locale
-    locale.value = lang;
-    saveLocal("i18nLocal", lang);
-  }
+  // const { availableLocales, locale } = i18n.global;
+  // let lang: any = to.params?.lang;
+  // // 国际化解析规则
+  // if (lang && lang != locale.value) {
+  //   if (!availableLocales.includes(lang)) {
+  //     lang = locale.value;
+  //     // 替换
+  //     to.params.lang = lang;
+  //     return router.resolve(to).fullPath;
+  //     // return to.fullPath.replace(/^\/.*?\//,`/${lang}/`);
+  //   }
+  //   // 修改 本地 locale
+  //   locale.value = lang;
+  //   saveLocal("i18nLocal", lang);
+  // }
   //
   if (to.fullPath === from.fullPath) {
     return false;

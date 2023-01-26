@@ -1,0 +1,16 @@
+[
+  { "label": "home", "path": "/home" },
+  {
+    "label": "供应链协同平台",
+    "path": "http://123.178.235.110:8086/main/workBoard"
+  },
+  { "label": "工业品超市", "path": "/platform/introduce/INDUSTRIAL-CITY" },
+  {
+    "label": "介绍",
+    "path": "introduce/:name",
+    "type": "route",
+    "name": "Introduce",
+    "component": "introduce/index.vue",
+    "show": false
+  }
+]

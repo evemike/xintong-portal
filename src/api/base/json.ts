@@ -6,12 +6,17 @@ export const getJsonFileData = async (name: string) => {
   if (!/^.*?\.json$/.test(name)) {
     name += ".json";
   }
-  const res = await http({
-    url: "/json/" + name,
-    method: "get",
-  });
-  if (res.data) {
-    return typeof res.data == 'string' ? JSON.parse(res.data.replace(/\/\/\s+.*/g, "")) : res.data;
+  try {
+    const res = await http({
+      url: "/json/" + name,
+      method: "get",
+    });
+    if (res.data) {
+      return typeof res.data == "string"
+        ? JSON.parse(res.data.replace(/\/\/\s+.*/g, ""))
+        : res.data;
+    }
+  } catch (e) {
+    return undefined;
   }
-  return Promise.reject(res);
 };

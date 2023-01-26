@@ -1,35 +1,50 @@
 <template>
   <div class="layout--header">
     <!-- logo -->
-    <div v-if="website.logo" class="logo" >
-      <img :src="`/image/logo/${transImgName(website.logo)}`"/>
+    <div v-if="website.logo" class="logo">
+      <img :src="`/image/logo/${transImgName(website.logo)}`" />
     </div>
     <!-- title -->
-    <div v-if="website.title" class="title" >{{ website.title }}</div>
+    <div v-if="website.title" class="title">{{ website.title }}</div>
     <!-- menu -->
     <els-menu :menu-tree="menuTree" prefix="/:lang/platform"></els-menu>
+    <!-- language -->
+    <el-select v-model="language" @change="handleChangeLanguage">
+      <el-option label="简体中文" value="zh-cn"></el-option>
+      <el-option label="English" value="en"></el-option>
+    </el-select>
   </div>
 </template>
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { saveLocal, getLocal } from "@/utils/storage";
 import { useI18n } from "vue-i18n";
-import ElsMenu from "@/components/els-menu"
+import { ElSelect, ElOption } from "element-plus";
+import ElsMenu from "@/components/els-menu";
+
+//
 const router = useRouter();
 const store = useStore();
-const options = [
-  {
-    value: "zh-cn",
-    label: "简体中文",
-  },
-  {
-    value: "en",
-    label: "English",
-  },
-];
-const { t } = useI18n();
+// const options = [
+//   {
+//     value: "zh-cn",
+//     label: "简体中文",
+//   },
+//   {
+//     value: "en",
+//     label: "English",
+//   },
+// ];
+const language = ref("");
+language.value = getLocal("i18nLocal") || "zh-cn";
+const handleChangeLanguage = (v: string) => {
+  saveLocal("i18nLocal", v);
+  locale.value = v;
+  // 刷新或者切换语言
+};
+const { t, locale } = useI18n();
 //
 const website = computed(() => store.getters.website);
 //
@@ -59,7 +74,29 @@ const handleCommand = (v: string | number | object) => {
 </script>
 <style lang="scss">
 .layout--header {
-
   position: relative;
+  > .el-select {
+    .el-input {
+      .el-input__wrapper {
+        background: transparent;
+        box-shadow: none !important;
+        input {
+          color: #fff;
+        }
+      }
+      .el-input__suffix {
+        color: #fff;
+        opacity: 0;
+      }
+      &:hover {
+        .el-input__suffix {
+          opacity: 1;
+        }
+        .el-input__wrapper{
+          box-shadow: 0 0 0 1px #ddd !important;
+        }
+      }
+    }
+  }
 }
 </style>
