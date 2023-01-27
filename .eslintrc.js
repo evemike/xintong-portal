@@ -149,6 +149,7 @@ module.exports = {
     "vue/require-default-prop": "off",
     "vue/component-definition-name-casing": "off",
     "vue/no-template-shadow": "off",
+    "vue/no-v-html": "off",
     "vue/multi-word-component-names": "off",
     "vue/valid-attribute-name": "off",
     "@typescript-eslint/no-empty-interface": "off",

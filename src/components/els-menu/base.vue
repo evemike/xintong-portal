@@ -9,6 +9,9 @@ import { ElMenuItemGroup, ElMenuItem, ElSubMenu, ElIcon } from "element-plus";
 import { RouteRecordNormalized, RouteRecordRaw } from "vue-router";
 import { MenuItem } from "./inter"
 import SvgIcon from "../svg-icon";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 type Node = RouteRecordNormalized | RouteRecordRaw | MenuItem
 interface Props {
   node: Node;
@@ -43,7 +46,7 @@ const nodeType = getType(node);
       <el-icon>
         <svg-icon v-if="icon" :id="icon"></svg-icon>
       </el-icon>
-      <span v-if="label">{{ label }}</span>
+      <span v-if="label">{{ t(label,label) }}</span>
     </template>
     <template v-for="(n, i) in node.children" :key="`els-menu-sub--${i}`">
       <els-menu-base
@@ -58,7 +61,7 @@ const nodeType = getType(node);
     <el-icon>
       <svg-icon v-if="icon" :id="icon"></svg-icon>
     </el-icon>
-    <span v-if="label">{{ label }}</span>
+    <span v-if="label">{{ t(label,label) }}</span>
   </el-menu-item>
   <template v-else>
     <template v-for="(n, i) in node?.children" :key="`els-menu-item--${i}`">

@@ -10,12 +10,13 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "suppressImplicitAnyIndexErrors":true,
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom","ES2021.String"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "@views/*": ["src/views/*"],
       "@api/*": ["src/api/*"],
+      "@unocss/preset-icons/browser": ["./node_modules/@unocss/preset-icons/dist/browser"]
       // "@utils/*": ["packages/common/utils/*"]
     },
     "types": ["vite/client","vite-plugin-svg-icons/client"]

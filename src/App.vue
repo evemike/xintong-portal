@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {useStore} from "vuex"
+import "@/utils/unocss"
 
 const store = useStore();
 //

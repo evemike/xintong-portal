@@ -4,10 +4,8 @@ import { useRouter } from "vue-router";
 import { ElCarousel, ElCarouselItem, ElIcon, ElImage } from "element-plus";
 import { Right } from "@element-plus/icons-vue";
 import SvgIcon from "@/components/svg-icon";
-import { useI18n } from "vue-i18n"
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import ElsContent from "@/components/els-content";
 //
 const router = useRouter();
 //
@@ -23,8 +21,6 @@ const props = withDefaults(defineProps<Props>(), {
 });
 //
 const { carousel, items, layer } = toRefs(props);
-//
-const { t } = useI18n()
 // 添加动画
 onUpdated(() => {
   gsap.registerPlugin(ScrollTrigger);
@@ -99,7 +95,7 @@ const handleGo = (path: string) => {
         :style="{ background: layer?.background || '#33333373' }"
       >
         <!-- title -->
-        <div v-if="layer.title" class="title">{{ t(layer.title,layer.title) }}</div>
+        <div v-if="layer.title" class="title">{{ layer.title }}</div>
         <!-- icons -->
         <div v-if="layer.icons" class="icons">
           <div
@@ -109,16 +105,43 @@ const handleGo = (path: string) => {
             @click.stop="handleGo(d.link)"
           >
             <img v-if="d.img" :src="d.img" />
-            <span v-if="d.text">{{ t(d.text,d.text) }}</span>
+            <span v-if="d.text">{{ d.text }}</span>
           </div>
         </div>
       </div>
     </div>
     <!-- items -->
     <div class="_items">
-      <template v-for="(item, i) in items" :key="`_item-${i}`">
-        <els-content :class="['_item', `_item-${i}`]" v-bind="item"> </els-content>
-      </template>
+      <div
+        v-for="(item, i) in items"
+        :key="`_item-a-${i}`"
+        :class="['_item', `_item-${i}`,item.class ?? '']"
+        :style="{ background: item.background || '#fff' }"
+      >
+        <div v-if="i % 2 == 0" class="_img left">
+          <img v-if="item.img" :src="item.img" />
+        </div>
+        <div :class="['_text', { 'is-white': i % 2 == 0 }]">
+          <!-- title -->
+          <div class="_title">{{ item.title }}</div>
+          <!-- desc -->
+          <div class="_desc">{{ item.desc }}</div>
+          <!-- link -->
+          <div
+            v-if="item.link"
+            class="_link"
+            @click.stop="() => handleGo(item.link)"
+          >
+            <span>了解更多</span>
+            <el-icon>
+              <right />
+            </el-icon>
+          </div>
+        </div>
+        <div v-if="i % 2 != 0" class="_img right">
+          <img v-if="item.img" :src="item.img" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -149,45 +172,41 @@ const handleGo = (path: string) => {
         height: 472px;
       }
     }
-    > ._layer {
-      padding: 40px 32px 27px 32px;
-      position: absolute;
-      top: 130px;
-      right: 10%;
-      color: #fff;
+    >._layer{
+      padding:40px 32px 27px 32px;
+      position:absolute;
+      top:130px;
+      right:10%;
+      color:#fff;
       border-radius: 8px;
       overflow: hidden;
       backdrop-filter: blur(10px);
-      .title {
+      .title{
         font-size: 28px;
         font-weight: 400;
       }
-      .icons {
-        margin-top: 30px;
-        display: flex;
+      .icons{
+        margin-top:30px;
+        display:flex;
         align-items: center;
         justify-content: space-between;
-        padding: 5px;
-        .icons-item {
-          margin: 10px;
-          width: 100px;
-          height: 100px;
-          transition: all 0.1s ease-in-out;
-          display:flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          &.is-link {
-            &:hover {
-              cursor: pointer;
-              width: 80px;
-              height: 80px;
-              margin-top: 0;
+        padding:5px;
+        .icons-item{
+          margin-top:10px;
+          width:70px;
+          height:70px;
+          transition:all .1s ease-in-out;
+          &.is-link{
+            &:hover{
+              cursor:pointer;
+              width:80px;
+              height:80px;
+              margin-top:0;
             }
           }
-          > img {
-            width: calc(100% - 2em);
-            height: calc(100% - 2em);
+          >img{
+            width:100%;
+            height:100%;
           }
         }
       }
@@ -199,61 +218,61 @@ const handleGo = (path: string) => {
     > ._item {
       position: relative;
       width: 100%;
-      min-height: 536px;
+      height: 536px;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      // > ._img {
-      //   &.left {
-      //     margin-left: 150px;
-      //   }
-      //   &.right {
-      //     margin-right: 110px;
-      //   }
-      //   // width:740px;
-      //   height: 536px;
-      //   img {
-      //     // width:100%;
-      //     height: 100%;
-      //   }
-      // }
-      // > ._text {
-      //   max-width: 334px;
-      //   color: rgba(51, 51, 51, 0.85);
-      //   &.is-white {
-      //     color: rgba(255, 255, 255, 0.85);
-      //   }
-      //   ._title {
-      //     font-size: 32px;
-      //     font-weight: 500;
-      //   }
-      //   ._desc {
-      //     margin-top: 30px;
-      //     font-size: 14px;
-      //     line-height: 28px;
-      //     font-weight: 400;
-      //   }
-      //   ._link {
-      //     margin-top: 32px;
-      //     font-size: 14px;
-      //     font-weight: 400;
-      //     color: #00a5ff;
-      //     display: flex;
-      //     align-items: center;
-      //     cursor: pointer;
-      //     border-radius: 5px;
-      //     padding: 4px 0;
-      //     &:hover {
-      //       // box-shadow:0 0 5px 0 #eee;
-      //       .el-icon {
-      //         animation: goto 1s infinite;
-      //       }
-      //     }
-      //     .el-icon {
-      //       margin-left: 8px;
-      //     }
-      //   }
-      // }
+      > ._img {
+        &.left {
+          margin-left: 150px;
+        }
+        &.right {
+          margin-right: 110px;
+        }
+        // width:740px;
+        height: 536px;
+        img {
+          // width:100%;
+          height: 100%;
+        }
+      }
+      > ._text {
+        max-width: 334px;
+        color: rgba(51, 51, 51, 0.85);
+        &.is-white {
+          color: rgba(255, 255, 255, 0.85);
+        }
+        ._title {
+          font-size: 32px;
+          font-weight: 500;
+        }
+        ._desc {
+          margin-top: 30px;
+          font-size: 14px;
+          line-height: 28px;
+          font-weight: 400;
+        }
+        ._link {
+          margin-top: 32px;
+          font-size: 14px;
+          font-weight: 400;
+          color: #00a5ff;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          border-radius: 5px;
+          padding: 4px 0;
+          &:hover {
+            // box-shadow:0 0 5px 0 #eee;
+            .el-icon {
+              animation: goto 1s infinite;
+            }
+          }
+          .el-icon {
+            margin-left: 8px;
+          }
+        }
+      }
     }
   }
 }

@@ -3,11 +3,11 @@
     // logo 图标
     "logo":"logo", 
     // 页面标题
-    "title":"数构云工业互联网平台", 
+    "title":"website.title", 
     // 国际化语言
     "locale":"zh-cn", 
     // home 页路由
-    "home":"/:lang/home" ,
+    "home":"/home" ,
     // 底栏 链接
     "footer":{
         "layout":[

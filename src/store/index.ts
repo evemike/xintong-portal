@@ -70,6 +70,7 @@ export default createStore({
     setMenuTree(state, val) {
       state.menuTree = val;
       saveLocal("menuTree", val);
+      console.log('===========')
     },
     setRouteData(state, val) {
       state.routeData = val;

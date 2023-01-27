@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import store from "@/store";
 import Login from "@/views/login/login.vue";
 import Home from "@/views/home/index.vue";
+import DefaultPage from "@/views/pages/index.vue"
 import page404 from "@/views/error/404.vue";
 import page401 from "@/views/error/401.vue";
 import i18n from "@/i18n";
@@ -37,9 +38,15 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
-    path: "/platform",
+    path: "/base",
     component: LayoutBase,
     name: "BASE_ROUTER",
+    children:[
+      {
+        path:"page/:name",
+        component:DefaultPage,
+      }
+    ]
   },
   {
     path: "/404",
@@ -132,6 +139,7 @@ export default router;
 const initRouter = async () => {
   try {
     const menu = await getJsonFileData("menu");
+    console.log('............',menu)
     if (isArray(menu)) {
       store.commit("setMenuTree", menu);
       const data = treeFilter(menu, (n) => n.type === "route");

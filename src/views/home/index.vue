@@ -63,12 +63,13 @@ const layer = computed(() => {
 // 生成首页信息
 const items = computed(() => {
   const data = unref(homeData);
-  const list = unref(introduceData)?.SHOW ?? [];
+  // const list = unref(introduceData)?.SHOW ?? [];
   const { CONTENTS = [] } = data;
   return CONTENTS.map((k: string) => ({
+    
+    bg: `/image/home/${k}.png`,
+    // link: list.includes(k) ? `/:lang/platform/introduce/${k}` : false,
     ...data[k],
-    img: `/image/home/${k}.png`,
-    link: list.includes(k) ? `/:lang/platform/introduce/${k}` : false,
   }));
 });
 </script>

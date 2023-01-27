@@ -5,9 +5,9 @@
       <img :src="`/image/logo/${transImgName(website.logo)}`" />
     </div>
     <!-- title -->
-    <div v-if="website.title" class="title">{{ website.title }}</div>
+    <div v-if="website.title" class="title">{{ t(website.title) }}</div>
     <!-- menu -->
-    <els-menu :menu-tree="menuTree" prefix="/:lang/platform"></els-menu>
+    <els-menu :menu-tree="menuTree" prefix="/platform"></els-menu>
     <!-- language -->
     <el-select v-model="language" @change="handleChangeLanguage">
       <el-option label="简体中文" value="zh-cn"></el-option>
