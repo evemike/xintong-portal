@@ -5,10 +5,12 @@
 <script lang="ts" setup>
 import { computed, toRefs, unref } from "vue";
 
-import ElsText from "@/components/els-text";
 import CBase from "./base.vue";
 import CCollapse from "./collapse.vue";
-
+import CIMG from "./img.vue";
+import CSVG from "./svg.vue"
+import CLINK from "./link.vue"
+import CTEXT from "./text.vue"
 interface Props {
   type?: string;
   [key: string]: any;
@@ -25,7 +27,13 @@ const com = computed(() => {
     case "collapse":
       return CCollapse;
     case "text":
-      return ElsText;
+      return CTEXT;
+    case "img":
+      return CIMG;
+    case "svg":
+      return CSVG;
+    case "link":
+      return CLINK;
     default:
       return CBase;
   }

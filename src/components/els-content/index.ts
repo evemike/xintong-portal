@@ -18,3 +18,9 @@ export interface ElsContentProps {
     | { data: { url: string; class: string }[]; box?: boolean | string };
   text?: string | ElsTextProps;
 }
+
+
+export interface ContentBaseProps {
+  class: string | string[];
+  bg: string | { url?: string; class?: string };
+}

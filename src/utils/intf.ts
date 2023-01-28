@@ -18,7 +18,7 @@ var Test;
 })(Test || (Test = {}));
 var test = Test.enum2; // 3
 */
-
+import type {Ref,ShallowRef} from "vue"
 // 公共普通的对象类型
 export interface KeyValue<T> {
   [key: string]: T;
@@ -36,3 +36,8 @@ export type Switch<T extends Record<any, any>> =
 export type SwitchObj<T extends Record<any, any>> =
   | { enabled: boolean }
   | ({ enabled: boolean } & T);
+
+
+export type TORA<T> = T | T[];
+
+export type TORR<T> = T | Ref<T> | ShallowRef<T>;

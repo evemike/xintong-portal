@@ -10,7 +10,7 @@
       {"img":"icon1","text":"home.layer.sbzl","link":""},
       {"img":"icon2","text":"home.layer.znwl","link":""},
       {"img":"icon3","text":"home.layer.cxzz","link":""},
-      {"img":"icon4","text":"home.layer.pzfw","link":""}
+      {"img":"icon4","text":"home.layer.pzfw","link":"/base/"}
       // {"img":"icon5","text":"home.layer.sbzl","link":""}
     ]
   },
@@ -25,7 +25,7 @@
     "bg":"/image/home/响水.jpg",
     "text":{
       "text":"home.desc",
-      "annotation":[{"line":0,"class":"font-700 text-64px c-white ml-2em text-shadow-lg block mt-2em"}]
+      "annotation":[{"class":"font-700 text-64px c-white ml-2em text-shadow-lg block mt-2em"}]
     }
   },
   "ITEM-2":{
@@ -34,18 +34,18 @@
     "text":{
       "text":"home.hxjzg",
       "annotation":[
-        {"line":0,"class":"font-700 text-64px c-white text-shadow-lg block mt-2em text-center"},
+        {"class":"font-700 text-64px c-white text-shadow-lg block mt-2em text-center"},
         {"text":"base.satisfied","class":"text-80px"}
       ]
     }
   },
   "ITEM-3":{
-    "class":"h-800px",
+    "class":"h-1000px",
     "bg":"/image/home/运输.png",
     "text":{
       "text":"home.hzgy",
       "annotation":[
-        {"line":0,"class":"font-700 text-64px c-white text-shadow-lg block ml-2em mt-2em"},
+        {"class":"font-700 text-64px c-white text-shadow-lg block ml-2em mt-2em"},
         {"text":["base.cooperation","base.tong"],"class":"text-80px"},
         {"text":"base.rong","class":"text-96px"}
       ]
