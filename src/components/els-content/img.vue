@@ -3,7 +3,7 @@
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
-    <img :src="src" class="relative w-100% h-100%" />
+    <img :src="src" class="relative w-100% h-100%" :class="imgClass" />
   </div>
 </template>
 
@@ -14,15 +14,17 @@ import {useBg} from "./bg"
 interface Props {
   class?: string | string[];
   bg?: string | { url?: string; class?: string };
-  src:string
+  src:string;
+  imgClass?:string | string[];
 }
 
 const props = withDefaults(defineProps<Props>(),{
   class:"",
   bg:"",
+  imgClass:"",
 })
 //
 const {pageClass,bgClass,bgUrl} = useBg(props);
 //
-const {src} = toRefs(props)
+const {src,imgClass} = toRefs(props)
 </script>

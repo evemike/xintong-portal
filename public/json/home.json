@@ -30,7 +30,7 @@
   },
   "ITEM-2":{
     "class":"h-800px",
-    "bg":"/image/home/商务.jpg",
+    "bg":{"url":"/image/home/商务.jpg","class":"hover-bg-cover"},
     "text":{
       "text":"home.hxjzg",
       "annotation":[

@@ -388,6 +388,6 @@ export const isAdmin = (userInfo: { scopes: string[] }) => {
 };
 
 // 获取public静态资源
-export  const getAssetsFile = (url: string) => {
+export const getAssetsFile = (url: string) => {
   return new URL(`../../public/image/${url}`, import.meta.url).href
 }

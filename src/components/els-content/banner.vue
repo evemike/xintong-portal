@@ -1,12 +1,13 @@
 <template>
-  <div :class="['_link relative', pageClass]" @click="handleClick">
+  <div :class="['_link relative', pageClass]">
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
-    <ElsText v-if="title" v-bind="textAttr" />
-    <template v-for="(c, i) in contents" :key="i">
-      <ElsContent v-bind="c" @click="() => handleLink(c.link)" />
-    </template>
+    <ElCarousel>
+      <ElCarouselItem v-for="(c,i) in  contents" :key="i">
+        <ElsContent v-bind="c" @click="() => handleLink(c.link)" />
+      </ElCarouselItem>
+    </ElCarousel>
   </div>
 </template>
 
@@ -15,13 +16,12 @@ import { toRefs, computed, unref } from "vue";
 import { useBg } from "./bg";
 import { TORA } from "@/utils/intf";
 import ElsContent, { ElsContentProps } from "./index";
-import ElsText, { ElsTextProps } from "@/components/els-text";
+import { ElCarousel,ElCarouselItem} from "element-plus";
 import { useRouter } from "vue-router";
 //
 interface Props {
   class?: string | string[];
   bg?: string | { url?: string; class?: string };
-  title?: string | ElsTextProps;
   link?: string | Record<string, any>;
   data: TORA<ElsContentProps & { link?: string | Record<string, any> }>;
 }
@@ -29,27 +29,15 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   class: "",
   bg: "",
-  title: "",
-  link: "",
   data: () => [],
 });
 //
 const { pageClass, bgClass, bgUrl } = useBg(props);
 //
-const { data, title, link } = toRefs(props);
-// text
-const textAttr = computed(() => {
-  if (typeof title.value === "string") {
-    return { text: title.value };
-  }
-  return title.value;
-});
+const { data } = toRefs(props);
 //
 const contents = computed(() => new Array<any>().concat(data.value));
-// 卡片跳转条件 ：link
-const handleClick = () => {
-  handleLink(unref(link))
-};
+//
 const handleLink = (link: string | Record<string, any> | undefined) => {
   if (link) {
     linkTo(link);
