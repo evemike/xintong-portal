@@ -11,6 +11,9 @@ import CIMG from "./img.vue";
 import CSVG from "./svg.vue"
 import CLINK from "./link.vue"
 import CTEXT from "./text.vue"
+import CBANNER from "./banner.vue"
+import CSWITCH from "./switch.vue"
+//
 interface Props {
   type?: string;
   [key: string]: any;
@@ -34,6 +37,10 @@ const com = computed(() => {
       return CSVG;
     case "link":
       return CLINK;
+    case "banner":
+      return CBANNER;
+    case "switch":
+      return CSWITCH;
     default:
       return CBase;
   }

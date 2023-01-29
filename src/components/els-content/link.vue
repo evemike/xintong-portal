@@ -4,8 +4,10 @@
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
     <ElsText v-if="title" v-bind="textAttr" />
-    <template v-for="(c, i) in contents" :key="i">
-      <ElsContent v-bind="c" @click="() => handleLink(c.link)" />
+    <template v-for="({link,...c}, i) in contents" :key="i">
+      <div class="_link-item relative w-100% h-100%" @click="() => handleLink(link)">
+        <ElsContent v-bind="c" />
+      </div>
     </template>
   </div>
 </template>
@@ -55,7 +57,6 @@ const handleLink = (link: string | Record<string, any> | undefined) => {
     linkTo(link);
   }
 };
-
 //
 const router = useRouter();
 // link
