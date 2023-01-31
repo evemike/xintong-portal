@@ -9,7 +9,7 @@ export default Main;
 import { ElsTextProps } from "@/components/els-text";
 
 export interface ElsContentProps {
-  class?: string | string[];
+  class?: string ;
   type?:string;
   bg?: string | { url?: string; class?: string };
   imgs?:
@@ -21,6 +21,6 @@ export interface ElsContentProps {
 
 
 export interface ContentBaseProps {
-  class: string | string[];
+  class: string;
   bg: string | { url?: string; class?: string };
 }

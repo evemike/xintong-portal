@@ -9,13 +9,13 @@
 
 <script lang="ts" setup>
 import { toRefs } from "vue";
-import {useBg} from "./bg"
+import {useBg} from "../lib/bg"
 //
 interface Props {
-  class?: string | string[];
+  class?: string;
   bg?: string | { url?: string; class?: string };
   src:string;
-  imgClass?:string | string[];
+  imgClass?:string;
 }
 
 const props = withDefaults(defineProps<Props>(),{

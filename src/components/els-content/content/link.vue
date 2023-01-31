@@ -14,14 +14,14 @@
 
 <script lang="ts" setup>
 import { toRefs, computed, unref } from "vue";
-import { useBg } from "./bg";
+import { useBg } from "../lib/bg";
 import { TORA } from "@/utils/intf";
-import ElsContent, { ElsContentProps } from "./index";
+import ElsContent, { ElsContentProps } from "../index";
 import ElsText, { ElsTextProps } from "@/components/els-text";
 import { useRouter } from "vue-router";
 //
 interface Props {
-  class?: string | string[];
+  class?: string;
   bg?: string | { url?: string; class?: string };
   title?: string | ElsTextProps;
   link?: string | Record<string, any>;

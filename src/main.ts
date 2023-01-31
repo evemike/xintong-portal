@@ -4,6 +4,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import ElementPlus from "element-plus";
+import VueAnimXyz from '@animxyz/vue3'
 import "./assets/style/them-body.scss"; //引入element-plus样式
 import "./assets/style/theme.scss"
 import "./assets/style/ablitity.scss"
@@ -11,6 +12,8 @@ import i18n,{init} from "./i18n";
 import zhLocale from "element-plus/es/locale/lang/zh-cn";
 import enLocale from "element-plus/es/locale/lang/en";
 import 'virtual:svg-icons-register'
+//
+import '@animxyz/core'
 /* 引入 unocss */
 import "uno.css"
 //
@@ -26,6 +29,7 @@ if (i18n.global.locale.value === "zh-cn") {
 //
 app.use(i18n).use(store)
   .use(router)
+  .use(VueAnimXyz)
   .use(ElementPlus, { locale })
   .mount("#app");
 

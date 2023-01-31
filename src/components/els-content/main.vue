@@ -1,48 +1,66 @@
 <template>
-  <component :is="com" v-bind="props"></component>
+  <component :is="com" v-bind="attr"></component>
 </template>
 
 <script lang="ts" setup>
 import { computed, toRefs, unref } from "vue";
 
-import CBase from "./base.vue";
-import CCollapse from "./collapse.vue";
-import CIMG from "./img.vue";
-import CSVG from "./svg.vue"
-import CLINK from "./link.vue"
-import CTEXT from "./text.vue"
-import CBANNER from "./banner.vue"
-import CSWITCH from "./switch.vue"
+// base
+import CIMG from "./base/img.vue";
+import CTEXT from "./base/text.vue";
+// content
+import CCAROUSEL from "./content/carousel.vue";
+import CLINK from "./content/link.vue";
+import CLIST from "./content/list.vue";
+// effect
+import CHOVER from "./effect/hover.vue";
+import CHOVERBG from "./effect/hoverbg.vue";
+import CHOVER2 from "./effect/hover2.vue";
+import CHOVERS from "./effect/hovers.vue";
+import CSHOW from "./effect/show.vue";
+import CXYZBG from "./effect/xyzbg.vue";
 //
 interface Props {
-  type?: string;
+  name?: string;
   [key: string]: any;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  type: "base",
+  name: "base",
 });
 
-const { type } = toRefs(props);
+const { name, ...attr } = toRefs(props);
 
 const com = computed(() => {
-  switch (unref(type)) {
-    case "collapse":
-      return CCollapse;
-    case "text":
-      return CTEXT;
+  switch (unref(name)) {
+    //
     case "img":
       return CIMG;
-    case "svg":
-      return CSVG;
+    case "text":
+      return CTEXT;
+    //
+    case "carousel":
+      return CCAROUSEL;
     case "link":
       return CLINK;
-    case "banner":
-      return CBANNER;
-    case "switch":
-      return CSWITCH;
+    case "list":
+      return CLIST;
+    //
+    case "hover":
+      return CHOVER;
+    case "hoverbg":
+      return CHOVERBG;
+    case "hover2":
+      return CHOVER2;
+    case "hovers":
+      return CHOVERS;
+    case "show":
+      return CSHOW;
+    case "xyzbg":
+      return CXYZBG;
+    //
     default:
-      return CBase;
+      return "div";
   }
 });
 </script>

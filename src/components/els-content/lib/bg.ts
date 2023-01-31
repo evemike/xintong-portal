@@ -1,5 +1,5 @@
 import { toRefs,computed } from "vue";
-import { ContentBaseProps } from "./index";
+import { ContentBaseProps } from "../index";
 
 //
 export function useBg<T extends ContentBaseProps>(props: T) {
@@ -23,7 +23,6 @@ export function useBg<T extends ContentBaseProps>(props: T) {
     return bg.value?.class || "";
   });
 
-  const pageClass = computed(() => Array.isArray(cs.value) ? cs.value.join(' ') : cs.value)
 
-  return {pageClass,bgUrl,bgClass}
+  return {pageClass:cs,bgUrl,bgClass}
 }

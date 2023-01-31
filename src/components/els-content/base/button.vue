@@ -1,29 +1,31 @@
 <template>
-  <div :class="['_timeline relative',pageClass]" >
+  <div :class="['_img relative',pageClass]" >
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
+    <ElButton :src="src" class="relative w-100% h-100%" :class="imgClass" ></ElButton>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { toRefs,computed } from "vue";
-import {useBg} from "./bg"
-import { TORA } from "@/utils/intf"
-import ElsContent,{ElsContentProps} from "./index"
+import { ElButton } from "element-plus";
+import { toRefs } from "vue";
+import {useBg} from "../lib/bg"
 //
 interface Props {
-  class?: string | string[];
+  class?: string;
   bg?: string | { url?: string; class?: string };
-  data: [node: Record<string, any>, content: ElsContentProps][];
+  src:string;
+  imgClass?:string;
 }
 
 const props = withDefaults(defineProps<Props>(),{
   class:"",
   bg:"",
+  imgClass:"",
 })
 //
 const {pageClass,bgClass,bgUrl} = useBg(props);
 //
-//
+const {src,imgClass} = toRefs(props)
 </script>

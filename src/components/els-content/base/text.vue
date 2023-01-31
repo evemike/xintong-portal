@@ -9,13 +9,12 @@
 
 <script lang="ts" setup>
 import { toRefs,computed } from "vue";
-import {useBg} from "./bg"
+import {useBg} from "../lib/bg"
 import { TORA } from "@/utils/intf"
-import ElsContent from "./index"
 import ElsText, { ElsTextProps } from "@/components/els-text";
 //
 interface Props extends ElsTextProps {
-  class?: string | string[];
+  class?: string;
   bg?: string | { url?: string; class?: string };
   text: string;
   splits: [paragraph: string, line: string];

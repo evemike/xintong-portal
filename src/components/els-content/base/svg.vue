@@ -6,12 +6,12 @@
 
 <script lang="ts" setup>
 import { toRefs } from "vue";
-import {useBg} from "./bg"
+import {useBg} from "../lib/bg"
 import {ElIcon} from "element-plus"
 import SvgIcon from "@/components/svg-icon"
 //
 interface Props {
-  class?: string | string[];
+  class?: string;
   bg?: string | { url?: string; class?: string };
   icon:string
 }
@@ -19,6 +19,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(),{
   class:"",
   bg:"",
+  icon:"",
 })
 //
 const {pageClass,bgClass,bgUrl} = useBg(props);
