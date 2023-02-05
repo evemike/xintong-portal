@@ -19,6 +19,8 @@ import CHOVER2 from "./effect/hover2.vue";
 import CHOVERS from "./effect/hovers.vue";
 import CSHOW from "./effect/show.vue";
 import CXYZBG from "./effect/xyzbg.vue";
+import CHOVERCLD from "./effect/hovercld.vue"
+import CHOVERCLS from "./effect/hovercls.vue"
 //
 interface Props {
   name?: string;
@@ -54,6 +56,10 @@ const com = computed(() => {
       return CHOVER2;
     case "hovers":
       return CHOVERS;
+    case "hovercld":
+      return CHOVERCLD;
+    case "hovercls":
+      return CHOVERCLS;
     case "show":
       return CSHOW;
     case "xyzbg":
