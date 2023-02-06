@@ -7,9 +7,9 @@
       <els-content v-bind="main"></els-content>
     </div>
     <div
-      v-for="({ xyz = '', inclass = '', outclass = '', class: cs = '', ...c }, i) in data"
+      v-for="({ xyz = '', inclass = '', outclass = '', cla = '', ...c }, i) in data"
       :key="i"
-      :class="[cs, hover ? inclass : outclass]"
+      :class="[cla, hover ? inclass : outclass]"
       :xyz="xyz"
     >
       <els-content v-bind="c"></els-content>
@@ -33,7 +33,7 @@ interface Props {
     xyz?: string;
     inclass?: string;
     outclass?: string;
-    class?: string;
+    cla?: string;
   })[];
 }
 
@@ -46,7 +46,7 @@ const props = withDefaults(defineProps<Props>(), {
 //
 const { pageClass, bgClass, bgUrl } = useBg(props);
 //
-const { data, main } = toRefs(props);
+const { data, main,mainclass,inclass,outclass } = toRefs(props);
 
 const hover = ref(false);
 </script>

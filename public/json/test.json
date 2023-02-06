@@ -1,0 +1,33 @@
+{
+  "title":"test",
+  "class":"",
+  "template":[
+    {
+      "name":"hovers",
+      "class":"page-header flex",
+      "bg":"red",
+      "common":{ 
+
+      },
+      "data":[
+        {
+          "name":"link",
+          "title":"测试1",
+          "link":"http://www.baidu.com"
+        },
+        {
+          "name":"hoverbg",
+          "bg":"transition-all h-10px bottom-0 bg-green",
+          "inclass":"w-100%",
+          "outclass":"w-0",
+          "data":{
+            "name":"text",
+            "text":"测试2"
+            
+          }
+        }
+      ]
+    }
+  ],
+  "content":""
+}

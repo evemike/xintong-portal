@@ -25,7 +25,7 @@ interface Props {
   bg?: string | { url?: string; class?: string };
   title?: string | ElsTextProps;
   link?: string | Record<string, any>;
-  data: TORA<ElsContentProps & { link?: string | Record<string, any> }>;
+  data?: TORA<ElsContentProps & { link?: string | Record<string, any> }>;
 }
 
 const props = withDefaults(defineProps<Props>(), {

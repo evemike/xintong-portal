@@ -6,10 +6,10 @@
     <div :class="['relative  transition-all', `roate-${ca}`]">
       <div
         v-for="(
-          { xyz = '', inclass = '', outclass = '', class: cs = '', ...c }, i
+          { xyz = '', inclass = '', outclass = '', cla = '', ...c }, i
         ) in data"
         :key="i"
-        :class="[cs, ci == i ? inclass : outclass]"
+        :class="[cla, ci == i ? inclass : outclass]"
         :xyz="xyz"
         @mouseenter="() => handleMouseEnter(i)"
         @mouseleave="() => handleMouseLeave()"
@@ -39,7 +39,7 @@ interface Props {
     xyz?: string;
     inclass?: string;
     outclass?: string;
-    class?: string;
+    cla?: string;
   })[];
   contentProps?: ([string, string] | string)[];
 }

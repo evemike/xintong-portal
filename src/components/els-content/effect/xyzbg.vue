@@ -32,6 +32,6 @@ const props = withDefaults(defineProps<Props>(),{
 //
 const {pageClass,bgClass,bgUrl} = useBg(props);
 //
-const {data,xyz} = toRefs(props)
+const {data,xyz,inClass,outClass} = toRefs(props)
 
 </script>

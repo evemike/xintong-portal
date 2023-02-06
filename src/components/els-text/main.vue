@@ -95,7 +95,6 @@ const getTextHtml = (str: string, l: number) => {
     }
   });
   let res = str;
-  console.log('..................',className);
   Object.keys(className).forEach((s) => {
     const cn = className[s].join(" ");
     res = res.replaceAll(s, `<span class="${cn}">${s}</span>`);

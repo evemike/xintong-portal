@@ -9,6 +9,9 @@ import presetIcons from "@unocss/preset-icons"
 initUnocssRuntime({
   defaults: {
     presets: [presetUno(), presetAttributify(), presetIcons()],
+    rules:[
+      [/^bp-([\w%]+)-([\w%]+)$/,([,v1,v2]) => ({'background-position':`${v1} ${v2}`})],
+    ]
   },
 });
 // const className = [

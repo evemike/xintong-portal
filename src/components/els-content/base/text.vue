@@ -13,12 +13,12 @@ import {useBg} from "../lib/bg"
 import { TORA } from "@/utils/intf"
 import ElsText, { ElsTextProps } from "@/components/els-text";
 //
-interface Props extends ElsTextProps {
+interface Props {
   class?: string;
   bg?: string | { url?: string; class?: string };
   text: string;
-  splits: [paragraph: string, line: string];
-  annotation: {
+  splits?: [paragraph: string, line: string];
+  annotation?: {
     class: string | string[];
     line?: number | number[];
     text: string | string[];

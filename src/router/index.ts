@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import store from "@/store";
 import Login from "@/views/login/login.vue";
 import Home from "@/views/home/index.vue";
+import TestPage from "@/views/test.vue"
 import DefaultPage from "@/views/pages/index.vue"
 import page404 from "@/views/error/404.vue";
 import page401 from "@/views/error/401.vue";
@@ -9,6 +10,7 @@ import i18n from "@/i18n";
 import { saveLocal, getLocal } from "@/utils/storage";
 import LayoutBase from "@/layout/base/index.vue";
 import Empty from "@/layout/empty/index.vue";
+
 import { getJsonFileData } from "@/api/base/json";
 import { isArray } from "lodash";
 import { treeFilter, treeMap } from "@/utils/tree";
@@ -60,8 +62,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   { path: "/home", redirect: "/home" },
   {
-    path: "/",
-    redirect: "/login",
+    path:"/test",component:TestPage
   },
   {
     path: "/",
