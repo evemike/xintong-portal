@@ -6,7 +6,8 @@ import store from "./store";
 import ElementPlus from "element-plus";
 import VueAnimXyz from '@animxyz/vue3'
 import "./assets/style/them-body.scss"; //引入element-plus样式
-import "./assets/style/theme.scss"
+// import "./assets/style/theme.scss"
+import "./assets/style/theme-default.scss"
 import "./assets/style/ablitity.scss"
 import i18n,{init} from "./i18n";
 import zhLocale from "element-plus/es/locale/lang/zh-cn";

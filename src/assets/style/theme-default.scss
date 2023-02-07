@@ -1,0 +1,48 @@
+.theme-default{
+  .layout--header{
+    ._header{
+      background:rgba(0,0,0,.5);
+      &:hover{
+        backdrop-filter: blur(10px);
+        // background:blue;
+        
+      }
+      ._logo{}
+      ._title{}
+      .els-menu{
+        >._menu-item{
+          cursor: pointer;
+          transition: all .5s;
+          line-height:64px;
+          padding:0 10px;
+          &.is-active{
+            padding:0 15px;
+            >._text{
+              font-size:20px;
+              font-weight: bold;
+              color:white;
+            }
+          }
+          >._text{
+            transition: all .5s;
+          }
+          >._bg{
+            transition: all .5s;
+            position:absolute;
+          }
+          &:hover{
+            padding:0 15px;
+            >._text{
+              font-size:20px;
+              font-weight: bold;
+              color:white;
+            }
+            >._bg{
+              width:100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

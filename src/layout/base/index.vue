@@ -10,10 +10,10 @@ import cardHeader from "../card/header.vue"
 
 
 <template>
-  <div class="layout-base theme-chenyujiao">
+  <div class="layout-base theme-default">
     <header-view></header-view>
     <!-- <card-header></card-header> -->
-    <content-view></content-view>
+    <content-view class="absolute top-0"></content-view>
     <footer-view></footer-view>
     <el-backtop></el-backtop>
   </div>
