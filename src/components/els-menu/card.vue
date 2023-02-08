@@ -36,7 +36,10 @@ import {ref} from "vue"
 type Menu = Record<string,any> & {key?:string,label:string,path?:string,children?:any[]};
 
 interface Props {
-  menus:Menu[]
+  menus:Menu[];
+  menuClass:string;
+  headerClass:string
+  
 }
 
 const props = withDefaults(defineProps<Props>(),{
