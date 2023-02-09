@@ -13,7 +13,7 @@ import cardHeader from "../card/header.vue"
   <div class="layout-base theme-default">
     <header-view></header-view>
     <!-- <card-header></card-header> -->
-    <content-view class="absolute top-0"></content-view>
+    <content-view></content-view>
     <footer-view></footer-view>
     <el-backtop></el-backtop>
   </div>

@@ -25,49 +25,49 @@ const props = withDefaults(defineProps<Props>(), {
 const { carousel, items, layer } = toRefs(props);
 //
 const { t } = useI18n()
-// 添加动画
-onUpdated(() => {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.utils.toArray("._item").forEach((e: any, i: number) => {
-    const scrollTrigger = {
-      trigger: e,
-      start: "top 75%",
-      end: "bottom bottom",
-      // markers: true,
-      toggleActions: "restart none none reverse",
-    };
-    //
-    gsap.fromTo(
-      e.children[0],
-      {
-        opacity: 0,
-        ...(i % 2 == 0 ? { x: -100 } : { y: 100 }),
-      },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        duration: 2,
-        scrollTrigger,
-      }
-    );
-    //
-    gsap.fromTo(
-      e.children[1],
-      {
-        opacity: 0,
-        ...(i % 2 == 0 ? { y: 100 } : { x: 100 }),
-      },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        duration: 2,
-        scrollTrigger,
-      }
-    );
-  });
-});
+// // 添加动画
+// onUpdated(() => {
+//   gsap.registerPlugin(ScrollTrigger);
+//   gsap.utils.toArray("._item").forEach((e: any, i: number) => {
+//     const scrollTrigger = {
+//       trigger: e,
+//       start: "top 75%",
+//       end: "bottom bottom",
+//       // markers: true,
+//       toggleActions: "restart none none reverse",
+//     };
+//     //
+//     gsap.fromTo(
+//       e.children[0],
+//       {
+//         opacity: 0,
+//         ...(i % 2 == 0 ? { x: -100 } : { y: 100 }),
+//       },
+//       {
+//         x: 0,
+//         y: 0,
+//         opacity: 1,
+//         duration: 2,
+//         scrollTrigger,
+//       }
+//     );
+//     //
+//     gsap.fromTo(
+//       e.children[1],
+//       {
+//         opacity: 0,
+//         ...(i % 2 == 0 ? { y: 100 } : { x: 100 }),
+//       },
+//       {
+//         x: 0,
+//         y: 0,
+//         opacity: 1,
+//         duration: 2,
+//         scrollTrigger,
+//       }
+//     );
+//   });
+// });
 // 跳转
 const handleGo = (path: string) => {
   if (!path) {
@@ -82,7 +82,7 @@ const handleGo = (path: string) => {
 </script>
 
 <template>
-  <div class="template--home">
+  <div class="template--home absolute top-0">
     <!-- banner 走马灯 -->
     <div v-if="carousel.length > 0" class="_carousel">
       <el-carousel>
