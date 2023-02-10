@@ -4,7 +4,7 @@ import { useRouter } from "vue-router";
 import { ElCarousel, ElCarouselItem, ElIcon, ElImage } from "element-plus";
 import { Right } from "@element-plus/icons-vue";
 import SvgIcon from "@/components/svg-icon";
-import { useI18n } from "vue-i18n"
+import { useI18n } from "vue-i18n";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ElsContent from "@/components/els-content";
@@ -22,52 +22,52 @@ const props = withDefaults(defineProps<Props>(), {
   layer: () => ({}),
 });
 //
-const { carousel, items, layer } = toRefs(props);
+// const { carousel, items, layer } = toRefs(props);
 //
-const { t } = useI18n()
+const { t } = useI18n();
 // // 添加动画
-// onUpdated(() => {
-//   gsap.registerPlugin(ScrollTrigger);
-//   gsap.utils.toArray("._item").forEach((e: any, i: number) => {
-//     const scrollTrigger = {
-//       trigger: e,
-//       start: "top 75%",
-//       end: "bottom bottom",
-//       // markers: true,
-//       toggleActions: "restart none none reverse",
-//     };
-//     //
-//     gsap.fromTo(
-//       e.children[0],
-//       {
-//         opacity: 0,
-//         ...(i % 2 == 0 ? { x: -100 } : { y: 100 }),
-//       },
-//       {
-//         x: 0,
-//         y: 0,
-//         opacity: 1,
-//         duration: 2,
-//         scrollTrigger,
-//       }
-//     );
-//     //
-//     gsap.fromTo(
-//       e.children[1],
-//       {
-//         opacity: 0,
-//         ...(i % 2 == 0 ? { y: 100 } : { x: 100 }),
-//       },
-//       {
-//         x: 0,
-//         y: 0,
-//         opacity: 1,
-//         duration: 2,
-//         scrollTrigger,
-//       }
-//     );
-//   });
-// });
+onUpdated(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray(".home_item").forEach((e: any, i: number) => {
+    const scrollTrigger = {
+      trigger: e,
+      start: "top 75%",
+      end: "bottom bottom",
+      // markers: true,
+      toggleActions: "restart none none reverse",
+    };
+    //
+    gsap.fromTo(
+      e.children[0],
+      {
+        opacity: 0,
+        ...(i % 2 == 0 ? { x: -100 } : { y: 100 }),
+      },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        scrollTrigger,
+      }
+    );
+    //
+    gsap.fromTo(
+      e.children[1],
+      {
+        opacity: 0,
+        ...(i % 2 == 0 ? { y: 100 } : { x: 100 }),
+      },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        scrollTrigger,
+      }
+    );
+  });
+});
 // 跳转
 const handleGo = (path: string) => {
   if (!path) {
@@ -86,9 +86,9 @@ const handleGo = (path: string) => {
     <!-- banner 走马灯 -->
     <div v-if="carousel.length > 0" class="_carousel">
       <el-carousel>
-        <template v-for="img in carousel" :key="img">
-          <el-carousel-item>
-            <el-image :src="img" fit="cover"></el-image>
+        <template v-for="(data,i) in carousel" :key="i">
+          <el-carousel-item class="">
+            <els-content v-bind="data"></els-content>
           </el-carousel-item>
         </template>
       </el-carousel>
@@ -99,7 +99,7 @@ const handleGo = (path: string) => {
         :style="{ background: layer?.background || '#33333373' }"
       >
         <!-- title -->
-        <div v-if="layer.title" class="title">{{ t(layer.title,layer.title) }}</div>
+        <div v-if="layer.title" class="title">{{ t(layer.title, layer.title) }}</div>
         <!-- icons -->
         <div v-if="layer.icons" class="icons">
           <div
@@ -109,15 +109,15 @@ const handleGo = (path: string) => {
             @click.stop="handleGo(d.link)"
           >
             <img v-if="d.img" :src="d.img" />
-            <span v-if="d.text">{{ t(d.text,d.text) }}</span>
+            <span v-if="d.text">{{ t(d.text, d.text) }}</span>
           </div>
         </div>
       </div>
     </div>
     <!-- items -->
-    <div class="_items">
-      <template v-for="(item, i) in items" :key="`_item-${i}`">
-        <els-content :class="['_item', `_item-${i}`]" v-bind="item"> </els-content>
+    <div class="home_items">
+      <template v-for="(item, i) in items" :key="`home_item-${i}`">
+        <els-content :class="['home_item', `home_item-${i}`]" v-bind="item"> </els-content>
       </template>
     </div>
   </div>
@@ -139,25 +139,30 @@ const handleGo = (path: string) => {
   // overflow: auto;
   > ._carousel {
     position: relative;
-    height: 472px;
+    height: 800px;
     > .el-carousel {
+      height: 100%;
       .el-carousel__container {
-        height: 472px;
-      }
-      .el-image {
-        width: 100%;
-        height: 472px;
+        height: 100%;
+        .el-carousel__item {
+          height: 100%;
+          .el-image {
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
     > ._layer {
-      padding: 40px 32px 27px 32px;
+      padding: 16px 32px;
       position: absolute;
-      top: 130px;
-      right: 10%;
+      bottom: 48px;
+      left:50%;
+      transform: translateX(-50%);
       color: #fff;
       border-radius: 8px;
       overflow: hidden;
-      backdrop-filter: blur(10px);
+      // backdrop-filter: blur(10px);
       .title {
         font-size: 28px;
         font-weight: 400;
@@ -173,7 +178,7 @@ const handleGo = (path: string) => {
           width: 100px;
           height: 100px;
           transition: all 0.1s ease-in-out;
-          display:flex;
+          display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
@@ -193,10 +198,10 @@ const handleGo = (path: string) => {
       }
     }
   }
-  > ._items {
+  > .home_items {
     position: relative;
     width: 100%;
-    > ._item {
+    > .home_item {
       position: relative;
       width: 100%;
       min-height: 536px;

@@ -1,53 +1,89 @@
 {
   // 轮播图 走马灯 图片 ， 当数组长度是 0 的时候，走马灯模块将会不显示
-  "CAROUSEL":["banner1"],
+  "CAROUSEL": [
+    {
+      "class": "h-800px",
+      "bg": "/image/home/响水.jpg",
+      "text": "home.desc",
+      "annotation": [
+        {
+          "class": "font-700 text-64px c-white ml-2em text-shadow-lg block mt-2em"
+        }
+      ]
+    },
+    {
+      "class": "h-800px",
+      "bg": { "url": "/image/home/商务.jpg", "class": "hover-bg-cover" },
+      "text": "home.hxjzg",
+      "annotation": [
+        {
+          "class": "font-700 text-64px c-white text-shadow-lg block mt-2em text-center"
+        },
+        { "text": "base.satisfied", "class": "text-80px" }
+      ]
+    },
+    {
+      "class": "h-1000px",
+      "bg": "/image/home/运输.png",
+      "text": "home.hzgy",
+      "annotation": [
+        {
+          "class": "font-700 text-64px c-white text-shadow-lg block ml-2em mt-2em"
+        },
+        { "text": ["base.cooperation", "base.tong"], "class": "text-80px" },
+        { "text": "base.rong", "class": "text-96px" }
+      ]
+    }
+  ],
   // 轮播图悬浮图层
-  "LAYER":{
-    "show":true,
-    "background":"",
-    "title":"",
-    "icons":[
-      {"img":"icon1","text":"home.layer.sbzl","link":""},
-      {"img":"icon2","text":"home.layer.znwl","link":""},
-      {"img":"icon3","text":"home.layer.cxzz","link":""},
-      {"img":"icon4","text":"home.layer.pzfw","link":"/base/"}
+  "LAYER": {
+    "show": true,
+    "background": "",
+    "title": "",
+    "icons": [
+      { "img": "icon1", "text": "home.layer.sbzl", "link": "" },
+      { "img": "icon2", "text": "home.layer.znwl", "link": "" },
+      { "img": "icon3", "text": "home.layer.cxzz", "link": "" },
+      { "img": "icon4", "text": "home.layer.pzfw", "link": "/base/" }
       // {"img":"icon5","text":"home.layer.sbzl","link":""}
     ]
   },
   // 页面显示内容的顺序 , 内容具体配置在下方
-  "CONTENTS": [
-    "ITEM-1",
-    "ITEM-2",
-    "ITEM-3"
-  ],
-  "ITEM-1":{
-    "class":"h-800px",
-    "bg":"/image/home/响水.jpg",
-    "text":{
-      "text":"home.desc",
-      "annotation":[{"class":"font-700 text-64px c-white ml-2em text-shadow-lg block mt-2em"}]
-    }
+  "CONTENTS": ["ITEM-1"],
+  "ITEM-1": {
+    "name":"list",
+    "data":[
+      {
+        "name":"imgtext",
+        "svgProps":{"icon":"icon-free-zh"},
+        "textProps":{"text":"home.bzz"}
+      }
+    ]
   },
-  "ITEM-2":{
-    "class":"h-800px",
-    "bg":{"url":"/image/home/商务.jpg","class":"hover-bg-cover"},
-    "text":{
-      "text":"home.hxjzg",
-      "annotation":[
-        {"class":"font-700 text-64px c-white text-shadow-lg block mt-2em text-center"},
-        {"text":"base.satisfied","class":"text-80px"}
+  "ITEM-2": {
+    "class": "h-800px",
+    "bg": { "url": "/image/home/商务.jpg", "class": "hover-bg-cover" },
+    "text": {
+      "text": "home.hxjzg",
+      "annotation": [
+        {
+          "class": "font-700 text-64px c-white text-shadow-lg block mt-2em text-center"
+        },
+        { "text": "base.satisfied", "class": "text-80px" }
       ]
     }
   },
-  "ITEM-3":{
-    "class":"h-1000px",
-    "bg":"/image/home/运输.png",
-    "text":{
-      "text":"home.hzgy",
-      "annotation":[
-        {"class":"font-700 text-64px c-white text-shadow-lg block ml-2em mt-2em"},
-        {"text":["base.cooperation","base.tong"],"class":"text-80px"},
-        {"text":"base.rong","class":"text-96px"}
+  "ITEM-3": {
+    "class": "h-1000px",
+    "bg": "/image/home/运输.png",
+    "text": {
+      "text": "home.hzgy",
+      "annotation": [
+        {
+          "class": "font-700 text-64px c-white text-shadow-lg block ml-2em mt-2em"
+        },
+        { "text": ["base.cooperation", "base.tong"], "class": "text-80px" },
+        { "text": "base.rong", "class": "text-96px" }
       ]
     }
   }

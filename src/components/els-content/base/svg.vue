@@ -13,7 +13,7 @@ import SvgIcon from "@/components/svg-icon"
 interface Props {
   class?: string;
   bg?: string | { url?: string; class?: string };
-  icon:string
+  icon?:string
 }
 
 const props = withDefaults(defineProps<Props>(),{

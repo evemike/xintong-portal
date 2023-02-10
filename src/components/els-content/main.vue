@@ -1,13 +1,14 @@
 <template>
-  <component :is="com" v-bind="attr"></component>
+  <component :is="com" v-bind="attrs"></component>
 </template>
 
 <script lang="ts" setup>
-import { computed, toRefs, unref } from "vue";
+import { computed, toRefs, unref,useAttrs } from "vue";
 
 // base
 import CIMG from "./base/img.vue";
 import CTEXT from "./base/text.vue";
+import CIMGTEXT from "./base/imgtext.vue";
 // content
 import CCAROUSEL from "./content/carousel.vue";
 import CLINK from "./content/link.vue";
@@ -24,14 +25,13 @@ import CHOVERCLS from "./effect/hovercls.vue"
 //
 interface Props {
   name?: string;
-  [key: string]: any;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  name: "base",
+  name: "text",
 });
-
-const { name, ...attr } = toRefs(props);
+const attrs = useAttrs();
+const name = props.name;
 
 const com = computed(() => {
   switch (unref(name)) {
@@ -40,6 +40,8 @@ const com = computed(() => {
       return CIMG;
     case "text":
       return CTEXT;
+    case "imgtext":
+    return CIMGTEXT;
     //
     case "carousel":
       return CCAROUSEL;

@@ -56,6 +56,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { annotation } = toRefs(props);
 const text = computed(() => $t(unref(props.text), unref(props.text)));
+console.log('====================',unref(props.text),':::',text.value)
 
 // 段落
 const paragraphs = computed(() => unref(text).split(props.splits[0]));

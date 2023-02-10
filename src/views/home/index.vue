@@ -46,7 +46,9 @@ const transImgName = (name: string) => {
 const carousel = computed(() => {
   const data = unref(homeData);
   const { CAROUSEL = [] } = data;
-  return CAROUSEL.map((k: string) => transImgName(k));
+  // return CAROUSEL.map((k: string) => transImgName(k));
+  console.log('..............',data,CAROUSEL)
+  return CAROUSEL;
 });
 // 生成悬浮图层
 const layer = computed(() => {
@@ -67,7 +69,7 @@ const items = computed(() => {
   const { CONTENTS = [] } = data;
   return CONTENTS.map((k: string) => ({
     
-    bg: `/image/home/${k}.png`,
+    // bg: `/image/home/${k}.png`,
     // link: list.includes(k) ? `/:lang/platform/introduce/${k}` : false,
     ...data[k],
   }));

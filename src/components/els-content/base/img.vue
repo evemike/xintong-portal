@@ -14,7 +14,7 @@ import {useBg} from "../lib/bg"
 interface Props {
   class?: string;
   bg?: string | { url?: string; class?: string };
-  src:string;
+  src?:string;
   imgClass?:string;
 }
 
