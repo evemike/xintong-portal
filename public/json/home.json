@@ -1,4 +1,5 @@
 {
+  "TITLE":"menu.home",
   // 轮播图 走马灯 图片 ， 当数组长度是 0 的时候，走马灯模块将会不显示
   "CAROUSEL": [
     {
@@ -38,18 +39,62 @@
   // 轮播图悬浮图层
   "LAYER": {
     "name": "list",
-    "class": "",
+    "class": "w-100%",
     "data": [
       {
         "name": "link",
-        "class":"",
-        "contentClass":"",
-        "common":{},
+        "class": "flex justify-around",
+        "contentClass": "text-center hover-backdrop-blur-10px hover-bg-op-40 hover-bg-black hover-items p-48px w-160px rd-8px",
+        "common": {},
         "data": [
-          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} },
-          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} },
-          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} },
-          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} }
+          {
+            "link": "",
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-zuling",
+              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+            },
+            "textProps": {
+              "text": "home.layer.sbzl",
+              "class":" fw-bold mt-32px"
+            }
+          },
+          {
+            "link": "",
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-wuliu",
+              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+            },
+            "textProps": {
+              "text": "home.layer.znwl",
+              "class":" fw-bold mt-32px"
+            }
+          },
+          {
+            "link": "",
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-cx",
+              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+            },
+            "textProps": {
+              "text": "home.layer.cxzz",
+              "class":" fw-bold mt-32px"
+            }
+          },
+          {
+            "link": "",
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-server",
+              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+            },
+            "textProps": {
+              "text": "home.layer.pzfw",
+              "class":" fw-bold mt-32px"
+            }
+          }
         ]
       }
     ]
@@ -58,7 +103,7 @@
   "CONTENTS": ["ITEM-1", "ITEM-2", "ITEM-3"],
   "ITEM-1": {
     "name": "list",
-    "class": "flex justify-around flex-wrap p-24px",
+    "class": "flex justify-around flex-wrap p-48px",
     // "bg":"/image/effect/dt (6).gif",
     "common": {
       "class": "w-30% m-16px text-center rd p-8px hover-color-amber hover-shadow"
@@ -135,7 +180,7 @@
   "ITEM-2": {
     "name": "list",
     "bg": "/image/home/商务.jpg",
-    "class": "p-24px",
+    "class": "p-48px",
     "data": [
       {
         "name": "text",
@@ -250,7 +295,7 @@
   "ITEM-3": {
     "name": "list",
     "bg": "/image/home/响水.jpg",
-    "class": "p-24px",
+    "class": "p-48px",
     "data": [
       {
         "name": "text",
@@ -264,15 +309,17 @@
         "name": "list",
         "class": "flex justify-around mt-160px p-24px text-center",
         "common": {
-          "class": "hover-backdrop-blur-10px  hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-red rd-8px"
+          "class": "hover-backdrop-blur-10px hover-items hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-red rd-8px"
         },
         "data": [
           {
             "name": "text",
+            
             "text": ["home.tg1_n", "home.tg1_d", "home.tg1_t"],
             "annotation": [
-              { "line": 0, "class": "text-32px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              {"class":"scale-item-2 ts-5"},
+              { "line": 0, "class": "text-48px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
               { "line": 2, "class": "text-24px mt-16px" }
             ]
           },
@@ -280,8 +327,9 @@
             "name": "text",
             "text": ["home.tg2_n", "home.tg2_d", "home.tg2_t"],
             "annotation": [
-              { "line": 0, "class": "text-32px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              {"class":"scale-item-2 ts-5"},
+              { "line": 0, "class": "text-48px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
               { "line": 2, "class": "text-24px mt-16px" }
             ]
           },
@@ -289,8 +337,9 @@
             "name": "text",
             "text": ["home.tg3_n", "home.tg3_d", "home.tg3_t"],
             "annotation": [
-              { "line": 0, "class": "text-32px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              {"class":"scale-item-2 ts-5"},
+              { "line": 0, "class": "text-48px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
               { "line": 2, "class": "text-24px mt-16px" }
             ]
           },
@@ -298,8 +347,9 @@
             "name": "text",
             "text": ["home.tg4_n", "home.tg4_d", "home.tg4_t"],
             "annotation": [
-              { "line": 0, "class": "text-32px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              {"class":"scale-item-2 ts-5"},
+              { "line": 0, "class": "text-48px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
               { "line": 2, "class": "text-24px mt-16px" }
             ]
           }

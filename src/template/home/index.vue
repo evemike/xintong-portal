@@ -158,13 +158,12 @@ const handleGo = (path: string) => {
       }
     }
     > ._layer {
-      padding: 16px 32px;
+      // padding: 16px 32px;
       position: absolute;
-      bottom: 48px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 0;
+      left:0;
       color: #fff;
-      border-radius: 8px;
+      // border-radius: 8px;
       overflow: hidden;
       // backdrop-filter: blur(10px);
       .title {

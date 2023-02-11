@@ -45,4 +45,56 @@
       }
     }
   }
+  .hover-items{
+    .ts-5 {
+      transition: all .5s linear;
+    }
+    .ts-10{
+      transition: all 1s linear;
+    }
+
+    .ts-20{
+      transition: all 2s linear;
+    }
+    
+    // .em-2,.em-3,.bold-item.fade-item,.scale-item-1,.scale-item-2,.scale-item-3,.scale-item-4,.scale-item-5,.scale-item-10{
+    //   transition: all 1s linear;
+    // }
+    //
+    &:hover .scale-item-1{
+      transform: scale(1.1);
+    }
+    &:hover .scale-item-2{
+      transform: scale(1.2);
+    }
+    &:hover .scale-item-3{
+      transform: scale(1.3);
+    }
+    &:hover .scale-item-4{
+      transform: scale(1.4);
+    }
+    &:hover .scale-item-5{
+      transform: scale(1.5);
+    }
+    &:hover .scale-item-10{
+      transform: scale(2);
+    }
+    .fade-item{
+      opacity: 0;
+    }
+    
+    &:hover .fade-item{
+      opacity: 1;
+    }
+
+    &:hover .bold-item{
+      font-weight: bold;
+    }
+    &:hover .em-2{
+      font-size:2em;
+    }
+    &:hover .em-3{
+      font-size:3em;
+    }
+  }
 }

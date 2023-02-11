@@ -6,7 +6,7 @@
     </div>
     <ElsText v-if="title" v-bind="textAttr" />
     <template v-for="({link,...c}, i) in contents" :key="i">
-      <div :class="['_link-item cursor-pointer relative w-100% h-100%',contentClass]" @click="() => handleLink(link)">
+      <div :class="['_link-item cursor-pointer relative',contentClass]" @click="() => handleLink(link)">
         <ElsContent v-bind="mergeProps(common,c)" />
       </div>
     </template>

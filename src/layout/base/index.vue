@@ -11,9 +11,10 @@ import cardHeader from "../card/header.vue"
 
 <template>
   <div class="layout-base theme-default">
-    <header-view class="sticky top-0"></header-view>
+    <header-view class="fixed top-0 w-100%"></header-view>
     <!-- <card-header></card-header> -->
     <content-view></content-view>
+    
     <footer-view></footer-view>
     <!-- <el-backtop></el-backtop> -->
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="layout--header relative bg-transparent z-999">
+  <div class="layout--header top-0 bg-transparent z-999">
     <Card :menus="menuTree" menus-class="pl-20px" :show-card="false">
       <template #left>
         <!-- logo -->
