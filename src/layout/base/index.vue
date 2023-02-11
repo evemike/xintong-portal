@@ -15,7 +15,7 @@ import cardHeader from "../card/header.vue"
     <!-- <card-header></card-header> -->
     <content-view></content-view>
     
-    <footer-view></footer-view>
+    <!-- <footer-view></footer-view> -->
     <!-- <el-backtop></el-backtop> -->
   </div>
 </template>
