@@ -37,54 +37,274 @@
   ],
   // 轮播图悬浮图层
   "LAYER": {
-    "show": true,
-    "background": "",
-    "title": "",
-    "icons": [
-      { "img": "icon1", "text": "home.layer.sbzl", "link": "" },
-      { "img": "icon2", "text": "home.layer.znwl", "link": "" },
-      { "img": "icon3", "text": "home.layer.cxzz", "link": "" },
-      { "img": "icon4", "text": "home.layer.pzfw", "link": "/base/" }
-      // {"img":"icon5","text":"home.layer.sbzl","link":""}
+    "name": "list",
+    "class": "",
+    "data": [
+      {
+        "name": "link",
+        "class":"",
+        "contentClass":"",
+        "common":{},
+        "data": [
+          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} },
+          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} },
+          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} },
+          { "link": "", "name": "imgtext", "svgProps": {}, "textProps": {} }
+        ]
+      }
     ]
   },
   // 页面显示内容的顺序 , 内容具体配置在下方
-  "CONTENTS": ["ITEM-1"],
+  "CONTENTS": ["ITEM-1", "ITEM-2", "ITEM-3"],
   "ITEM-1": {
-    "name":"list",
-    "data":[
+    "name": "list",
+    "class": "flex justify-around flex-wrap p-24px",
+    // "bg":"/image/effect/dt (6).gif",
+    "common": {
+      "class": "w-30% m-16px text-center rd p-8px hover-color-amber hover-shadow"
+    },
+    "data": [
       {
-        "name":"imgtext",
-        "svgProps":{"icon":"icon-free-zh"},
-        "textProps":{"text":"home.bzz"}
+        "name": "imgtext",
+        "svgProps": { "icon": "icon-zu", "class": "text-100px c-lime" },
+        "textProps": {
+          "text": ["home.bzz_i", "home.bzz_t"],
+          "annotation": [
+            { "line": 0, "class": "text-30px" },
+            { "line": 1, "class": "mt-1em" }
+          ]
+        }
+      },
+      {
+        "name": "imgtext",
+        "svgProps": { "icon": "icon-free-zh", "class": "text-100px c-teal" },
+        "textProps": {
+          "text": ["home.lxz_i", "home.lxz_t"],
+          "annotation": [
+            { "line": 0, "class": "text-30px" },
+            { "line": 1, "class": "mt-1em" }
+          ]
+        }
+      },
+      {
+        "name": "imgtext",
+        "svgProps": { "icon": "icon-free-zh", "class": "text-100px c-emerald" },
+        "textProps": {
+          "text": ["home.lfz_i", "home.lfz_t"],
+          "annotation": [
+            { "line": 0, "class": "text-30px" },
+            { "line": 1, "class": "mt-1em" }
+          ]
+        }
+      },
+      {
+        "name": "imgtext",
+        "svgProps": { "icon": "icon-node", "class": "text-100px" },
+        "textProps": {
+          "text": ["home.lhz_i", "home.lhz_t"],
+          "annotation": [
+            { "line": 0, "class": "text-30px" },
+            { "line": 1, "class": "mt-1em" }
+          ]
+        }
+      },
+      {
+        "name": "imgtext",
+        "svgProps": { "icon": "icon-butie", "class": "text-100px c-sky" },
+        "textProps": {
+          "text": ["home.txz_i", "home.txz_t"],
+          "annotation": [
+            { "line": 0, "class": "text-30px" },
+            { "line": 1, "class": "mt-1em" }
+          ]
+        }
+      },
+      {
+        "name": "imgtext",
+        "svgProps": { "icon": "icon-set", "class": "text-100px c-purple" },
+        "textProps": {
+          "text": ["home.zlb_i", "home.zlb_t"],
+          "annotation": [
+            { "line": 0, "class": "text-30px" },
+            { "line": 1, "class": "mt-1em" }
+          ]
+        }
       }
     ]
   },
   "ITEM-2": {
-    "class": "h-800px",
-    "bg": { "url": "/image/home/商务.jpg", "class": "hover-bg-cover" },
-    "text": {
-      "text": "home.hxjzg",
-      "annotation": [
-        {
-          "class": "font-700 text-64px c-white text-shadow-lg block mt-2em text-center"
-        },
-        { "text": "base.satisfied", "class": "text-80px" }
-      ]
-    }
+    "name": "list",
+    "bg": "/image/home/商务.jpg",
+    "class": "p-24px",
+    "data": [
+      {
+        "name": "text",
+        "class": " mb-24px",
+        "text": ["home.sor_t", "home.sor_d"],
+        "annotation": [
+          { "line": 0, "class": "text-32px fw-bold text-center" },
+          { "line": 1, "class": "text-28px mt-16px" }
+        ]
+      },
+      {
+        "name": "list",
+        "class": "flex mt-24px h-400px justify-around items-center",
+        "data": [
+          {
+            "name": "list",
+            "class": "max-w-30%",
+            "common": {
+              "class": "flex pb-24px hover-backdrop-blur-10px hover-bg-op-40 hover-bg-white m-16px p-24px rd-8px"
+            },
+            "data": [
+              {
+                "name": "imgtext",
+                "svgProps": {
+                  "icon": "icon-car-tc",
+                  "class": "text-100px block c-red transition-all hover-scale-150"
+                },
+                "textProps": {
+                  "text": ["home.sor1_t", "home.sor1_d"],
+                  "class": "ml-24px",
+                  "annotation": [
+                    { "line": 0, "class": "text-24px fw-bold " },
+                    { "line": 1, "class": "text-16px text-left mt-8px" }
+                  ]
+                }
+              },
+              {
+                "name": "imgtext",
+                "svgProps": {
+                  "icon": "icon-car-ttj",
+                  "class": "text-100px c-orange transition-all hover-scale-150"
+                },
+                "textProps": {
+                  "text": ["home.sor2_t", "home.sor2_d"],
+                  "class": "ml-24px",
+                  "annotation": [
+                    { "line": 0, "class": "text-24px fw-bold " },
+                    { "line": 1, "class": "text-16px text-left mt-8px" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": "xyzbg",
+            "class": "flex items-center justify-center",
+            "bg": {
+              "icon": "icon-yh",
+              "iconClass": "text-250px transition-all hover-scale-120",
+              "class": "xyz-in rd-600px flex items-center justify-center"
+            },
+            "xyz": "iterate-infinite duration-30 ease-linear rotate-right-100%",
+            "data": {
+              "name": "img",
+              "class": "w-100px h-100px hover-scale",
+              "src": "/image/home/cpjsbg.png"
+            }
+          },
+          {
+            "name": "list",
+            "class": "max-w-30%",
+            "common": {
+              "class": "flex pb-24px transition-all hover-backdrop-blur-10px hover-bg-op-40 hover-bg-white m-16px p-24px rd-8px"
+            },
+            "data": [
+              {
+                "name": "imgtext",
+                "svgProps": {
+                  "icon": "icon-car-tlj",
+                  "class": "text-100px c-amber transition-all hover-scale-150"
+                },
+                "textProps": {
+                  "text": ["home.sor3_t", "home.sor3_d"],
+                  "class": "ml-24px",
+                  "annotation": [
+                    { "line": 0, "class": "text-24px fw-bold " },
+                    { "line": 1, "class": "text-left mt-8px" }
+                  ]
+                }
+              },
+              {
+                "name": "imgtext",
+                "svgProps": {
+                  "icon": "icon-gcs",
+                  "class": "text-100px transition-all hover-scale-150"
+                },
+                "textProps": {
+                  "text": ["home.sor4_t", "home.sor4_d"],
+                  "class": "ml-24px",
+                  "annotation": [
+                    { "line": 0, "class": "text-24px fw-bold " },
+                    { "line": 1, "class": "text-left mt-8px" }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "ITEM-3": {
-    "class": "h-1000px",
-    "bg": "/image/home/运输.png",
-    "text": {
-      "text": "home.hzgy",
-      "annotation": [
-        {
-          "class": "font-700 text-64px c-white text-shadow-lg block ml-2em mt-2em"
+    "name": "list",
+    "bg": "/image/home/响水.jpg",
+    "class": "p-24px",
+    "data": [
+      {
+        "name": "text",
+        "text": ["home.tg_t", "home.tg_d"],
+        "annotation": [
+          { "line": 0, "class": "text-32px fw-bold text-center" },
+          { "line": 1, "class": "text-28px mt-16px" }
+        ]
+      },
+      {
+        "name": "list",
+        "class": "flex justify-around mt-160px p-24px text-center",
+        "common": {
+          "class": "hover-backdrop-blur-10px  hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-red rd-8px"
         },
-        { "text": ["base.cooperation", "base.tong"], "class": "text-80px" },
-        { "text": "base.rong", "class": "text-96px" }
-      ]
-    }
+        "data": [
+          {
+            "name": "text",
+            "text": ["home.tg1_n", "home.tg1_d", "home.tg1_t"],
+            "annotation": [
+              { "line": 0, "class": "text-32px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              { "line": 2, "class": "text-24px mt-16px" }
+            ]
+          },
+          {
+            "name": "text",
+            "text": ["home.tg2_n", "home.tg2_d", "home.tg2_t"],
+            "annotation": [
+              { "line": 0, "class": "text-32px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              { "line": 2, "class": "text-24px mt-16px" }
+            ]
+          },
+          {
+            "name": "text",
+            "text": ["home.tg3_n", "home.tg3_d", "home.tg3_t"],
+            "annotation": [
+              { "line": 0, "class": "text-32px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              { "line": 2, "class": "text-24px mt-16px" }
+            ]
+          },
+          {
+            "name": "text",
+            "text": ["home.tg4_n", "home.tg4_d", "home.tg4_t"],
+            "annotation": [
+              { "line": 0, "class": "text-32px fw-bold inline-block" },
+              { "line": 1, "class": "text-24px ml-8px mt-16px inline-block" },
+              { "line": 2, "class": "text-24px mt-16px" }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

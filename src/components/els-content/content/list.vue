@@ -5,13 +5,13 @@
     </div>
     <ElsText v-if="title" v-bind="textAttr" />
     <template v-for="(c, i) in contents" :key="i">
-      <ElsContent v-bind="{...common,...c}" />
+      <ElsContent v-bind="mergeProps(common,c)" />
     </template>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { toRefs, computed, unref } from "vue";
+import { toRefs, computed, unref,mergeProps } from "vue";
 import { useBg } from "../lib/bg";
 import ElsContent, { ElsContentProps } from "../index";
 import ElsText, { ElsTextProps } from "@/components/els-text";

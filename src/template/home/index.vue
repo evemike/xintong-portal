@@ -37,35 +37,57 @@ onUpdated(() => {
       toggleActions: "restart none none reverse",
     };
     //
-    gsap.fromTo(
-      e.children[0],
-      {
-        opacity: 0,
-        ...(i % 2 == 0 ? { x: -100 } : { y: 100 }),
-      },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        duration: 2,
-        scrollTrigger,
-      }
-    );
-    //
-    gsap.fromTo(
-      e.children[1],
-      {
-        opacity: 0,
-        ...(i % 2 == 0 ? { y: 100 } : { x: 100 }),
-      },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        duration: 2,
-        scrollTrigger,
-      }
-    );
+    console.log(".........", e.children);
+    if (!e.children || e.children.length <= 0) {
+      return;
+    }
+    for (const c of e.children) {
+
+      gsap.fromTo(
+        c,
+        {
+          opacity: 0,
+          ...(i % 2 == 0 ? { x: -100 } : { y: 100 }),
+        },
+        {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          duration: 2,
+          scrollTrigger,
+        }
+      );
+    }
+    
+    // gsap.fromTo(
+    //   e.children[0],
+    //   {
+    //     opacity: 0,
+    //     ...(i % 2 == 0 ? { x: -100 } : { y: 100 }),
+    //   },
+    //   {
+    //     x: 0,
+    //     y: 0,
+    //     opacity: 1,
+    //     duration: 2,
+    //     scrollTrigger,
+    //   }
+    // );
+    // //
+    // gsap.fromTo(
+    //   e.children[1],
+    //   {
+    //     opacity: 0,
+    //     ...(i % 2 == 0 ? { y: 100 } : { x: 100 }),
+    //   },
+    //   {
+    //     x: 0,
+    //     y: 0,
+    //     opacity: 1,
+    //     duration: 2,
+    //     scrollTrigger,
+    //   }
+    // );
   });
 });
 // 跳转
@@ -82,42 +104,24 @@ const handleGo = (path: string) => {
 </script>
 
 <template>
-  <div class="template--home absolute top-0">
+  <div class="template--home">
     <!-- banner 走马灯 -->
     <div v-if="carousel.length > 0" class="_carousel">
       <el-carousel>
-        <template v-for="(data,i) in carousel" :key="i">
+        <template v-for="(data, i) in carousel" :key="i">
           <el-carousel-item class="">
             <els-content v-bind="data"></els-content>
           </el-carousel-item>
         </template>
       </el-carousel>
       <!-- layer -->
-      <div
-        v-if="layer.show"
-        class="_layer"
-        :style="{ background: layer?.background || '#33333373' }"
-      >
-        <!-- title -->
-        <div v-if="layer.title" class="title">{{ t(layer.title, layer.title) }}</div>
-        <!-- icons -->
-        <div v-if="layer.icons" class="icons">
-          <div
-            v-for="(d, i) in layer.icons"
-            :key="i"
-            :class="['icons-item', { 'is-link': d.link }]"
-            @click.stop="handleGo(d.link)"
-          >
-            <img v-if="d.img" :src="d.img" />
-            <span v-if="d.text">{{ t(d.text, d.text) }}</span>
-          </div>
-        </div>
-      </div>
+      <els-content v-if="layer" class="_layer" v-bind="layer"></els-content>
     </div>
     <!-- items -->
     <div class="home_items">
       <template v-for="(item, i) in items" :key="`home_item-${i}`">
-        <els-content :class="['home_item', `home_item-${i}`]" v-bind="item"> </els-content>
+        <els-content :class="['home_item', `home_item-${i}`]" v-bind="item">
+        </els-content>
       </template>
     </div>
   </div>
@@ -157,7 +161,7 @@ const handleGo = (path: string) => {
       padding: 16px 32px;
       position: absolute;
       bottom: 48px;
-      left:50%;
+      left: 50%;
       transform: translateX(-50%);
       color: #fff;
       border-radius: 8px;
@@ -202,12 +206,12 @@ const handleGo = (path: string) => {
     position: relative;
     width: 100%;
     > .home_item {
-      position: relative;
-      width: 100%;
-      min-height: 536px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
+      // position: relative;
+      // width: 100%;
+      // min-height: 536px;
+      // display: flex;
+      // align-items: center;
+      // justify-content: space-around;
       // > ._img {
       //   &.left {
       //     margin-left: 150px;

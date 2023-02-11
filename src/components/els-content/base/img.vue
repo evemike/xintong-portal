@@ -2,6 +2,7 @@
   <div :class="['_img relative',pageClass]" >
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
+      <svg-icon v-if="bgIcon" :id="bgIcon" />
     </div>
     <img :src="src" class="relative w-100% h-100%" :class="imgClass" />
   </div>
@@ -24,7 +25,7 @@ const props = withDefaults(defineProps<Props>(),{
   imgClass:"",
 })
 //
-const {pageClass,bgClass,bgUrl} = useBg(props);
+const {pageClass,bgClass,bgUrl,bgIcon} = useBg(props);
 //
 const {src,imgClass} = toRefs(props)
 </script>

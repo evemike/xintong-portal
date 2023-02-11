@@ -1,6 +1,7 @@
 [
     // 首页
     {"label":"menu.home","path":"/home"},
+    {"label":"menu.cpfw","path":"/cpfw"},
     {"label":"menu.jyzl","path":"/jyzl"},
     {"label":"menu.gswh","path":"/gswh"},
     {"label":"menu.rczp","path":"/rczp"},

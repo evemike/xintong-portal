@@ -14,7 +14,7 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   prefix: "icon",
-  color: "#333",
+  color: "",
 });
 //
 const { id, prefix, color, name } = toRefs(props);
@@ -24,7 +24,25 @@ const symbolId = computed(
 </script>
 
 <template>
-  <svg aria-hidden="true" class="svg-icon">
-    <use :href="symbolId" :fill="color" />
-  </svg>
+  <i class="svg-icon">
+    <svg aria-hidden="true" fill="currentColor" width="1em" height="1em">
+      <use :href="symbolId" :fill="color" />
+    </svg>
+  </i>
 </template>
+
+<style scoped>
+.svg-icon {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.svg-icon svg {
+  width: 1em;
+  height: 1em;
+}
+</style>

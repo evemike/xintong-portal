@@ -53,14 +53,8 @@ const carousel = computed(() => {
 // 生成悬浮图层
 const layer = computed(() => {
   const data = unref(homeData);
-  const { LAYER = { show: false } } = data;
-  if (LAYER.icons) {
-    LAYER.icons = LAYER.icons.map(({ img, ...t }: any) => ({
-      ...t,
-      img: transImgName(img),
-    }));
-  }
-  return LAYER;
+  const { LAYER } = data;
+  return LAYER || undefined;
 });
 // 生成首页信息
 const items = computed(() => {

@@ -1,9 +1,9 @@
 <template>
-  <div :class="['relative z',pageClass]" >
+  <div :class="['relative',pageClass]" >
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
-    <div :class="[textClass,'absolute w-100% z-index:99']" >
+    <div :class="[textClass,{'absolute':bgUrl},'w-100% z-index:99']" >
       <ElsText :text="text" :splits="splits" :annotation="annotation" />
     </div>
     

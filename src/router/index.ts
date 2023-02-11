@@ -3,7 +3,7 @@ import store from "@/store";
 import Login from "@/views/login/login.vue";
 import Home from "@/views/home/index.vue";
 import TestPage from "@/views/test.vue"
-import DefaultPage from "@/views/pages/index.vue"
+import DefaultPage from "@/views/pages/base/index.vue"
 import page404 from "@/views/error/404.vue";
 import page401 from "@/views/error/401.vue";
 import i18n from "@/i18n";

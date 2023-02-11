@@ -1,33 +1,31 @@
 <template>
   <!-- 分段 -->
   <template v-if="paragraphs.length > 1">
-    <p
+    <div
       v-for="(p, i) in paragraphs"
       :key="i + p"
-      :class="['_paragraph', `_paragraph-${i}`, 'mb-1em']"
+      :class="['_paragraph', `_paragraph-${i}`, 'mb-1em', partClass[i] || '',gloablClass]"
     >
-      <span
+      <p
         v-for="(l, j) in getLines(p)"
         :key="i + '-' + j"
-        :class="['_line', `_line-${j}`, 'inline-block']"
-      >
-        <span v-html="getTextHtml(l, j)"></span>
-      </span>
-    </p>
+        :class="['_line', `_line-${j}`, lineClass[j] || '']"
+        v-html="getTextHtml(l, j)"
+      ></p>
+    </div>
   </template>
   <!-- 单段 -->
   <template v-else-if="getLines(paragraphs[0]).length > 1">
-    <span
+    <p
       v-for="(l, j) in getLines(paragraphs[0])"
       :key="l + j"
-      :class="['_line', `_line-${j}`, 'inline-block']"
-    >
-      <span v-html="getTextHtml(l, j)"></span>
-    </span>
+      :class="['_line', `_line-${j}`, lineClass[j] || '',gloablClass]"
+      v-html="getTextHtml(l, j)"
+    ></p>
   </template>
   <!-- 单行 -->
   <template v-else>
-    <div v-html="getTextHtml(text, 0)"></div>
+    <div :class="gloablClass" v-html="getTextHtml(text, 0)"></div>
   </template>
 </template>
 
@@ -38,11 +36,12 @@ import { useI18n } from "vue-i18n";
 const { t: $t } = useI18n();
 
 interface Props {
-  text: string;
+  text: string | string[];
   splits?: [paragraph: string, line: string];
   annotation?: {
     class: string | string[];
     line?: number | number[];
+    part?: number | number[];
     text?: string | string[];
     check?: (t: string, l: number) => boolean;
   }[];
@@ -55,30 +54,78 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { annotation } = toRefs(props);
-const text = computed(() => $t(unref(props.text), unref(props.text)));
-console.log('====================',unref(props.text),':::',text.value)
-
+const text = computed(() =>
+  new Array<string>()
+    .concat(props.text || "")
+    .map((t) => $t(t, t))
+    .join(props.splits[1] || "/n")
+);
+//
+const gloablClass = computed(() => {
+  let clz: string[] = [];
+  unref(annotation).forEach((d) => {
+    const { part, check, line, text } = d;
+    const bool =
+      part == undefined &&
+      check == undefined &&
+      line == undefined &&
+      text == undefined;
+    if (bool) {
+      clz = clz.concat(d.class);
+    }
+  });
+  //
+  return clz.join(" ");
+});
+const partClass = computed(() => {
+  const res: string[] = [];
+  unref(annotation).forEach((d) => {
+    const { part } = d;
+    const clz = Array.isArray(d.class) ? d.class.join(" ") : d.class;
+    if (part != undefined) {
+      new Array<number>().concat(part).forEach((n) => {
+        if (res[n]) {
+          res[n] = `${res[n]} ${clz}`;
+        } else {
+          res[n] = clz;
+        }
+      });
+    }
+  });
+  return res;
+});
+const lineClass = computed(() => {
+  const res: string[] = [];
+  unref(annotation).forEach((d) => {
+    const { line } = d;
+    const clz = Array.isArray(d.class) ? d.class.join(" ") : d.class;
+    if (line != undefined) {
+      new Array<number>().concat(line).forEach((n) => {
+        if (res[n]) {
+          res[n] = `${res[n]} ${clz}`;
+        } else {
+          res[n] = clz;
+        }
+      });
+    }
+  });
+  return res;
+});
 // 段落
 const paragraphs = computed(() => unref(text).split(props.splits[0]));
 // 段落内分行
-const getLines = (text: string | Ref<string>) => unref(text).split(props.splits[1]);
+const getLines = (text: string | Ref<string>) => {
+  return unref(text).split(props.splits[1]);
+};
 // 文字修饰
 const getTextHtml = (str: string, l: number) => {
   const className: Record<string, string[]> = {};
   unref(annotation).forEach((d) => {
     const { text = "", check, line } = d;
 
-    let bool = true;
+    let bool = false;
     if (check) {
       bool = check(str, l);
-    }
-    if (line) {
-      const lines = new Array<number>().concat(line || []);
-      bool = lines.includes(l);
-    }
-    //
-    if (!bool) {
-      return;
     }
     //
     if (text) {
@@ -90,7 +137,7 @@ const getTextHtml = (str: string, l: number) => {
           className[s] = st.concat(d.class || []);
         }
       });
-    } else {
+    } else if (bool) {
       const st: string[] = className[str] || [];
       className[str] = st.concat(d.class || []);
     }
