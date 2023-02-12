@@ -16,4 +16,5 @@ export interface ElsContentProps extends Record<string,any> {
 export interface ContentBaseProps {
   class: string;
   bg: string | { url?: string; class?: string,icon?:string };
+  isHover?:boolean
 }

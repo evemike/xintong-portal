@@ -104,9 +104,9 @@
   "ITEM-1": {
     "name": "list",
     "class": "flex justify-around flex-wrap p-48px",
-    // "bg":"/image/effect/dt (6).gif",
+    "bg":"/image/home/bg-1.jpeg",
     "common": {
-      "class": "w-30% m-16px text-center rd p-8px hover-color-amber hover-shadow"
+      "class": "w-30% m-16px text-center box-border rd-8px p-24px hover-bg-op-40 hover-bg-white hover-fw-bold hover-backdrop-blur-10px"
     },
     "data": [
       {
@@ -116,7 +116,7 @@
           "text": ["home.bzz_i", "home.bzz_t"],
           "annotation": [
             { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "mt-1em" }
+            { "line": 1, "class": "text-20px mt-1em" }
           ]
         }
       },
@@ -127,7 +127,7 @@
           "text": ["home.lxz_i", "home.lxz_t"],
           "annotation": [
             { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "mt-1em" }
+            { "line": 1, "class": "text-20px mt-1em" }
           ]
         }
       },
@@ -138,7 +138,7 @@
           "text": ["home.lfz_i", "home.lfz_t"],
           "annotation": [
             { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "mt-1em" }
+            { "line": 1, "class": "text-20px mt-1em" }
           ]
         }
       },
@@ -149,7 +149,7 @@
           "text": ["home.lhz_i", "home.lhz_t"],
           "annotation": [
             { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "mt-1em" }
+            { "line": 1, "class": "text-20px mt-1em" }
           ]
         }
       },
@@ -160,7 +160,7 @@
           "text": ["home.txz_i", "home.txz_t"],
           "annotation": [
             { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "mt-1em" }
+            { "line": 1, "class": "text-20px mt-1em" }
           ]
         }
       },
@@ -171,7 +171,7 @@
           "text": ["home.zlb_i", "home.zlb_t"],
           "annotation": [
             { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "mt-1em" }
+            { "line": 1, "class": "text-20px mt-1em" }
           ]
         }
       }
@@ -179,7 +179,7 @@
   },
   "ITEM-2": {
     "name": "list",
-    "bg": "/image/home/商务.jpg",
+    "bg": "/image/home/bg-2.jpeg",
     "class": "p-48px",
     "data": [
       {
@@ -294,7 +294,7 @@
   },
   "ITEM-3": {
     "name": "list",
-    "bg": "/image/home/响水.jpg",
+    "bg": "/image/home/bg-3.jpeg",
     "class": "p-48px",
     "data": [
       {

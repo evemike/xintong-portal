@@ -2,7 +2,7 @@
   <div class="els-menu _card relative z-999">
     <div
       class="_header relative flex justify-between items-center z-9 h-64px"
-      :class="[headerClass,currentMenu ? 'is-over' : '']"
+      :class="[headerClass, currentMenu ? 'is-over' : '']"
     >
       <div class="_left flex items-center" :class="leftClass">
         <slot name="left"></slot>
@@ -11,11 +11,11 @@
       <div class="_menus flex-1 h-100% flex items-center" :class="menusClass">
         <template v-for="(m, i) in menus" :key="`${m.key || ''}-${i}`">
           <div
-            class="_item relative h-100%"
+            class="_item relative cursor-pointer h-100%"
             :class="[currentMenu == m ? 'is-active' : '', itemClass]"
             @mouseenter="() => handleOver(m)"
             @mouseleave="() => handleOut(m)"
-            @click="() => {}"
+            @click="() => handleGo(m)"
           >
             <span class="_label text-18px font-normal c-white" :class="itemLabelClass">{{
               t(m.label, m.label)
@@ -45,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -96,15 +97,30 @@ const handleOut = (m?: any) => {
     temp = m;
   }
 };
+
+const router = useRouter();
+
+const handleGo = (d: any = {}) => {
+  console.log('..............',d)
+  const { path } = d;
+  if (path) {
+    const isUrl = /^http/.test(path);
+    if (isUrl) {
+      window.open(path);
+    } else {
+      router.push(path);
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .els-menu._card {
   ._header {
-    background:#00000088;
-    &:hover,&.is-over {
+    background: #00000088;
+    &:hover,
+    &.is-over {
       backdrop-filter: blur(10px);
-      
     }
     ._menus {
       ._item {
@@ -134,7 +150,7 @@ const handleOut = (m?: any) => {
   }
   > ._card {
     backdrop-filter: blur(10px);
-    background:#00000008;
+    background: #00000008;
   }
 }
 </style>

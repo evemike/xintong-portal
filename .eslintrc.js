@@ -153,6 +153,7 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     "vue/valid-attribute-name": "off",
     "@typescript-eslint/no-empty-interface": "off",
+    "vue/no-ref-as-operand": "off",
   },
   globals: {
     defineProps: "readonly",

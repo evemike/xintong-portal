@@ -8,12 +8,17 @@ export default Main;
 
 
 export interface ElsTextProps {
-  text: string;
-  splits: [paragraph: string, line: string];
-  annotation: {
-    class: string | string[];
+  text: string | string[];
+  splits?: [paragraph: string, line: string];
+  isHover?: boolean;
+  annotation?: {
+    class: string;
     line?: number | number[];
-    text: string | string[];
-    check?: (t: string, l: number) => boolean;
+    part?: number | number[];
+    text?: string | string[];
+    min?: number;
+    max?: number;
+    inclass?: string;
+    outclass?: string;
   }[];
 }

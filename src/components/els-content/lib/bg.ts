@@ -1,9 +1,9 @@
-import { toRefs, computed } from "vue";
+import { toRefs, computed, ref, unref, watch } from "vue";
 import { ContentBaseProps } from "../index";
 
 //
 export function useBg<T extends ContentBaseProps>(props: T) {
-  const { bg, class: cs } = toRefs(props);
+  const { bg, class: cs, isHover: hover } = toRefs(props);
   //
   // background
   const bgUrl = computed(() => {
@@ -32,8 +32,41 @@ export function useBg<T extends ContentBaseProps>(props: T) {
   });
 
   const iconClass = computed(() => {
-    return typeof bg.value === 'string' ? "" : bg.value.iconClass || "";
-  })
+    return typeof bg.value === "string" ? "" : bg.value.iconClass || "";
+  });
 
-  return { pageClass: cs, bgUrl, bgClass,bgIcon,iconClass };
+  const isHover = ref(false);
+  const hoverVal = ref<any>()
+  //
+  const handleOver = (v?:any) => {
+    if (hover == undefined) {
+      isHover.value = true;
+      hoverVal.value = v;
+    }
+  };
+  const handleOut = () => {
+    if (unref(hover) == undefined) {
+      isHover.value = false;
+      hoverVal.value = undefined;
+    }
+  };
+
+  // @ts-ignore
+  if (hover != undefined) {
+    watch(hover, (v) => {
+      isHover.value = v;
+    });
+  }
+
+  return {
+    pageClass: cs,
+    bgUrl,
+    bgClass,
+    bgIcon,
+    iconClass,
+    isHover,
+    hoverVal,
+    handleOver,
+    handleOut,
+  };
 }

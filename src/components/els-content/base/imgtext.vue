@@ -1,16 +1,16 @@
 <template>
-  <div :class="['_img relative', pageClass]">
+  <div :class="['_imgtext relative', pageClass]">
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
-    <CIMG v-if="imgProps" v-bind="imgProps" />
-    <CSVG v-if="svgProps" v-bind="svgProps" />
-    <CTEXT v-if="textProps" v-bind="textProps" />
+    <CIMG v-if="imgProps" v-bind="imgProps" :is-hover="isHover" />
+    <CSVG v-if="svgProps" v-bind="svgProps" :is-hover="isHover" />
+    <CTEXT v-if="textProps" v-bind="textProps" :is-hover="isHover" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { toRefs } from "vue";
+import { toRefs, watch } from "vue";
 import { useBg } from "../lib/bg";
 import CIMG from "./img.vue";
 import CSVG from "./svg.vue";
@@ -26,29 +26,32 @@ interface ImgProps {
 interface TextProps {
   class?: string;
   bg?: string | { url?: string; class?: string };
-  text?: string;
   textClass?: string;
+  text: string | string[];
   splits?: [paragraph: string, line: string];
   annotation?: {
-    class: string | string[];
+    class: string;
     line?: number | number[];
-    text: string | string[];
-    check?: (t: string, l: number) => boolean;
+    part?: number | number[];
+    text?: string | string[];
+    min?: number;
+    max?: number;
   }[];
 }
 
 interface SvgProps {
   class?: string;
   bg?: string | { url?: string; class?: string };
-  icon?:string
+  icon?: string;
 }
 
 interface Props {
   textProps?: TextProps;
   imgProps?: ImgProps;
-  svgProps?:SvgProps
+  svgProps?: SvgProps;
   class?: string;
   bg?: string | { url?: string; class?: string };
+  isHover?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -56,6 +59,6 @@ const props = withDefaults(defineProps<Props>(), {
   bg: "",
 });
 //
-const { pageClass, bgClass, bgUrl } = useBg(props);
+const { pageClass, bgClass, bgUrl, isHover } = useBg(props);
 //
 </script>

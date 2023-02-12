@@ -97,5 +97,20 @@
     &:hover .em-3{
       font-size:3em;
     }
+    &:hover .h-primary{
+      color:#409EFF;
+    }
+    &:hover .h-success{
+      color:#67C23A;
+    }
+    &:hover .h-warning{
+      color:#E6A23C;
+    }
+    &:hover .h-danger{
+      color:#F56C6C;
+    }
+    &:hover .h-info{
+      color:#909399;
+    }
   }
 }

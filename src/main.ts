@@ -15,6 +15,7 @@ import enLocale from "element-plus/es/locale/lang/en";
 import 'virtual:svg-icons-register'
 //
 import '@animxyz/core'
+import "animate.css"
 /* 引入 unocss */
 import "uno.css"
 //
