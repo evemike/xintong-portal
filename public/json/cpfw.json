@@ -1,6 +1,6 @@
 {
   "TITLE": "",
-  "CONTENTS": ["ITEM-1"],
+  "CONTENTS": ["ITEM-1","ITEM-2"],
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-800px",
@@ -18,8 +18,8 @@
         },
         { "line": 1, "class": "ml-80px mt-100px" },
         {
-          "text":"base.cp",
-          "class":"inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+          "text": "base.cp",
+          "class": "inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
         },
         {
           "text": ["base.jsj"],
@@ -39,5 +39,62 @@
         }
       ]
     }
+  },
+  "ITEM-2": {
+    "name": "list",
+    "class":"p-48px",
+    "common":{"class":"mb-24px"},
+    "data": [
+      {
+        "name": "imgtext",
+        "class":"flex",
+        "imgProps": {
+          "src":"/image/cpfw/cp-1.png",
+          "class":"mr-48px w-30%"
+        },
+        "textProps": {
+          "class":"flex-1",
+          "text":["cpfw.cp1_t","cpfw.cp1_d","cpfw.cp1_s"],
+          "annotation":[
+            {"text":"cpfw.cp1_t","class":"inline-block text-32px fw-bold animate__infinite animate__animated","inclass":"animate__bounce"},
+            {"line":1,"class":"mt-24px text-24px"}
+          ]
+        }
+      },
+      {
+        "name": "hover2",
+        "class":"overflow-hidden",
+        "one":{
+          "class":""
+        },
+        "two":{
+          "class":"absolute backdrop-blur-10px bg-op-40 bg-white top-0 w-100% h-100% animate__animated",
+          "inclass":"animate__fadeInDown",
+          "outclass":"animate__fadeOutDown"
+        },
+        "data": [
+          {
+            "name": "imgtext",
+            "class":"flex",
+            "imgProps": {
+              "src":"/image/cpfw/cp-1.png",
+              "class":"mr-48px w-300px"
+            },
+            "textProps": {
+              "class":"flex-1",
+              "text":["cpfw.cp1_t","cpfw.cp1_d","cpfw.cp1_s"],
+              "annotation":[
+                {"text":"cpfw.cp1_t","class":"text-32px fw-bold"},
+                {"line":1,"class":"mt-24px text-24px"}
+              ]
+            }
+          },
+          {
+            "name": "text",
+            "text": "cpfw.cp1_s"
+          }
+        ]
+      }
+    ]
   }
 }

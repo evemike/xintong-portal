@@ -3,7 +3,7 @@
     {"label":"menu.home","path":"/home"},
     {"label":"menu.cpfw","path":"/base/page/cpfw"},
     {"label":"menu.jyzl","path":"/base/page/jyzl"},
-    {"label":"menu.gswh","path":"/gswh"},
-    {"label":"menu.rczp","path":"/rczp"},
-    {"label":"menu.gywm","path":"/gywm"}
+    {"label":"menu.gswh","path":"/base/page/gswh"},
+    {"label":"menu.rczp","path":"/base/page/rczp"},
+    {"label":"menu.gywm","path":"/base/page/gywm"}
 ]

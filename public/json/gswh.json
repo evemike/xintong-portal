@@ -1,0 +1,43 @@
+{
+  "TITLE": "",
+  "CONTENTS": ["ITEM-1"],
+  "ITEM-1": {
+    "name": "imgtext",
+    "class": "h-800px",
+    "bg": { "url": "/image/cpfw/header.jpg", "class": "hover-bg-cover" },
+    // "imgProps":{
+    //   "src":"/image/jyzl/phone.gif",
+    //   "class":"w-100px top-230px left-500px important-absolute"
+    // },
+    "textProps": {
+      "class": "absolute top-200px left-40%",
+      "text": ["cpfw.header", "cpfw.desc"],
+      "annotation": [
+        {
+          "class": "text-40px c-orange "
+        },
+        { "line": 1, "class": "ml-80px mt-100px" },
+        {
+          "text":"base.cp",
+          "class":"inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+        },
+        {
+          "text": ["base.jsj"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slower animate__rubberBand"
+        },
+        {
+          "text": ["base.zzw"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__bounce"
+        },
+        {
+          "text": ["base.qyc"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__lightSpeedInRight"
+        },
+        {
+          "text": ["base.cc"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__zoomInDown"
+        }
+      ]
+    }
+  }
+}

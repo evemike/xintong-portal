@@ -49,6 +49,6 @@ const oneAttr = computed(() => {
 })
 
 const twoAttr = computed(() => {
-  return {inclass:"",outclass:"",class:"",xyz:'',...one.value}
+  return {inclass:"",outclass:"",class:"",xyz:'',...two.value}
 })
 </script>
