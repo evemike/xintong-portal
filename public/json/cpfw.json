@@ -35,65 +35,91 @@
         },
         {
           "text": ["base.cc"],
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__zoomInDown"
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__slideInDown"
         }
       ]
     }
   },
   "ITEM-2": {
     "name": "list",
-    "class":"p-48px",
-    "common":{"class":"mb-24px"},
+    "class":"p-48px bg-light",
+    "common":{"class":"mb-24px p-24px flex rd-8px  hover-items hover-bg-sky-100"},
     "data": [
       {
         "name": "imgtext",
         "class":"flex",
         "imgProps": {
           "src":"/image/cpfw/cp-1.png",
-          "class":"mr-48px w-30%"
+          "imgClass":"ts-20 scale-item-5",
+          "class":"mr-48px bg-white w-500px rd-8px overflow-hidden"
         },
         "textProps": {
-          "class":"flex-1",
+          "class":"flex-1 p-24px rd-8px",
           "text":["cpfw.cp1_t","cpfw.cp1_d","cpfw.cp1_s"],
           "annotation":[
-            {"text":"cpfw.cp1_t","class":"inline-block text-32px fw-bold animate__infinite animate__animated","inclass":"animate__bounce"},
-            {"line":1,"class":"mt-24px text-24px"}
+            {"class":"h-primary","inclass":"fw-bold "},
+            {"text":"cpfw.cp1_t","class":"inline-block text-32px fw-bold ","inclass":"animate__infinite animate__animated animate__bounce"},
+            {"line":1,"class":"mt-24px mb-24px text-24px"},
+            {"line":[2,3,4,5,6],"class":"text-20px mt-8px"}
           ]
         }
       },
       {
-        "name": "hover2",
-        "class":"overflow-hidden",
-        "one":{
-          "class":""
+        "name": "imgtext",
+        "class":"flex",
+        "imgProps": {
+          "src":"/image/cpfw/cp-2.jpg",
+          "imgClass":"ts-20 scale-item-5",
+          "class":"mr-48px bg-white w-500px rd-8px overflow-hidden"
         },
-        "two":{
-          "class":"absolute backdrop-blur-10px bg-op-40 bg-white top-0 w-100% h-100% animate__animated",
-          "inclass":"animate__fadeInDown",
-          "outclass":"animate__fadeOutDown"
+        "textProps": {
+          "class":"flex-1 p-24px rd-8px",
+          "text":["cpfw.cp2_t","cpfw.cp2_d","cpfw.cp2_s"],
+          "annotation":[
+            {"class":"h-primary","inclass":"fw-bold "},
+            {"text":"cpfw.cp2_t","class":"inline-block text-32px fw-bold ","inclass":"animate__infinite animate__animated animate__slow animate__rubberBand"},
+            {"line":1,"class":"mt-24px mb-24px text-24px"},
+            {"line":[2,3,4,5,6],"class":"text-20px mt-8px"}
+          ]
+        }
+      },
+      {
+        "name": "imgtext",
+        "class":"flex",
+        "imgProps": {
+          "src":"/image/cpfw/cp-3.png",
+          "imgClass":"ts-20 scale-item-5",
+          "class":"mr-48px bg-white w-500px rd-8px overflow-hidden"
         },
-        "data": [
-          {
-            "name": "imgtext",
-            "class":"flex",
-            "imgProps": {
-              "src":"/image/cpfw/cp-1.png",
-              "class":"mr-48px w-300px"
-            },
-            "textProps": {
-              "class":"flex-1",
-              "text":["cpfw.cp1_t","cpfw.cp1_d","cpfw.cp1_s"],
-              "annotation":[
-                {"text":"cpfw.cp1_t","class":"text-32px fw-bold"},
-                {"line":1,"class":"mt-24px text-24px"}
-              ]
-            }
-          },
-          {
-            "name": "text",
-            "text": "cpfw.cp1_s"
-          }
-        ]
+        "textProps": {
+          "class":"flex-1 p-24px rd-8px",
+          "text":["cpfw.cp3_t","cpfw.cp3_d","cpfw.cp3_s"],
+          "annotation":[
+            {"class":"h-primary","inclass":"fw-bold "},
+            {"text":"cpfw.cp3_t","class":"inline-block text-32px fw-bold ","inclass":"animate__infinite animate__animated animate__slow animate__slideInDown"},
+            {"line":1,"class":"mt-24px mb-24px text-24px"},
+            {"line":[2,3,4,5,6],"class":"text-20px mt-8px"}
+          ]
+        }
+      },
+      {
+        "name": "imgtext",
+        "class":"flex",
+        "imgProps": {
+          "src":"/image/cpfw/cp-4.jpg",
+          "imgClass":"ts-20 scale-item-5",
+          "class":"mr-48px bg-white w-500px rd-8px overflow-hidden"
+        },
+        "textProps": {
+          "class":"flex-1 p-24px rd-8px",
+          "text":["cpfw.cp4_t","cpfw.cp4_d","cpfw.cp4_s"],
+          "annotation":[
+            {"class":"h-primary","inclass":"fw-bold "},
+            {"text":"cpfw.cp4_t","class":"inline-block text-32px fw-bold ","inclass":"animate__infinite animate__animated animate__slow animate__lightSpeedInRight"},
+            {"line":1,"class":"mt-24px mb-24px text-24px"},
+            {"line":[2,3,4,5,6],"class":"text-20px mt-8px"}
+          ]
+        }
       }
     ]
   }

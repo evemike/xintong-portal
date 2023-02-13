@@ -3,35 +3,27 @@
   "CONTENTS": ["ITEM-1"],
   "ITEM-1": {
     "name": "imgtext",
-    "class": "h-800px",
-    "bg": { "url": "/image/cpfw/header.jpg", "class": "hover-bg-cover" },
+    "class": "h-600px",
+    "bg": { "url": "/image/rczp/header.jpeg", "class": "hover-bg-cover" },
     "textProps": {
-      "class": "absolute top-200px left-40%",
+      "class": "absolute top-160px left-50%",
       "text": ["rczp.header", "rczp.desc"],
       "annotation": [
         {
-          "class": "text-40px c-orange "
+          "class": "text-40px c-lime "
         },
-        { "line": 1, "class": "ml-80px mt-100px" },
+        { "line": 1, "class": "ml-100px mt-80px" },
         {
-          "text":"base.cp",
+          "text":"base.zp",
           "class":"inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
         },
         {
-          "text": ["base.jsj"],
+          "text": ["base.yc"],
           "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slower animate__rubberBand"
         },
         {
-          "text": ["base.zzw"],
+          "text": ["base.qxrk"],
           "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__bounce"
-        },
-        {
-          "text": ["base.qyc"],
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__lightSpeedInRight"
-        },
-        {
-          "text": ["base.cc"],
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__zoomInDown"
         }
       ]
     }
