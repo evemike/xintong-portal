@@ -1,13 +1,13 @@
 {
   "TITLE": "",
-  "CONTENTS": ["ITEM-1"],
+  "CONTENTS": ["ITEM-1", "ITEM-2","ITEM-3","ITEM-4"],
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-600px",
     "bg": { "url": "/image/gywm/header.jpg", "class": "hover-bg-cover" },
-    "imgProps":{
-      "src":"/image/gywm/h-c.png",
-      "class":"w-600px top-76px left-55% important-absolute"
+    "imgProps": {
+      "src": "/image/gywm/h-c.png",
+      "class": "w-600px top-76px left-55% important-absolute"
     },
     "textProps": {
       "class": "absolute top-160px left-100px",
@@ -18,10 +18,244 @@
         },
         { "line": 1, "class": "ml-80px mt-100px" },
         {
-          "text":"base.xt",
-          "class":"inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+          "text": "base.xt",
+          "class": "inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
         }
       ]
     }
+  },
+  "ITEM-2": {
+    "name": "list",
+    "class": "p-48px ",
+    "title": {
+      "text": "gywm.zzjg_t",
+      "class": "text-center  text-64px fw-bold p-24px"
+    },
+    "data": [
+      {
+        "name": "list",
+        "class": "flex flex-col justify-center items-center",
+        "data": [
+          // {
+          //   "name":"empty",
+          //   "class":"line-main absolute h-10px bg-teal w-100% top-35px z-0"
+          // },
+          {
+            "name": "text",
+            "class": "important-absolute top-0 h-80px w-100% text-center text-48px z-99 ",
+            "textClass": "h-100%",
+            "text": "gywm.zzjg_0",
+            "annotation": [
+              {
+                "class": "inline-flex bg-white items-center pl-20px pr-20px rd-8px box-border border-10px border-teal border-solid h-100% "
+              }
+            ]
+          },
+          {
+            "name": "empty",
+            "class": "line-1 w-10px h-180px left-675px bg-teal z-0"
+          },
+          {
+            "name": "imgtext",
+            "class": "flex text-center w-280px h-80px rd-8px bg-sky items-center justify-around  z-99",
+            "svgProps": {
+              "icon": "icon-people",
+              "class": "text-64px"
+            },
+            "textProps": {
+              "class": "text-0",
+              "text": "gywm.zzjg_1",
+              "annotation": [{ "class": "text-48px c-white" }]
+            }
+          },
+          {
+            "name": "empty",
+            "class": "line-2 w-10px h-100px bg-teal z-0"
+          },
+          {
+            "name": "imgtext",
+            "class": "w-320px h-80px rd-8px bg-sky flex items-center justify-around z-99",
+            "svgProps": {
+              "icon": "icon-people",
+              "class": "text-64px"
+            },
+            "textProps": {
+              "class": "text-0",
+              "text": "gywm.zzjg_2",
+              "annotation": [{ "class": "text-48px c-white" }]
+            }
+          },
+          {
+            "name": "empty",
+            "class": "line-0 w-10px h-90px bg-teal z-0"
+          },
+          {
+            "name": "empty",
+            "class": "line-0 w-100% h-10px bg-teal z-0"
+          }
+        ]
+      },
+      {
+        "name": "list",
+        "class": "flex justify-around",
+        "common": { "class": "w-10px h-80px bg-teal" },
+        "data": [
+          {
+            "name": "empty",
+            "class": "line-1 z-0"
+          },
+          {
+            "name": "empty",
+            "class": "line-2  z-0"
+          },
+          {
+            "name": "empty",
+            "class": "line-3  z-0"
+          },
+          {
+            "name": "empty",
+            "class": "line-4  z-0"
+          },
+          {
+            "name": "empty",
+            "class": "line-5  z-0"
+          }
+        ]
+      },
+      {
+        "name": "list",
+        "class": "flex justify-around",
+        "common": {
+          "class": "h-80px rd-8px bg-sky z-99 flex items-center justify-around w-280px"
+        },
+        "data": [
+          {
+            "name": "imgtext",
+            "class": "",
+            "svgProps": {
+              "icon": "icon-people",
+              "class": "text-64px"
+            },
+            "textProps": {
+              "class": "text-0",
+              "text": "gywm.zzjg_3_1",
+              "annotation": [{ "class": "text-48px c-white" }]
+            }
+          },
+          {
+            "name": "imgtext",
+            "class": "",
+            "svgProps": {
+              "icon": "icon-people",
+              "class": "text-64px"
+            },
+            "textProps": {
+              "class": "text-0",
+              "text": "gywm.zzjg_3_2",
+              "annotation": [{ "class": "text-48px c-white" }]
+            }
+          },
+          {
+            "name": "imgtext",
+            "class": "",
+            "svgProps": {
+              "icon": "icon-people",
+              "class": "text-64px"
+            },
+            "textProps": {
+              "class": "text-0",
+              "text": "gywm.zzjg_3_3",
+              "annotation": [{ "class": "text-48px c-white" }]
+            }
+          },
+          {
+            "name": "imgtext",
+            "class": "",
+            "svgProps": {
+              "icon": "icon-people",
+              "class": "text-64px"
+            },
+            "textProps": {
+              "class": "text-0",
+              "text": "gywm.zzjg_3_4",
+              "annotation": [{ "class": "text-48px c-white" }]
+            }
+          },
+          {
+            "name": "imgtext",
+            "class": "",
+            "svgProps": {
+              "icon": "icon-people",
+              "class": "text-64px"
+            },
+            "textProps": {
+              "class": "text-0",
+              "text": "gywm.zzjg_3_5",
+              "annotation": [{ "class": "text-48px c-white" }]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ITEM-3": {
+    "name": "list",
+    "class": "p-48px ",
+    "hasBox":true,
+    "boxClass":"flex items-center justify-around mt-64px",
+    "title": {
+      "class":"text-64px text-center",
+      "text": ["gywm.sl_t"]
+    },
+    "common": { "class": "text-32px text-center w-30% " },
+    "data": [
+      {
+        "name": "imgtext",
+        "svgProps": {"icon":"icon-ry-1","class": "text-200px"},
+        "textProps": {"text":"gywm.sl-1"}
+      },
+      {
+        "name": "imgtext",
+        "svgProps": {"icon":"icon-ry-2","class": "text-200px"},
+        "textProps": {"text":"gywm.sl-2"}
+      },
+      {
+        "name": "imgtext",
+        "svgProps": {"icon":"icon-ry-3","class": "text-200px"},
+        "textProps": {"text":"gywm.sl-3"}
+      }
+    ]
+  },
+  "ITEM-4": {
+    "name": "list",
+    "class": "p-48px ",
+    "hasBox":true,
+    "boxClass":"flex justify-around mt-64px",
+    "title": {
+      "class":"text-64px text-center",
+      "text": ["gywm.gsry_t"]
+    },
+    "common": { "class": "w-200px" },
+    "data": [
+      {
+        "name": "img",
+        "src":"/image/gywm/kh-1.png"
+      },
+      {
+        "name": "img",
+        "src":"/image/gywm/kh-2.png"
+      },
+      {
+        "name": "img",
+        "src":"/image/gywm/kh-3.png"
+      },
+      {
+        "name": "img",
+        "src":"/image/gywm/kh-4.png"
+      }
+    ]
+  },
+  "ITEM-5":{
+    "name":"list"
   }
 }

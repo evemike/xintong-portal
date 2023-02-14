@@ -9,6 +9,7 @@ import { computed, toRefs, unref,useAttrs } from "vue";
 import CIMG from "./base/img.vue";
 import CTEXT from "./base/text.vue";
 import CIMGTEXT from "./base/imgtext.vue";
+import CEMPTY from "./base/empty.vue"
 // content
 import CCAROUSEL from "./content/carousel.vue";
 import CLINK from "./content/link.vue";
@@ -42,6 +43,8 @@ const com = computed(() => {
       return CTEXT;
     case "imgtext":
     return CIMGTEXT;
+    case "empty":
+      return CEMPTY;
     //
     case "carousel":
       return CCAROUSEL;

@@ -22,7 +22,7 @@ import ElsText, { ElsTextProps } from "@/components/els-text";
 //
 
 //
-interface Props {
+export interface Props {
   class?: string;
   bg?: string | { url?: string; class?: string };
   textClass?: string;

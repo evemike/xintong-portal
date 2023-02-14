@@ -29,7 +29,7 @@
       "text": "home.hzgy",
       "annotation": [
         {
-          "class": "font-700 text-64px c-white text-shadow-lg block ml-2em mt-2em"
+          "class": "font-700 text-64px c-white text-shadow-lg block ml-2em mt-3em"
         },
         { "text": ["base.cooperation", "base.tong"], "class": "text-80px" },
         { "text": "base.rong", "class": "text-96px" }
@@ -100,11 +100,25 @@
     ]
   },
   // 页面显示内容的顺序 , 内容具体配置在下方
-  "CONTENTS": ["ITEM-1", "ITEM-2", "ITEM-3"],
+  "CONTENTS": ["ITEM-0","ITEM-1", "ITEM-2", "ITEM-3"],
+  "ITEM-0":{
+    "name":"text",
+    // "class":"h-800px",
+    "bg":{
+      "url":"/image/home/bg-md-0.png",
+      "class":""
+    },
+    "text":"home.md-0",
+    "textClass":"important-relative p-48px box-border backdrop-blur-10px bg-op-40 bg-white w-100% h-100% text-24px lh-48px",
+    "annotation":[
+      {"class":"max-w-60%"},
+      {"line":0 ,"class":"text-48px fw-bold lh-64px mb-48px"}
+    ]
+  },
   "ITEM-1": {
     "name": "list",
     "class": "flex justify-around flex-wrap p-48px",
-    "bg":"/image/home/bg-1.jpeg",
+    // "bg":"/image/home/bg-1.jpeg",
     "common": {
       "class": "w-30% m-16px text-center box-border rd-8px p-24px hover-bg-op-40 hover-bg-white hover-fw-bold hover-backdrop-blur-10px"
     },

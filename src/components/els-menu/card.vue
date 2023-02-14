@@ -1,7 +1,7 @@
 <template>
-  <div class="els-menu _card relative z-999">
+  <div class="els-menu _card relative z-999 h-100%">
     <div
-      class="_header relative flex justify-between items-center z-9 h-64px"
+      class="_header relative flex justify-between items-center z-9 h-100%"
       :class="[headerClass, currentMenu ? 'is-over' : '']"
     >
       <div class="_left flex items-center" :class="leftClass">
@@ -11,7 +11,7 @@
       <div class="_menus flex-1 h-100% flex items-center" :class="menusClass">
         <template v-for="(m, i) in menus" :key="`${m.key || ''}-${i}`">
           <div
-            class="_item relative cursor-pointer h-100%"
+            class="_item relative cursor-pointer h-100% flex items-center"
             :class="[currentMenu == m ? 'is-active' : '', itemClass]"
             @mouseenter="() => handleOver(m)"
             @mouseleave="() => handleOut(m)"
