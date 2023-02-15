@@ -17,6 +17,7 @@ export const getJsonFileData = async (name: string) => {
         method: "get",
       });
       data = res.data;
+      saveLocal(dn,data)
     }
 
     if (data) {
