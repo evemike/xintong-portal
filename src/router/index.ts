@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
         path: "",
         name: "HOME",
         component: Home,
-        meta: { label: i18n.global.t("menuPage.home"), icon: "icon-home-blue" },
+        // meta: { label: i18n.global.t("menuPage.home"), icon: "icon-home-blue" },
       },
     ],
   },

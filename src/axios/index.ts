@@ -26,7 +26,7 @@ http.interceptors.request.use((config) => {
   NProgress.start();
   // 添加自定义请求头
   if (!config.headers) {
-    config.headers = {};
+    config.headers = {} as any;
   }
   if (config.headers?.Authorization == undefined) {
     config.headers.Authorization = `Bearer ${store.getters.token}`;

@@ -13,8 +13,8 @@ import { Elem } from "../components/els-elem";
 import { isArray, isObject, isString } from "lodash";
 import i18n from "@/i18n";
 
-//
-const $t = i18n.global.t;
+// @ts-ignore
+const $t = i18n?.global?.t;
 // 默认的按钮集合
 const DEFAULT_OPERATES = {
   add: { icon: Plus, cls: $t("ELS_OPERATE.add"), type: "primary" },

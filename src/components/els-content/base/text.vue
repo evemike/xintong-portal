@@ -26,7 +26,7 @@ export interface Props {
   class?: string;
   bg?: string | { url?: string; class?: string };
   textClass?: string;
-  text: string | string[];
+  text?: string | string[];
   splits?: [paragraph: string, line: string];
   isHover?: boolean;
   annotation?: {

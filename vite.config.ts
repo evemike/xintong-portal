@@ -12,10 +12,10 @@ export default defineConfig({
   base:"/xintong",
   resolve: {
     alias: {
-      "vue-i18n":"vue-i18n/dist/vue-i18n.cjs.js",
+      // "vue-i18n":"vue-i18n/dist/vue-i18n.cjs.js",
       "@": path.resolve(__dirname, "src"),
-      "@views": path.resolve(__dirname, "src/views"),
-      "@api": path.resolve(__dirname, "src/api"),
+      // "@views": path.resolve(__dirname, "src/views"),
+      // "@api": path.resolve(__dirname, "src/api"),
       // "@utils": path.resolve(__dirname, "packages/common/utils"),
     },
   },

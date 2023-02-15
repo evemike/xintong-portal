@@ -37,13 +37,13 @@ import { useRouter } from "vue-router";
 export interface Props {
   class?: string;
   bg?: string | { url?: string; class?: string };
-  title?: string | TextProps;
+  title?: string | TextProps | Record<string,any>;
   link?: string | Record<string, any>;
   common?: Record<string, any>;
   commonClass?: string;
   hasBox?: boolean;
   boxClass?: string;
-  data: ElsContentProps[];
+  data?: ElsContentProps[];
 }
 
 const props = withDefaults(defineProps<Props>(), {

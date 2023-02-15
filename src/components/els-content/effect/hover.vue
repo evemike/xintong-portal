@@ -16,9 +16,9 @@ interface Props {
   class?: string;
   bg?: string | { url?: string; class?: string };
   xyz?:string
-  inClass:string
-  outClass:string
-  data:ElsContentProps
+  inClass?:string
+  outClass?:string
+  data?:ElsContentProps
 }
 
 const props = withDefaults(defineProps<Props>(),{

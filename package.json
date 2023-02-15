@@ -15,7 +15,6 @@
     "@animxyz/vue3": "^0.6.7",
     "@element-plus/icons-vue": "^2.0.10",
     "@unocss/preset-attributify": "^0.48.4",
-    "@unocss/preset-icons": "^0.48.4",
     "@unocss/preset-uno": "^0.48.4",
     "@unocss/runtime": "^0.49.0",
     "animate.css": "^4.1.1",

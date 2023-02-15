@@ -26,7 +26,7 @@ interface Props {
   bg?: string | { url?: string; class?: string };
   one?: { xyz?: string; inclass?: string; outclass?: string; class?: string };
   two?: { xyz?: string; inclass?: string; outclass?: string; class?: string };
-  data: [ElsContentProps,ElsContentProps];
+  data?: [ElsContentProps,ElsContentProps];
 }
 
 const props = withDefaults(defineProps<Props>(), {

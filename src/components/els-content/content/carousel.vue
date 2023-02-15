@@ -27,7 +27,7 @@ interface Props {
   link?: string | Record<string, any>;
   attr?:Record<string,any>
   currentClass?:string
-  data: TORA<ElsContentProps & { link?: string | Record<string, any> }>;
+  data?: TORA<ElsContentProps & { link?: string | Record<string, any> }>;
 }
 
 const props = withDefaults(defineProps<Props>(), {
