@@ -17,7 +17,7 @@
             @mouseleave="() => handleOut(m)"
             @click="() => handleGo(m)"
           >
-            <span class="_label text-18px font-normal c-white" :class="itemLabelClass">{{
+            <span class="_label text-14px font-normal c-white" :class="itemLabelClass">{{
               t(m.label, m.label)
             }}</span>
             <b
@@ -134,7 +134,6 @@ const handleGo = (d: any = {}) => {
         }
         &.is-active {
           ._label {
-            font-size: larger;
             font-weight: bold;
             text-shadow: 0 -5px 20px gold;
           }

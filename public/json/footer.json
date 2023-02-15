@@ -1,6 +1,6 @@
 {
   "class":"flex justify-around bg-blue-600 c-white pt-80px pb-24px pl-10% pr-10% box-border",
-  "CONTENTS": ["ITEM-0", "ITEM-1", "ITEM-2", "ITEM-3", "ITEM-4", "ITEM-5", "ITEM-6", "ITEM-7"],
+  "CONTENTS": ["ITEM-1", "ITEM-2", "ITEM-3", "ITEM-4", "ITEM-5", "ITEM-6", "ITEM-7"],
   "ITEM-0":{
     "name":"list",
     "class":"w-279px text-16px",

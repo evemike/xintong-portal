@@ -1,5 +1,5 @@
 <template>
-  <div :class="['_empty',pageClass]" >
+  <div :class="['_empty',pageClass]" :style="style" >
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="[bgClass,isHover ? inclass : outclass]">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100% object-cover" />
       <svg-icon v-if="bgIcon" :id="bgIcon" />
@@ -18,12 +18,14 @@ interface Props {
   src?:string;
   isHover?:boolean
   inclass?:string;
+  style?:string
   outclass?:string;
 }
 
 const props = withDefaults(defineProps<Props>(),{
   class:"",
   inclass:"",
+  style:"",
   outclass:"",
   bg:"",
 })

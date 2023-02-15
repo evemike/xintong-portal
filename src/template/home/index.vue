@@ -143,7 +143,7 @@ const handleGo = (path: string) => {
   // overflow: auto;
   > ._carousel {
     position: relative;
-    height: 400px;
+    height: 680px;
     > .el-carousel {
       height: 100%;
       .el-carousel__container {

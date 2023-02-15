@@ -1,5 +1,5 @@
 <template>
-  <div :class="['_img relative',pageClass]" >
+  <div :class="['_img relative',pageClass]" :style="style" >
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100% object-cover" />
       <svg-icon v-if="bgIcon" :id="bgIcon" />
@@ -26,10 +26,12 @@ interface Props {
   src?:string|(string|[string,string])[];
   boxClass?:string;
   imgClass?:string;
+  style?:string
   isHover?:boolean
 }
 
 const props = withDefaults(defineProps<Props>(),{
+  style:"",
   class:"",
   bg:"",
   imgClass:"",

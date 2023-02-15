@@ -1,5 +1,5 @@
 <template>
-  <div :class="['relative', pageClass]">
+  <div :class="['relative', pageClass]" :style="style">
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
@@ -29,6 +29,7 @@ export interface Props {
   text?: string | string[];
   splits?: [paragraph: string, line: string];
   isHover?: boolean;
+  style?:string
   annotation?: {
     class: string;
     line?: number | number[];
@@ -43,6 +44,7 @@ export interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   class: "",
+  style: "",
   textClass: "",
   bg: "",
   text: "",

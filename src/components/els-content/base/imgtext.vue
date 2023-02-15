@@ -1,5 +1,5 @@
 <template>
-  <div :class="['_imgtext relative', pageClass]">
+  <div :class="['_imgtext relative', pageClass]" :style="style">
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
@@ -29,6 +29,7 @@ interface TextProps {
   textClass?: string;
   text: string | string[];
   splits?: [paragraph: string, line: string];
+  
   annotation?: {
     class: string;
     line?: number | number[];
@@ -50,12 +51,14 @@ interface Props {
   imgProps?: ImgProps;
   svgProps?: SvgProps;
   class?: string;
+  style?:string
   bg?: string | { url?: string; class?: string };
   isHover?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   class: "",
+  style: "",
   bg: "",
 });
 //
