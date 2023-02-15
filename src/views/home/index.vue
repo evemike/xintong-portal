@@ -5,7 +5,7 @@ import TempHome from "@/template/home/index.vue";
 import { getJsonFileData } from "@/api/base/json";
 
 const homeData = ref<Record<string, any>>({});
-const introduceData = ref<Record<string, any>>({});
+// const introduceData = ref<Record<string, any>>({});
 //
 const initHomeData = async () => {
   try {
@@ -14,34 +14,34 @@ const initHomeData = async () => {
     console.error(e);
   }
 };
-const initIntroduceData = async () => {
-  try {
-    introduceData.value = await getJsonFileData("introduce.json");
-  } catch (e) {
-    console.error(e);
-  }
-};
+// const initIntroduceData = async () => {
+//   try {
+//     introduceData.value = await getJsonFileData("introduce.json");
+//   } catch (e) {
+//     console.error(e);
+//   }
+// };
 //
 const init = () => {
-  Promise.all([initHomeData(), initIntroduceData()]);
+  Promise.all([initHomeData()]);
 };
 //
 init();
 // 图片名称处理
-const transImgName = (name: string) => {
-  if (!name) {
-    return undefined;
-  }
-  let res = name;
-  const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
-  if (!reg.test(res)) {
-    res = res + ".png";
-  }
-  if (!/^\//.test(res) && !/^http/.test(res)) {
-    res = "/image/home/" + res;
-  }
-  return res;
-};
+// const transImgName = (name: string) => {
+//   if (!name) {
+//     return undefined;
+//   }
+//   let res = name;
+//   const reg = /^.*?\.(png|jpg|jpeg|bmp|gif)$/;
+//   if (!reg.test(res)) {
+//     res = res + ".png";
+//   }
+//   if (!/^\//.test(res) && !/^http/.test(res)) {
+//     res = "/image/home/" + res;
+//   }
+//   return res;
+// };
 // 生成首页轮播
 const carousel = computed(() => {
   const data = unref(homeData);
