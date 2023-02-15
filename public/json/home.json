@@ -1,5 +1,5 @@
 {
-  "TITLE":"menu.home",
+  "TITLE": "menu.home",
   // 轮播图 走马灯 图片 ， 当数组长度是 0 的时候，走马灯模块将会不显示
   "CAROUSEL": [
     {
@@ -52,11 +52,11 @@
             "name": "imgtext",
             "svgProps": {
               "icon": "icon-zuling",
-              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+              "class": "text-60px fade-item p-4px scale-item-5 ts-10"
             },
             "textProps": {
               "text": "home.layer.sbzl",
-              "class":" fw-bold mt-32px"
+              "class": " fw-bold mt-32px"
             }
           },
           {
@@ -64,11 +64,11 @@
             "name": "imgtext",
             "svgProps": {
               "icon": "icon-wuliu",
-              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+              "class": "text-60px fade-item p-4px scale-item-5 ts-10"
             },
             "textProps": {
               "text": "home.layer.znwl",
-              "class":" fw-bold mt-32px"
+              "class": " fw-bold mt-32px"
             }
           },
           {
@@ -76,11 +76,11 @@
             "name": "imgtext",
             "svgProps": {
               "icon": "icon-cx",
-              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+              "class": "text-60px fade-item p-4px scale-item-5 ts-10"
             },
             "textProps": {
               "text": "home.layer.cxzz",
-              "class":" fw-bold mt-32px"
+              "class": " fw-bold mt-32px"
             }
           },
           {
@@ -88,11 +88,11 @@
             "name": "imgtext",
             "svgProps": {
               "icon": "icon-server",
-              "class":"text-60px fade-item p-4px scale-item-5 ts-10"
+              "class": "text-60px fade-item p-4px scale-item-5 ts-10"
             },
             "textProps": {
               "text": "home.layer.pzfw",
-              "class":" fw-bold mt-32px"
+              "class": " fw-bold mt-32px"
             }
           }
         ]
@@ -100,92 +100,115 @@
     ]
   },
   // 页面显示内容的顺序 , 内容具体配置在下方
-  "CONTENTS": ["ITEM-0","ITEM-1", "ITEM-2", "ITEM-3"],
-  "ITEM-0":{
-    "name":"text",
-    // "class":"h-800px",
-    "bg":{
-      "url":"/image/home/bg-md-0.png",
-      "class":""
+  "CONTENTS": ["ITEM-0", "ITEM-1", "ITEM-2", "ITEM-3"],
+  "ITEM-0": {
+    "name": "text",
+    "class": "",
+    "bg": {
+      "url": "/image/home/bg-4.png",
+      "class": ""
     },
-    "text":"home.md-0",
-    "textClass":"important-relative p-48px box-border backdrop-blur-10px bg-op-40 bg-white w-100% h-100% text-24px lh-48px",
-    "annotation":[
-      {"class":"max-w-60%"},
-      {"line":0 ,"class":"text-48px fw-bold lh-64px mb-48px"}
+    "text": "home.md-0",
+    "textClass": "important-relative p-36px pt-100px pb-100px box-border bg-white bg-op-40 backdrop-blur-10px w-100% h-100% text-24px lh-48px",
+    "annotation": [
+      { "class": "max-w-50%" },
+      { "line": 0, "class": "text-32px fw-bold lh-64px mb-64px" }
     ]
   },
   "ITEM-1": {
     "name": "list",
-    "class": "flex justify-around flex-wrap p-48px",
-    // "bg":"/image/home/bg-1.jpeg",
+    "class": "p-48px pt-100px pb-100px bg-light-400",
+    "title": {
+      "text": "home.xtzl",
+      "class": "text-center text-36px fw-bold mb-64px"
+    },
+    "boxClass": "flex justify-around flex-wrap",
     "common": {
-      "class": "w-30% m-16px text-center box-border rd-8px p-24px hover-bg-op-40 hover-bg-white hover-fw-bold hover-backdrop-blur-10px"
+      // "class": "w-30% hover-items m-16px text-center box-border rd-8px p-24px hover-bg-op-40 hover-bg-white hover-fw-bold hover-backdrop-blur-10px"
+      "class": "w-30% hover-items text-center box-border rd-8px p-24px hover-fw-bold"
     },
     "data": [
       {
         "name": "imgtext",
-        "svgProps": { "icon": "icon-zu", "class": "text-100px c-lime" },
+        "svgProps": {
+          "icon": "icon-zu",
+          "class": "text-100px c-lime ts-20 scale-item--1"
+        },
         "textProps": {
           "text": ["home.bzz_i", "home.bzz_t"],
           "annotation": [
-            { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "text-20px mt-1em" }
+            { "line": 0, "class": "text-36px" },
+            { "line": 1, "class": "text-24px mt-1em" }
           ]
         }
       },
       {
         "name": "imgtext",
-        "svgProps": { "icon": "icon-free-zh", "class": "text-100px c-teal" },
+        "svgProps": {
+          "icon": "icon-free-zh",
+          "class": "text-100px c-teal ts-20 scale-item--1"
+        },
         "textProps": {
           "text": ["home.lxz_i", "home.lxz_t"],
           "annotation": [
-            { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "text-20px mt-1em" }
+            { "line": 0, "class": "text-36px" },
+            { "line": 1, "class": "text-24px mt-1em" }
           ]
         }
       },
       {
         "name": "imgtext",
-        "svgProps": { "icon": "icon-free-zh", "class": "text-100px c-emerald" },
+        "svgProps": {
+          "icon": "icon-free-zh",
+          "class": "text-100px c-emerald ts-20 scale-item--1"
+        },
         "textProps": {
           "text": ["home.lfz_i", "home.lfz_t"],
           "annotation": [
-            { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "text-20px mt-1em" }
+            { "line": 0, "class": "text-36px" },
+            { "line": 1, "class": "text-24px mt-1em" }
           ]
         }
       },
       {
         "name": "imgtext",
-        "svgProps": { "icon": "icon-node", "class": "text-100px" },
+        "svgProps": {
+          "icon": "icon-node",
+          "class": "text-100px ts-20 scale-item--1"
+        },
         "textProps": {
           "text": ["home.lhz_i", "home.lhz_t"],
           "annotation": [
-            { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "text-20px mt-1em" }
+            { "line": 0, "class": "text-36px" },
+            { "line": 1, "class": "text-24px mt-1em" }
           ]
         }
       },
       {
         "name": "imgtext",
-        "svgProps": { "icon": "icon-butie", "class": "text-100px c-sky" },
+        "svgProps": {
+          "icon": "icon-butie",
+          "class": "text-100px c-sky ts-20 scale-item--1"
+        },
         "textProps": {
           "text": ["home.txz_i", "home.txz_t"],
           "annotation": [
             { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "text-20px mt-1em" }
+            { "line": 1, "class": "text-24px mt-1em" }
           ]
         }
       },
       {
         "name": "imgtext",
-        "svgProps": { "icon": "icon-set", "class": "text-100px c-purple" },
+        "svgProps": {
+          "icon": "icon-set",
+          "class": "text-100px c-purple ts-20 scale-item--1"
+        },
         "textProps": {
           "text": ["home.zlb_i", "home.zlb_t"],
           "annotation": [
-            { "line": 0, "class": "text-30px" },
-            { "line": 1, "class": "text-20px mt-1em" }
+            { "line": 0, "class": "text-36px" },
+            { "line": 1, "class": "text-24px mt-1em" }
           ]
         }
       }
@@ -194,113 +217,107 @@
   "ITEM-2": {
     "name": "list",
     "bg": "/image/home/bg-2.jpeg",
-    "class": "p-48px",
+    "class": "p-48px pt-100px pb-100px",
+    "title": {
+      "text": ["home.sor_t", "home.sor_d"],
+      "class": "mb-64px",
+      "annotation": [
+        { "line": 0, "class": "text-36px fw-bold text-center" },
+        { "line": 1, "class": "text-36px mt-16px" }
+      ]
+    },
+    "boxClass": "flex h-400px justify-around items-center",
     "data": [
       {
-        "name": "text",
-        "class": " mb-24px",
-        "text": ["home.sor_t", "home.sor_d"],
-        "annotation": [
-          { "line": 0, "class": "text-32px fw-bold text-center" },
-          { "line": 1, "class": "text-28px mt-16px" }
-        ]
-      },
-      {
         "name": "list",
-        "class": "flex mt-24px h-400px justify-around items-center",
+        "class": "max-w-30%",
+        "common": {
+          "class": "flex hover-items hover-backdrop-blur-10px hover-bg-op-40 hover-bg-white m-16px p-24px rd-8px"
+        },
         "data": [
           {
-            "name": "list",
-            "class": "max-w-30%",
-            "common": {
-              "class": "flex pb-24px hover-backdrop-blur-10px hover-bg-op-40 hover-bg-white m-16px p-24px rd-8px"
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-car-tc",
+              "class": "text-100px c-red ts-20 scale-item-2"
             },
-            "data": [
-              {
-                "name": "imgtext",
-                "svgProps": {
-                  "icon": "icon-car-tc",
-                  "class": "text-100px block c-red transition-all hover-scale-150"
-                },
-                "textProps": {
-                  "text": ["home.sor1_t", "home.sor1_d"],
-                  "class": "ml-24px",
-                  "annotation": [
-                    { "line": 0, "class": "text-24px fw-bold " },
-                    { "line": 1, "class": "text-16px text-left mt-8px" }
-                  ]
-                }
-              },
-              {
-                "name": "imgtext",
-                "svgProps": {
-                  "icon": "icon-car-ttj",
-                  "class": "text-100px c-orange transition-all hover-scale-150"
-                },
-                "textProps": {
-                  "text": ["home.sor2_t", "home.sor2_d"],
-                  "class": "ml-24px",
-                  "annotation": [
-                    { "line": 0, "class": "text-24px fw-bold " },
-                    { "line": 1, "class": "text-16px text-left mt-8px" }
-                  ]
-                }
-              }
-            ]
-          },
-          {
-            "name": "xyzbg",
-            "class": "flex items-center justify-center",
-            "bg": {
-              "icon": "icon-yh",
-              "iconClass": "text-250px transition-all hover-scale-120",
-              "class": "xyz-in rd-600px flex items-center justify-center"
-            },
-            "xyz": "iterate-infinite duration-30 ease-linear rotate-right-100%",
-            "data": {
-              "name": "img",
-              "class": "w-100px h-100px hover-scale",
-              "src": "/image/home/cpjsbg.png"
+            "textProps": {
+              "text": ["home.sor1_t", "home.sor1_d"],
+              "class": "ml-24px",
+              "annotation": [
+                { "line": 0, "class": "text-28px fw-bold mb-10px" },
+                { "line": 1, "class": "text-20px text-left" }
+              ]
             }
           },
           {
-            "name": "list",
-            "class": "max-w-30%",
-            "common": {
-              "class": "flex pb-24px transition-all hover-backdrop-blur-10px hover-bg-op-40 hover-bg-white m-16px p-24px rd-8px"
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-car-ttj",
+              "class": "text-100px c-orange ts-20 scale-item-2"
             },
-            "data": [
-              {
-                "name": "imgtext",
-                "svgProps": {
-                  "icon": "icon-car-tlj",
-                  "class": "text-100px c-amber transition-all hover-scale-150"
-                },
-                "textProps": {
-                  "text": ["home.sor3_t", "home.sor3_d"],
-                  "class": "ml-24px",
-                  "annotation": [
-                    { "line": 0, "class": "text-24px fw-bold " },
-                    { "line": 1, "class": "text-left mt-8px" }
-                  ]
-                }
-              },
-              {
-                "name": "imgtext",
-                "svgProps": {
-                  "icon": "icon-gcs",
-                  "class": "text-100px transition-all hover-scale-150"
-                },
-                "textProps": {
-                  "text": ["home.sor4_t", "home.sor4_d"],
-                  "class": "ml-24px",
-                  "annotation": [
-                    { "line": 0, "class": "text-24px fw-bold " },
-                    { "line": 1, "class": "text-left mt-8px" }
-                  ]
-                }
-              }
-            ]
+            "textProps": {
+              "text": ["home.sor2_t", "home.sor2_d"],
+              "class": "ml-24px",
+              "annotation": [
+                { "line": 0, "class": "text-28px fw-bold mb-10px" },
+                { "line": 1, "class": "text-20px text-left" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "xyzbg",
+        "class": "flex hover-items items-center justify-center",
+        "bg": {
+          "icon": "icon-yh",
+          "iconClass": "text-250px ts-20 scale-item-10",
+          "class": "xyz-in rd-600px flex items-center justify-center"
+        },
+        "xyz": "iterate-infinite duration-30 ease-linear rotate-right-100%",
+        "data": {
+          "name": "img",
+          "class": "w-100px h-100px hover-scale",
+          "src": "/image/home/cpjsbg.png"
+        }
+      },
+      {
+        "name": "list",
+        "class": "max-w-30%",
+        "common": {
+          "class": "flex hover-items hover-backdrop-blur-10px hover-bg-op-40 hover-bg-white m-16px p-24px rd-8px"
+        },
+        "data": [
+          {
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-car-tlj",
+              "class": "text-100px c-amber ts-20 scale-item-2"
+            },
+            "textProps": {
+              "text": ["home.sor3_t", "home.sor3_d"],
+              "class": "ml-24px",
+              "annotation": [
+                { "line": 0, "class": "text-28px fw-bold mb-10px" },
+                { "line": 1, "class": "text-20px text-left" }
+              ]
+            }
+          },
+          {
+            "name": "imgtext",
+            "svgProps": {
+              "icon": "icon-gcs",
+              "class": "text-100px ts-20 scale-item-2"
+            },
+            "textProps": {
+              "text": ["home.sor4_t", "home.sor4_d"],
+              "class": "ml-24px",
+              "annotation": [
+                { "line": 0, "class": "text-28px fw-bold mb-10px" },
+                { "line": 1, "class": "text-20px text-left" }
+              ]
+            }
           }
         ]
       }
@@ -308,65 +325,58 @@
   },
   "ITEM-3": {
     "name": "list",
-    "bg": "/image/home/bg-3.jpeg",
-    "class": "p-48px",
+    // "bg": "/image/home/bg-3.jpeg",
+    "class": "p-48px pt-100px pb-100px",
+    "title": {
+      "name": "text",
+      "text": ["home.tg_t", "home.tg_d"],
+      "annotation": [
+        { "line": 0, "class": "text-36px fw-bold text-center mb-10px" },
+        { "line": 1, "class": "text-36px" }
+      ]
+    },
+    "boxClass": "flex justify-around mt-64px p-24px text-center",
+    "commonClass": "hover-backdrop-blur-10px hover-items hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-orange rd-8px",
     "data": [
       {
         "name": "text",
-        "text": ["home.tg_t", "home.tg_d"],
+
+        "text": ["home.tg1_n", "home.tg1_d", "home.tg1_t"],
         "annotation": [
-          { "line": 0, "class": "text-32px fw-bold text-center" },
-          { "line": 1, "class": "text-28px mt-16px" }
+          { "class": "scale-item-2 ts-5" },
+          { "line": 0, "class": "text-80px inline-block" },
+          { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
+          { "line": 2, "class": "text-24px mt-64px" }
         ]
       },
       {
-        "name": "list",
-        "class": "flex justify-around mt-160px p-24px text-center",
-        "common": {
-          "class": "hover-backdrop-blur-10px hover-items hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-red rd-8px"
-        },
-        "data": [
-          {
-            "name": "text",
-            
-            "text": ["home.tg1_n", "home.tg1_d", "home.tg1_t"],
-            "annotation": [
-              {"class":"scale-item-2 ts-5"},
-              { "line": 0, "class": "text-48px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
-              { "line": 2, "class": "text-24px mt-16px" }
-            ]
-          },
-          {
-            "name": "text",
-            "text": ["home.tg2_n", "home.tg2_d", "home.tg2_t"],
-            "annotation": [
-              {"class":"scale-item-2 ts-5"},
-              { "line": 0, "class": "text-48px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
-              { "line": 2, "class": "text-24px mt-16px" }
-            ]
-          },
-          {
-            "name": "text",
-            "text": ["home.tg3_n", "home.tg3_d", "home.tg3_t"],
-            "annotation": [
-              {"class":"scale-item-2 ts-5"},
-              { "line": 0, "class": "text-48px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
-              { "line": 2, "class": "text-24px mt-16px" }
-            ]
-          },
-          {
-            "name": "text",
-            "text": ["home.tg4_n", "home.tg4_d", "home.tg4_t"],
-            "annotation": [
-              {"class":"scale-item-2 ts-5"},
-              { "line": 0, "class": "text-48px fw-bold inline-block" },
-              { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
-              { "line": 2, "class": "text-24px mt-16px" }
-            ]
-          }
+        "name": "text",
+        "text": ["home.tg2_n", "home.tg2_d", "home.tg2_t"],
+        "annotation": [
+          { "class": "scale-item-2 ts-5" },
+          { "line": 0, "class": "text-80px fw-bold inline-block" },
+          { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
+          { "line": 2, "class": "text-24px mt-64px" }
+        ]
+      },
+      {
+        "name": "text",
+        "text": ["home.tg3_n", "home.tg3_d", "home.tg3_t"],
+        "annotation": [
+          { "class": "scale-item-2 ts-5" },
+          { "line": 0, "class": "text-80px fw-bold inline-block" },
+          { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
+          { "line": 2, "class": "text-24px mt-64px" }
+        ]
+      },
+      {
+        "name": "text",
+        "text": ["home.tg4_n", "home.tg4_d", "home.tg4_t"],
+        "annotation": [
+          { "class": "scale-item-2 ts-5" },
+          { "line": 0, "class": "text-80px fw-bold inline-block" },
+          { "line": 1, "class": "text-24px ml-32px mt-16px inline-block" },
+          { "line": 2, "class": "text-24px mt-64px" }
         ]
       }
     ]

@@ -4,7 +4,7 @@
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
     <CTEXT v-if="title" v-bind="textAttr" />
-    <div v-if="hasBox" :class="['_list-box', boxClass]">
+    <div v-if="boxClass" :class="['_list-box', boxClass]">
       <template v-for="(c, i) in contents" :key="i">
         <ElsContent
           v-bind="mergeProps(common, { class: commonClass }, c)"

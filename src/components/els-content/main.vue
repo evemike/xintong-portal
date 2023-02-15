@@ -10,10 +10,12 @@ import CIMG from "./base/img.vue";
 import CTEXT from "./base/text.vue";
 import CIMGTEXT from "./base/imgtext.vue";
 import CEMPTY from "./base/empty.vue"
+import CSVG from "./base/svg.vue"
 // content
 import CCAROUSEL from "./content/carousel.vue";
 import CLINK from "./content/link.vue";
 import CLIST from "./content/list.vue";
+import CTABS from "./content/tabs.vue"
 // effect
 import CHOVER from "./effect/hover.vue";
 import CHOVERBG from "./effect/hoverbg.vue";
@@ -37,7 +39,9 @@ const name = props.name;
 const com = computed(() => {
   switch (unref(name)) {
     //
-    case "img":
+    case "svg":
+      return CSVG;
+      case "img":
       return CIMG;
     case "text":
       return CTEXT;
@@ -52,6 +56,8 @@ const com = computed(() => {
       return CLINK;
     case "list":
       return CLIST;
+    case "tabs":
+      return CTABS;
     //
     case "hover":
       return CHOVER;

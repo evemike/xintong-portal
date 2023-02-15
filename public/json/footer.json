@@ -1,0 +1,99 @@
+{
+  "class":"flex justify-around bg-blue-600 c-white pt-80px pb-24px pl-10% pr-10% box-border",
+  "CONTENTS": ["ITEM-0", "ITEM-1", "ITEM-2", "ITEM-3", "ITEM-4", "ITEM-5", "ITEM-6", "ITEM-7"],
+  "ITEM-0":{
+    "name":"list",
+    "class":"w-279px text-16px",
+    "data":[
+      {
+        "name":"img",
+        "class":"mb-33px",
+        "src":"/image/footer/ft_hanyun_logo.png"
+      },
+      {
+        "name":"text",
+        "text":["gywm.lxwm","gywm.tel"],
+        "annotation":[
+          {"line":1,"class":"text-32px"}
+        ]
+      },
+      {
+        "name":"img",
+        "class":"mb-10px mt-100px",
+        "boxClass":"flex",
+        "imgClass":"w-106px mr-30px",
+        "src":["/image/footer/shipin_code_2.jpg","/image/footer/weixin_code.jpg"]
+      },
+      {
+        "name":"text",
+        "textClass":"flex",
+        "text":["base.wxgzh","base.wxsph"],
+        "annotation":[
+          {"class":"w-106px mr-30px text-center"}
+        ]
+      }
+    ]
+  },
+  "ITEM-1":{
+    "name":"list",
+    "class":" ",
+    "commonClass":"mb-20px text-16px",
+    "data":[
+      {"name":"link","link":"/base/page/cpfw","title":"menu.cpfw","class":"text-20px"},
+      {"name":"link","link":"/base/page/cpfw","title":"cpfw.cp1_t"},
+      {"name":"link","link":"/base/page/cpfw","title":"cpfw.cp2_t"},
+      {"name":"link","link":"/base/page/cpfw","title":"cpfw.cp3_t"},
+      {"name":"link","link":"/base/page/cpfw","title":"cpfw.cp4_t"}
+    ]
+  },
+  "ITEM-2":{
+    "name":"list",
+    "class":" ",
+    "commonClass":"mb-20px text-16px",
+    "data":[
+      {"name":"link","link":"/base/page/jyzl","title":"menu.jyzl","class":"text-20px"},
+      {"name":"link","link":"/base/page/jyzl","title":"jyzl.yzds"},
+      {"name":"link","link":"/base/page/jyzl","title":"jyzl.yzds"},
+      {"name":"link","link":"/base/page/jyzl","title":"jyzl.sbjz"},
+      {"name":"link","link":"/base/page/jyzl","title":"jyzl.lhzl"},
+      {"name":"link","link":"/base/page/jyzl","title":"jyzl.ppfn"},
+      {"name":"link","link":"/base/page/jyzl","title":"jyzl.cthzl"}
+    ]
+  },
+  "ITEM-3":{
+    "name":"list",
+    "class":" ",
+    "commonClass":"mb-20px text-16px",
+    "data":[
+      {"name":"link","link":"/base/page/gswh","title":"menu.gswh","class":"text-20px"},
+      {"name":"link","link":"/base/page/gswh","title":"gswh.yj_t"},
+      {"name":"link","link":"/base/page/gswh","title":"gswh.jzg_t"},
+      {"name":"link","link":"/base/page/gswh","title":"gswh.wh_t"},
+      {"name":"link","link":"/base/page/gswh","title":"gswh.fw_t"}
+    ]
+  },
+  "ITEM-4":{
+    "name":"list",
+    "class":" ",
+    "commonClass":"mb-20px text-16px",
+    "data":[
+      // {"name":"link","link":"/base/page/cpfw","title":"menu.gswh","class":"text-20px"},
+      // {"name":"link","link":"/base/page/cpfw","title":"cpfw.yj_t"},
+      // {"name":"link","link":"/base/page/cpfw","title":"cpfw.jzg_t"},
+      // {"name":"link","link":"/base/page/cpfw","title":"cpfw.wh_t"},
+      // {"name":"link","link":"/base/page/cpfw","title":"cpfw.fw_t"}
+    ]
+  },
+  "ITEM-5":{
+    "name":"list",
+    "class":" ",
+    "commonClass":"mb-20px text-16px",
+    "data":[
+      {"name":"link","link":"/base/page/gywm","title":"menu.gywm","class":"text-20px"},
+      {"name":"link","link":"/base/page/gywm","title":"gywm.jj_t"},
+      {"name":"link","link":"/base/page/gywm","title":"gywm.zzjg_t"},
+      {"name":"link","link":"/base/page/gywm","title":"gywm.sl_t"},
+      {"name":"link","link":"/base/page/gywm","title":"gywm.lxwm"}
+    ]
+  }
+}

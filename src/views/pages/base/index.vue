@@ -1,5 +1,5 @@
 <template>
-  <div :key="pageName" class="_common-page relative w-100% h-100%">
+  <div :key="pageName" class="_common-page relative w-100% h-100%" :class="pageClass">
     <template v-for="(item, i) in itemsData" :key="`${pageName}-${i}`">
       <ElsContent v-bind="item" />
     </template>
@@ -18,6 +18,7 @@ const route = useRoute();
 const pageName = computed(() => route.params.name as string);
 //
 // const pageData = ref<Record<string, any>>({});
+const pageClass = ref("");
 const itemsData = ref<Record<string,any>[]>([])
 // init Data
 const initPageData = async () => {
@@ -28,8 +29,8 @@ const initPageData = async () => {
     if (show === false) {
       return router.go(-1);
     }
-    // pageData.value = data;
     const { CONTENTS = [] } = data;
+    pageClass.value = `page_${pn} ${data.class ?? ""}`;
     itemsData.value = CONTENTS.map((k: string) => ({
     ...(data[k] || {}),
   }));
@@ -37,14 +38,6 @@ const initPageData = async () => {
     console.error(e);
   }
 };
-
-// const items = computed(() => {
-//   const data = unref(pageData);
-//   const { CONTENTS = [] } = data;
-//   return CONTENTS.map((k: string) => ({
-//     ...(data[k] || {}),
-//   }));
-// });
 
 initPageData();
 

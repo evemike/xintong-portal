@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['_link relative', pageClass]"
+    :class="['_link relative', pageClass,link ? 'cursor-pointer' : '']"
     @click="handleClick"
     @mouseenter="handleOver"
     @mouseleave="handleOut"

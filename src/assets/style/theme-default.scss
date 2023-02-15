@@ -62,6 +62,12 @@
     //   transition: all 1s linear;
     // }
     //
+    &:hover .scale-item--2{
+      transform: scale(0.8);
+    }
+    &:hover .scale-item--1{
+      transform: scale(0.9);
+    }
     &:hover .scale-item-1{
       transform: scale(1.1);
     }

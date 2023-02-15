@@ -1,6 +1,6 @@
 {
   "TITLE": "",
-  "CONTENTS": ["ITEM-1"],
+  "CONTENTS": ["ITEM-1","ITEM-2"],
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-600px",
@@ -41,6 +41,47 @@
     }
   },
   "ITEM-2":{
-    
+    "name":"list",
+    "class":"pt-100px pb-100px ",
+    "boxClass":"w-60% min-w-1220px m-x-auto",
+    "commonClass":"flex hover-items shadow-lg rd-8px text-center mb-24px",
+    "data":[
+      {
+        "name":"imgtext",
+        "class":"overflow-hidden",
+        "imgProps":{
+          "src":"/image/gswh/md-1.jpg",
+          "imgClass":"ts-20 scale-item-2",
+          "class":"w-50% overflow-hidden "
+        },
+        "textProps":{
+          "text":["gswh.yj_t","gswh.yj_d"],
+          "class":"w-50% flex items-center",
+          "annotation":[
+            {"line":0,"class":"text-36px fw-bold mb-10px"},
+            {"line":1,"class":"text-20px"}
+          ]
+        }
+      },
+      {
+        "name":"imgtext",
+        "class":"overflow-hidden flex-row-reverse",
+        "imgProps":{
+          "src":"/image/gswh/md-2.jpg",
+          "imgClass":"ts-20 scale-item-2",
+          "class":"w-50% overflow-hidden "
+        },
+        "textProps":{
+          "text":["gswh.jzg_t","gswh.jzg_d","gswh.jzg_s"],
+          "class":"w-50% p-24px flex items-center",
+          "annotation":[
+            {"line":0,"class":"text-36px fw-bold mb-10px"},
+            {"line":1,"class":"text-20px"},
+            {"line":2,"class":"text-16px mt-10px text-left"}
+          ]
+        }
+      }
+
+    ]
   }
 }

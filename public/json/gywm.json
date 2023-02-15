@@ -1,6 +1,6 @@
 {
   "TITLE": "",
-  "CONTENTS": ["ITEM-1", "ITEM-2","ITEM-3","ITEM-4"],
+  "CONTENTS": ["ITEM-1", "ITEM-2","ITEM-3","ITEM-4","ITEM-5"],
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-600px",
@@ -26,10 +26,10 @@
   },
   "ITEM-2": {
     "name": "list",
-    "class": "p-48px ",
+    "class": "p-48px pt-100px pb-100px bg-light-400 text-36px c-white",
     "title": {
       "text": "gywm.zzjg_t",
-      "class": "text-center  text-64px fw-bold p-24px"
+      "class": "text-center fw-bold p-24px c-black"
     },
     "data": [
       {
@@ -42,12 +42,12 @@
           // },
           {
             "name": "text",
-            "class": "important-absolute top-0 h-80px w-100% text-center text-48px z-99 ",
+            "class": "important-absolute top-0 h-80px w-100% text-center z-99 ",
             "textClass": "h-100%",
             "text": "gywm.zzjg_0",
             "annotation": [
               {
-                "class": "inline-flex bg-white items-center pl-20px pr-20px rd-8px box-border border-10px border-teal border-solid h-100% "
+                "class": "inline-flex bg-teal items-center pl-20px pr-20px rd-8px box-border border-10px border-teal border-solid h-100% "
               }
             ]
           },
@@ -63,9 +63,8 @@
               "class": "text-64px"
             },
             "textProps": {
-              "class": "text-0",
               "text": "gywm.zzjg_1",
-              "annotation": [{ "class": "text-48px c-white" }]
+              "annotation": [{ "class": "" }]
             }
           },
           {
@@ -80,9 +79,8 @@
               "class": "text-64px"
             },
             "textProps": {
-              "class": "text-0",
               "text": "gywm.zzjg_2",
-              "annotation": [{ "class": "text-48px c-white" }]
+              "annotation": [{ "class": "" }]
             }
           },
           {
@@ -137,9 +135,8 @@
               "class": "text-64px"
             },
             "textProps": {
-              "class": "text-0",
               "text": "gywm.zzjg_3_1",
-              "annotation": [{ "class": "text-48px c-white" }]
+              "annotation": [{ "class": "" }]
             }
           },
           {
@@ -150,9 +147,8 @@
               "class": "text-64px"
             },
             "textProps": {
-              "class": "text-0",
               "text": "gywm.zzjg_3_2",
-              "annotation": [{ "class": "text-48px c-white" }]
+              "annotation": [{ "class": "" }]
             }
           },
           {
@@ -163,9 +159,8 @@
               "class": "text-64px"
             },
             "textProps": {
-              "class": "text-0",
               "text": "gywm.zzjg_3_3",
-              "annotation": [{ "class": "text-48px c-white" }]
+              "annotation": [{ "class": "" }]
             }
           },
           {
@@ -176,9 +171,8 @@
               "class": "text-64px"
             },
             "textProps": {
-              "class": "text-0",
               "text": "gywm.zzjg_3_4",
-              "annotation": [{ "class": "text-48px c-white" }]
+              "annotation": [{ "class": "" }]
             }
           },
           {
@@ -189,9 +183,8 @@
               "class": "text-64px"
             },
             "textProps": {
-              "class": "text-0",
               "text": "gywm.zzjg_3_5",
-              "annotation": [{ "class": "text-48px c-white" }]
+              "annotation": [{ "class": "" }]
             }
           }
         ]
@@ -200,14 +193,14 @@
   },
   "ITEM-3": {
     "name": "list",
-    "class": "p-48px ",
+    "class": "p-48px pt-100px pb-100px",
     "hasBox":true,
     "boxClass":"flex items-center justify-around mt-64px",
     "title": {
-      "class":"text-64px text-center",
+      "class":"text-36px text-center fw-bold",
       "text": ["gywm.sl_t"]
     },
-    "common": { "class": "text-32px text-center w-30% " },
+    "common": { "class": "text-36px text-center w-30% " },
     "data": [
       {
         "name": "imgtext",
@@ -228,11 +221,10 @@
   },
   "ITEM-4": {
     "name": "list",
-    "class": "p-48px ",
-    "hasBox":true,
+    "class": "p-48px pt-100px pb-100px bg-light-400",
     "boxClass":"flex justify-around mt-64px",
     "title": {
-      "class":"text-64px text-center",
+      "class":"text-36px fw-bold text-center",
       "text": ["gywm.gsry_t"]
     },
     "common": { "class": "w-200px" },
@@ -256,6 +248,37 @@
     ]
   },
   "ITEM-5":{
-    "name":"list"
+    "name":"list",
+    "class":"p-48px pt-100px pb-100px",
+    "boxClass":"flex mt-64px",
+    "title":{
+      "class":"text-36px fw-bold text-center",
+      "text":"gywm.lxwm"
+    },
+    "data":[
+      {
+        "name":"img",
+        "class":"w-40%",
+        "src":"/image/gywm/md-5.png"
+      },
+      {
+        "name":"text",
+        "class":"text-22px c-dark box-border w-50% pl-10% lh-48px",
+        "text":[
+          "gywm.addr",
+          "gywm.yb",
+          "gywm.tel",
+          "gywm.zl_t",
+          "gywm.zl_p",
+          "gywm.wx_t",
+          "gywm.wx_p",
+          "gywm.rl_t",
+          "gywm.rl_p"
+        ],
+        "annotation":[
+          {"line":[3,5,7],"class":"mt-24px"}
+        ]
+      }
+    ]
   }
 }
