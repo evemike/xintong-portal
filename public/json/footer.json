@@ -1,37 +1,45 @@
 {
   "class":"flex justify-around bg-blue-600 c-white pt-80px pb-24px pl-10% pr-10% box-border",
-  "CONTENTS": ["ITEM-1", "ITEM-2", "ITEM-3", "ITEM-4", "ITEM-5", "ITEM-6", "ITEM-7"],
+  "CONTENTS": ["ITEM-0","ITEM-1", "ITEM-2", "ITEM-3", "ITEM-5"],
   "ITEM-0":{
     "name":"list",
     "class":"w-279px text-16px",
     "data":[
-      {
-        "name":"img",
-        "class":"mb-33px",
-        "src":"/image/footer/ft_hanyun_logo.png"
-      },
-      {
-        "name":"text",
-        "text":["gywm.lxwm","gywm.tel"],
-        "annotation":[
-          {"line":1,"class":"text-32px"}
-        ]
-      },
-      {
-        "name":"img",
-        "class":"mb-10px mt-100px",
-        "boxClass":"flex",
-        "imgClass":"w-106px mr-30px",
-        "src":["/image/footer/shipin_code_2.jpg","/image/footer/weixin_code.jpg"]
-      },
+      // {
+      //   "name":"img",
+      //   "class":"mb-33px",
+      //   "src":"/image/footer/ft_hanyun_logo.png"
+      // },
       {
         "name":"text",
-        "textClass":"flex",
-        "text":["base.wxgzh","base.wxsph"],
+        "text":["base.name"," ","gywm.addr"," ","gywm.yb","gywm.tel"],
         "annotation":[
-          {"class":"w-106px mr-30px text-center"}
+          {"class":"mb-18px"},
+          {"line":[0,4,5],"class":"text-32px"}
         ]
       }
+      // {
+      //   "name":"text",
+      //   "text":[" ","gywm.tel"],
+      //   "annotation":[
+      //     {"line":1,"class":"text-32px"}
+      //   ]
+      // }
+      // {
+      //   "name":"img",
+      //   "class":"mb-10px mt-100px",
+      //   "boxClass":"flex",
+      //   "imgClass":"w-106px mr-30px",
+      //   "src":["/image/footer/shipin_code_2.jpg","/image/footer/weixin_code.jpg"]
+      // },
+      // {
+      //   "name":"text",
+      //   "textClass":"flex",
+      //   "text":["base.wxgzh","base.wxsph"],
+      //   "annotation":[
+      //     {"class":"w-106px mr-30px text-center"}
+      //   ]
+      // }
     ]
   },
   "ITEM-1":{

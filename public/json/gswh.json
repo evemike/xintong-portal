@@ -6,8 +6,9 @@
     "class": "h-600px",
     "bg": { "url": "/image/gswh/header.jpeg", "class": "hover-bg-cover" },
     "imgProps":{
-      "src":"/image/gswh/h-c.png",
-      "class":"important-absolute top-200px w-500px left-100px"
+      // "src":"/image/gswh/h-c.png",
+      "src":"/image/effect/dt-4.gif",
+      "class":"important-absolute top-50px w-500px left-80px"
     },
     "textProps": {
       "class": "absolute top-160px left-40%",
