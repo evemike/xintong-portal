@@ -1,6 +1,6 @@
 <template>
   <div :key="pageName" class="_common-page relative w-100% h-100%" :class="pageClass">
-    <template v-for="(item, i) in itemsData" :key="`${pageName}-${i}`">
+    <template v-for="(item, i) in itemsData" :key="`${pageName}-${i}-${Math.random()}`">
       <ElsContent v-bind="item" />
     </template>
   </div>

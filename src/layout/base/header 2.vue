@@ -1,13 +1,16 @@
 <template>
-  <div class="layout--header">
-    <!-- logo -->
-    <div v-if="website.logo" class="logo">
+  <div class="layout--header z-999 flex items-center justify-between">
+  <div class="flex items-center">
+  <!-- logo -->
+  <div v-if="website.logo" class="logo">
       <img :src="`/image/logo/${transImgName(website.logo)}`" />
     </div>
     <!-- title -->
-    <div v-if="website.title" class="title">{{ t(website.title) }}</div>
+    <div v-if="website.title" class="title w-200px">{{ t(website.title) }}</div>
+  </div>
+    
     <!-- menu -->
-    <els-menu :menu-tree="menuTree" prefix="/platform"></els-menu>
+    <els-menu :menu-tree="menuTree" ></els-menu>
     <!-- language -->
     <el-select v-model="language" @change="handleChangeLanguage">
       <el-option label="简体中文" value="zh-cn"></el-option>
@@ -74,7 +77,12 @@ const handleCommand = (v: string | number | object) => {
 </script>
 <style lang="scss">
 .layout--header {
-  position: relative;
+  &:hover{
+    backdrop-filter: blur(10px);
+  }
+  .el-menu-item{
+    background: transparent;
+  }
   > .el-select {
     .el-input {
       .el-input__wrapper {

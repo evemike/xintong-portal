@@ -42,7 +42,6 @@ onUpdated(() => {
       return;
     }
     for (const c of e.children) {
-
       gsap.fromTo(
         c,
         {
@@ -58,7 +57,7 @@ onUpdated(() => {
         }
       );
     }
-    
+
     // gsap.fromTo(
     //   e.children[0],
     //   {
@@ -146,6 +145,9 @@ const handleGo = (path: string) => {
     height: 680px;
     > .el-carousel {
       height: 100%;
+      .el-carousel__indicators {
+        display: none;
+      }
       .el-carousel__container {
         height: 100%;
         .el-carousel__item {
@@ -161,7 +163,7 @@ const handleGo = (path: string) => {
       // padding: 16px 32px;
       position: absolute;
       bottom: 0;
-      left:0;
+      left: 0;
       color: #fff;
       // border-radius: 8px;
       overflow: hidden;

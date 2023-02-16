@@ -1,0 +1,166 @@
+{
+  "TITLE": "",
+  "CONTENTS": ["ITEM-1", "ITEM-2"],
+  "ITEM-1": {
+    "name": "imgtext",
+    "class": "h-600px",
+    "bg": { "url": "/image/rczp/header.jpeg", "class": "hover-bg-cover" },
+    "textProps": {
+      "class": "absolute top-160px left-50%",
+      "text": ["rczp.header", "rczp.desc"],
+      "annotation": [
+        {
+          "class": "text-40px c-lime "
+        },
+        { "line": 1, "class": "ml-100px mt-80px" },
+        {
+          "text": "base.zp",
+          "class": "inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+        },
+        {
+          "text": ["base.yc"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slower animate__rubberBand"
+        },
+        {
+          "text": ["base.qxrk"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__bounce"
+        }
+      ]
+    }
+  },
+  "ITEM-2": {
+    "name": "tabs",
+    "class": "pt-100px pb-100px pl-20% pr-20%",
+    "data": [
+      {
+        "label": "rczp.shzp",
+        "name": "tabs",
+        "class":"text-18px lh-32px",
+        "tabsProps": { "tabPosition": "right" },
+        "data": [
+          {
+            "label": {"text":"rczp.sz-n-1","class":""},
+            "name": "text",
+            "class":"p-48px bg-light",
+            "annotation":[
+              {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
+            ],
+            "text": [
+              "rczp.sz-n-1",
+              "rczp.gwzz",
+              "rczp.n1-zz-1",
+              "rczp.n1-zz-2",
+              "rczp.n1-zz-3",
+              "rczp.n1-zz-4",
+              "rczp.n1-zz-5",
+              "rczp.rzyq",
+              "rczp.n1-rz-1",
+              "rczp.n1-rz-2",
+              "rczp.n1-rz-3",
+              "rczp.n1-rz-4"
+            ]
+          },
+          {
+            "label": "rczp.sz-n-2",
+            "name": "text",
+            "class":"p-48px bg-light",
+            "annotation":[
+              {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
+            ],
+            "text": [
+              "rczp.sz-n-2",
+              "rczp.gwzz",
+              "rczp.n2-zz-1",
+              "rczp.n2-zz-2",
+              "rczp.n2-zz-3",
+              "rczp.n2-zz-4",
+              "rczp.n2-zz-5",
+              "rczp.n2-zz-6",
+              "rczp.n2-zz-7",
+              "rczp.n2-zz-8",
+              "rczp.n2-zz-9",
+              "rczp.n2-zz-10",
+              "rczp.n2-zz-11",
+              "rczp.n2-zz-12",
+              "rczp.n2-zz-13"
+            ]
+          },
+          {
+            "label": "rczp.sz-n-3",
+            "name": "text",
+            "class":"p-48px bg-light",
+            "annotation":[
+              {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
+            ],
+            "text": [
+              "rczp.sz-n-3",
+              "rczp.gwzz",
+              "rczp.n3-zz-1",
+              "rczp.n3-zz-2",
+              "rczp.n3-zz-3",
+              "rczp.n3-zz-4",
+              "rczp.n3-zz-5",
+              "rczp.n3-zz-6",
+              "rczp.n3-zz-7",
+              "rczp.n3-zz-8",
+              "rczp.n3-zz-9",
+              "rczp.rzyq",
+              "rczp.n3-rz-1",
+              "rczp.n3-rz-2",
+              "rczp.n3-rz-3"
+            ]
+          }
+        ]
+      },
+      {
+        "label":"rczp.xyzp",
+        "name":"list",
+        "class":"pt-80px pb-80px",
+        "boxClass":"flex justify-between items-center",
+        "data":[
+          {
+            "name":"imgtext",
+            "class":"text-center",
+            "svgProps":{"icon":"icon-jl-1","class":"text-100px"},
+            "textProps":{"text":"rczp.xz-1","class":""}
+          },
+          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+          {
+            "name":"imgtext",
+            "class":"text-center",
+            "svgProps":{"icon":"icon-cs-1","class":"text-100px"},
+            "textProps":{"text":"rczp.xz-2","class":""}
+          },
+          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+          {
+            "name":"imgtext",
+            "class":"text-center",
+            "svgProps":{"icon":"icon-bs-1","class":"text-100px"},
+            "textProps":{"text":"rczp.xz-3","class":""}
+          },
+          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+          {
+            "name":"imgtext",
+            "class":"text-center",
+            "svgProps":{"icon":"icon-ms-1","class":"text-100px"},
+            "textProps":{"text":"rczp.xz-4","class":""}
+          },
+          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+          {
+            "name":"imgtext",
+            "class":"text-center",
+            "svgProps":{"icon":"icon-mftj-1","class":"text-100px"},
+            "textProps":{"text":"rczp.xz-5","class":""}
+          },
+          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+          {
+            "name":"imgtext",
+            "class":"text-center",
+            "svgProps":{"icon":"icon-offer-1","class":"text-100px"},
+            "textProps":{"text":"rczp.xz-6","class":""}
+          }
+        ]
+      }
+    ]
+  }
+}

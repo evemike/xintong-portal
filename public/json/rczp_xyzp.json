@@ -1,0 +1,84 @@
+{
+  "TITLE": "",
+  "CONTENTS": ["ITEM-1", "ITEM-2"],
+  "ITEM-1": {
+    "name": "imgtext",
+    "class": "h-600px",
+    "bg": { "url": "/image/rczp/header.jpeg", "class": "hover-bg-cover" },
+    "textProps": {
+      "class": "absolute top-160px left-50%",
+      "text": ["rczp.header", "rczp.desc"],
+      "annotation": [
+        {
+          "class": "text-40px c-lime "
+        },
+        { "line": 1, "class": "ml-100px mt-80px" },
+        {
+          "text": "base.zp",
+          "class": "inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+        },
+        {
+          "text": ["base.yc"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slower animate__rubberBand"
+        },
+        {
+          "text": ["base.qxrk"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__bounce"
+        }
+      ]
+    }
+  },
+  "ITEM-2": {
+    "label":"rczp.xyzp",
+    "name":"list",
+    "title": {
+      "text": "rczp.xyzp",
+      "class": "text-center text-36px fw-700 mb-60px"
+    },
+    "class":"pt-90px pb-50px w-1200px m-x-auto",
+    "boxClass":"flex justify-between items-center",
+    "data":[
+      {
+        "name":"imgtext",
+        "class":"text-center",
+        "svgProps":{"icon":"icon-jl-1","class":"text-100px"},
+        "textProps":{"text":"rczp.xz-1","class":""}
+      },
+      {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+      {
+        "name":"imgtext",
+        "class":"text-center",
+        "svgProps":{"icon":"icon-cs-1","class":"text-100px"},
+        "textProps":{"text":"rczp.xz-2","class":""}
+      },
+      {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+      {
+        "name":"imgtext",
+        "class":"text-center",
+        "svgProps":{"icon":"icon-bs-1","class":"text-100px"},
+        "textProps":{"text":"rczp.xz-3","class":""}
+      },
+      {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+      {
+        "name":"imgtext",
+        "class":"text-center",
+        "svgProps":{"icon":"icon-ms-1","class":"text-100px"},
+        "textProps":{"text":"rczp.xz-4","class":""}
+      },
+      {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+      {
+        "name":"imgtext",
+        "class":"text-center",
+        "svgProps":{"icon":"icon-mftj-1","class":"text-100px"},
+        "textProps":{"text":"rczp.xz-5","class":""}
+      },
+      {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
+      {
+        "name":"imgtext",
+        "class":"text-center",
+        "svgProps":{"icon":"icon-offer-1","class":"text-100px"},
+        "textProps":{"text":"rczp.xz-6","class":""}
+      }
+    ]
+  }
+}

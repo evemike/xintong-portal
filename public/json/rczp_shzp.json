@@ -1,0 +1,115 @@
+{
+  "TITLE": "",
+  "CONTENTS": ["ITEM-1", "ITEM-2"],
+  "ITEM-1": {
+    "name": "imgtext",
+    "class": "h-600px",
+    "bg": { "url": "/image/rczp/header.jpeg", "class": "hover-bg-cover" },
+    "textProps": {
+      "class": "absolute top-160px left-50%",
+      "text": ["rczp.header", "rczp.desc"],
+      "annotation": [
+        {
+          "class": "text-40px c-lime "
+        },
+        { "line": 1, "class": "ml-100px mt-80px" },
+        {
+          "text": "base.zp",
+          "class": "inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+        },
+        {
+          "text": ["base.yc"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slower animate__rubberBand"
+        },
+        {
+          "text": ["base.qxrk"],
+          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__bounce"
+        }
+      ]
+    }
+  },
+  "ITEM-2":{
+    "label": "rczp.shzp",
+    "name": "tabs",
+    "class":"text-18px lh-32px pt-90px pb-50px w-1200px m-x-auto",
+    "title": {
+      "text": "rczp.shzp",
+      "class": "text-center text-36px fw-700 mb-60px"
+    },
+    "tabsProps": { "tabPosition": "right" },
+    "data": [
+      {
+        "label": {"text":"rczp.sz-n-1","class":""},
+        "name": "text",
+        "class":"p-48px bg-light",
+        "annotation":[
+          {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
+        ],
+        "text": [
+          "rczp.sz-n-1",
+          "rczp.gwzz",
+          "rczp.n1-zz-1",
+          "rczp.n1-zz-2",
+          "rczp.n1-zz-3",
+          "rczp.n1-zz-4",
+          "rczp.n1-zz-5",
+          "rczp.rzyq",
+          "rczp.n1-rz-1",
+          "rczp.n1-rz-2",
+          "rczp.n1-rz-3",
+          "rczp.n1-rz-4"
+        ]
+      },
+      {
+        "label": "rczp.sz-n-2",
+        "name": "text",
+        "class":"p-48px bg-light",
+        "annotation":[
+          {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
+        ],
+        "text": [
+          "rczp.sz-n-2",
+          "rczp.gwzz",
+          "rczp.n2-zz-1",
+          "rczp.n2-zz-2",
+          "rczp.n2-zz-3",
+          "rczp.n2-zz-4",
+          "rczp.n2-zz-5",
+          "rczp.n2-zz-6",
+          "rczp.n2-zz-7",
+          "rczp.n2-zz-8",
+          "rczp.n2-zz-9",
+          "rczp.n2-zz-10",
+          "rczp.n2-zz-11",
+          "rczp.n2-zz-12",
+          "rczp.n2-zz-13"
+        ]
+      },
+      {
+        "label": "rczp.sz-n-3",
+        "name": "text",
+        "class":"p-48px bg-light",
+        "annotation":[
+          {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
+        ],
+        "text": [
+          "rczp.sz-n-3",
+          "rczp.gwzz",
+          "rczp.n3-zz-1",
+          "rczp.n3-zz-2",
+          "rczp.n3-zz-3",
+          "rczp.n3-zz-4",
+          "rczp.n3-zz-5",
+          "rczp.n3-zz-6",
+          "rczp.n3-zz-7",
+          "rczp.n3-zz-8",
+          "rczp.n3-zz-9",
+          "rczp.rzyq",
+          "rczp.n3-rz-1",
+          "rczp.n3-rz-2",
+          "rczp.n3-rz-3"
+        ]
+      }
+    ]
+  }
+}

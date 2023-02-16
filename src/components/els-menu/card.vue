@@ -1,5 +1,5 @@
 <template>
-  <div class="els-menu _card relative z-999 h-100%">
+  <div class="els-menu _card relative z-999 h-100% c-dark-200">
     <div
       class="_header relative flex justify-between items-center z-9 h-100%"
       :class="[headerClass, currentMenu ? 'is-over' : '']"
@@ -28,18 +28,30 @@
         </template>
       </div>
       <div class="_right flex items-center" :class="rightClass">
-        <slot name="right"></slot>
+        <slot name="right"> </slot>
       </div>
     </div>
     <div
       v-if="showCard"
-      class="_card h-300px absolute z-5 top-64px left-0 w-100%"
-      :class="[currentMenu ? 'xyz-in' : 'xyz-out']"
+      class="_card absolute z-5 top-64px left-0 w-100%"
+      :class="[currentMenu && currentMenu.card ? 'xyz-in' : 'xyz-out']"
       xyz="fade up-100% duration-10 short-100% ease-liner"
       @mouseenter="() => handleOver()"
       @mouseleave="() => handleOut()"
     >
-      <slot name="card" v-bind="{ menu: currentMenu }"></slot>
+      <slot name="card" v-bind="{ menu: currentMenu }">
+        <div class="h-130px flex items-center justify-center cursor-pointer">
+          <template v-for="(c, i) in currentMenu?.cls" :key="i">
+            <div class="relative hover-c-blue pl-64px " @click.stop="() => handleGo(c)">
+              <span
+                class="_label text-14px font-normal"
+                :class="itemLabelClass"
+                >{{ t(c.label, c.label) }}</span
+              >
+            </div>
+          </template>
+        </div>
+      </slot>
     </div>
   </div>
 </template>
@@ -55,6 +67,7 @@ type Menu = Record<string, any> & {
   label: string;
   path?: string;
   children?: any[];
+  cls?: any[];
 };
 
 interface Props {
@@ -101,8 +114,7 @@ const handleOut = (m?: any) => {
 const router = useRouter();
 
 const handleGo = (d: any = {}) => {
-  console.log('..............',d)
-  const { path } = d;
+  const path = d.path || d.link;
   if (path) {
     const isUrl = /^http/.test(path);
     if (isUrl) {
@@ -120,7 +132,7 @@ const handleGo = (d: any = {}) => {
     background: #00000088;
     &:hover,
     &.is-over {
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(50px);
     }
     ._menus {
       ._item {
@@ -148,8 +160,8 @@ const handleGo = (d: any = {}) => {
     }
   }
   > ._card {
-    backdrop-filter: blur(10px);
-    background: #00000008;
+    backdrop-filter: blur(50px);
+    background: #ffffffb8;
   }
 }
 </style>

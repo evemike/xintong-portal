@@ -1,6 +1,6 @@
 <template>
   <div class="layout--header top-0 bg-transparent z-999 h-64px">
-    <Card :menus="menuTree" menus-class="pl-20px" :show-card="false">
+    <Card :menus="menuTree" menus-class="pl-20px">
       <template #left>
         <!-- logo -->
         <div v-if="website.logo" class="_logo w-32px pl-20px">
@@ -11,7 +11,6 @@
           {{ t(website.title) }}
         </div>
       </template>
-
       <template #right>
         <el-select
           v-model="language"
@@ -64,6 +63,7 @@ const transImgName = (name: string) => {
 
 <style lang="scss">
 .layout--header {
+  
   ._language {
     .el-input {
       width:120px;
