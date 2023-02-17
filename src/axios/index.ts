@@ -28,8 +28,8 @@ http.interceptors.request.use((config) => {
   if (!config.headers) {
     config.headers = {} as any;
   }
-  if (config.headers?.Authorization == undefined) {
-    config.headers.Authorization = `Bearer ${store.getters.token}`;
+  if ((config.headers as any)?.Authorization == undefined) {
+    (config.headers as any).Authorization = `Bearer ${store.getters.token}`;
   }
   for (const k in config.headers) {
     const v = config.headers[k];

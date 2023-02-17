@@ -1,5 +1,5 @@
 <template>
-  <div class="layout--header top-0 bg-transparent z-999 h-64px">
+  <div class="layout--header top-0 z-999 h-64px">
     <Card :menus="menuTree" menus-class="pl-20px">
       <template #left>
         <!-- logo -->
@@ -7,7 +7,7 @@
           <img :src="`/image/logo/${transImgName(website.logo)}`" />
         </div>
         <!-- title -->
-        <div v-if="website.title" class="_title text-14px font-bold pl-20px c-white">
+        <div v-if="website.title" class="_title text-14px font-bold pl-20px">
           {{ t(website.title) }}
         </div>
       </template>

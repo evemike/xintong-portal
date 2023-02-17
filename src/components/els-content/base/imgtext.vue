@@ -3,6 +3,7 @@
     <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
+    <CTEXT v-if="title" v-bind="textAttr" />
     <CIMG v-if="imgProps" v-bind="imgProps" :is-hover="isHover" />
     <CSVG v-if="svgProps" v-bind="svgProps" :is-hover="isHover" />
     <CTEXT v-if="textProps" v-bind="textProps" :is-hover="isHover" />
@@ -10,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { toRefs, watch } from "vue";
+import { computed, toRefs, watch } from "vue";
 import { useBg } from "../lib/bg";
 import CIMG from "./img.vue";
 import CSVG from "./svg.vue";
@@ -54,14 +55,24 @@ interface Props {
   style?:string
   bg?: string | { url?: string; class?: string };
   isHover?: boolean;
+  title?: string | TextProps | Record<string,any>;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   class: "",
+  title: "",
   style: "",
   bg: "",
 });
 //
+const { title } = toRefs(props)
 const { pageClass, bgClass, bgUrl, isHover } = useBg(props);
+//
+const textAttr = computed(() => {
+  if (typeof title.value === "string") {
+    return { text: title.value };
+  }
+  return title.value;
+});
 //
 </script>

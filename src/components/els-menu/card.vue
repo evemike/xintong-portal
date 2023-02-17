@@ -1,5 +1,5 @@
 <template>
-  <div class="els-menu _card relative z-999 h-100% c-dark-200">
+  <div class="els-menu _card relative z-999 h-100%">
     <div
       class="_header relative flex justify-between items-center z-9 h-100%"
       :class="[headerClass, currentMenu ? 'is-over' : '']"
@@ -11,17 +11,17 @@
       <div class="_menus flex-1 h-100% flex items-center" :class="menusClass">
         <template v-for="(m, i) in menus" :key="`${m.key || ''}-${i}`">
           <div
-            class="_item relative cursor-pointer h-100% flex items-center"
+            class="_item relative cursor-pointer h-100% flex items-center hover-c-blue-500"
             :class="[currentMenu == m ? 'is-active' : '', itemClass]"
             @mouseenter="() => handleOver(m)"
             @mouseleave="() => handleOut(m)"
             @click="() => handleGo(m)"
           >
-            <span class="_label text-14px font-normal c-white" :class="itemLabelClass">{{
+            <span class="_label text-14px font-normal" :class="itemLabelClass">{{
               t(m.label, m.label)
             }}</span>
             <b
-              class="_bg absolute bottom-0 left-0 h-5px w-0 bg-amber"
+              class="_bg absolute bottom-0 left-0 h-5px w-0 bg-blue-500"
               :class="itemBgClass"
             ></b>
           </div>
@@ -129,7 +129,6 @@ const handleGo = (d: any = {}) => {
 <style lang="scss" scoped>
 .els-menu._card {
   ._header {
-    background: #00000088;
     &:hover,
     &.is-over {
       backdrop-filter: blur(50px);
@@ -147,13 +146,13 @@ const handleGo = (d: any = {}) => {
         &.is-active {
           ._label {
             font-weight: bold;
-            text-shadow: 0 -5px 20px gold;
+            // text-shadow: 0 -5px 20px #3b82f6;
           }
         }
         &:hover {
           ._bg {
             width: 100%;
-            box-shadow: 0 0 20px gold;
+            box-shadow: 0 0 20px #3b82f6;
           }
         }
       }
@@ -161,7 +160,7 @@ const handleGo = (d: any = {}) => {
   }
   > ._card {
     backdrop-filter: blur(50px);
-    background: #ffffffb8;
+    // background: #ffffffb8;
   }
 }
 </style>

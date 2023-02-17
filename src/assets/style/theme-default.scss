@@ -1,8 +1,16 @@
 .theme-default{
   color:#333;
   .layout--header{
+    &.is-home{
+      background:#000000aa;
+      .els-menu{
+        ._card{
+          background:#000000aa;
+        }
+      }
+    }
     ._header{
-      background:rgba(0,0,0,.5);
+      // background:rgba(0,0,0,.5);
       &:hover{
         backdrop-filter: blur(10px);
         // background:blue;
@@ -48,14 +56,14 @@
   }
   .hover-items{
     .ts-5 {
-      transition: all .5s linear;
+      transition: all .5s ease-in-out;
     }
     .ts-10{
-      transition: all 1s linear;
+      transition: all 1s ease-in-out;
     }
 
     .ts-20{
-      transition: all 2s linear;
+      transition: all 2s ease-in-out;
     }
     
     // .em-2,.em-3,.bold-item.fade-item,.scale-item-1,.scale-item-2,.scale-item-3,.scale-item-4,.scale-item-5,.scale-item-10{

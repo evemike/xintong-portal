@@ -156,7 +156,7 @@
               "text": ["home.layer.sbzl",""],
               "class": "text-16px fw-800",
               "annotation":[
-                {"line":1,"class":"w-15px h-2px inline-block bg-lime"}
+                {"line":1,"class":"w-15px h-2px inline-block bg-blue-500"}
               ]
             }
           },
@@ -176,7 +176,7 @@
               "text": ["home.layer.znwl",""],
               "class": "text-16px fw-800",
               "annotation":[
-                {"line":1,"class":"w-15px h-2px inline-block bg-lime"}
+                {"line":1,"class":"w-15px h-2px inline-block bg-blue-500"}
               ]
             }
           },
@@ -196,7 +196,7 @@
               "text": ["home.layer.cxzz",""],
               "class": "text-16px fw-800",
               "annotation":[
-                {"line":1,"class":"w-15px h-2px inline-block bg-lime"}
+                {"line":1,"class":"w-15px h-2px inline-block bg-blue-500"}
               ]
             }
           },
@@ -216,7 +216,7 @@
               "text": ["home.layer.pzfw",""],
               "class": "text-16px fw-800",
               "annotation":[
-                {"line":1,"class":"w-15px h-2px inline-block bg-lime"}
+                {"line":1,"class":"w-15px h-2px inline-block bg-blue-500"}
               ]
             }
           }
@@ -457,7 +457,7 @@
         "class": "flex hover-items items-center justify-center",
         "bg": {
           "icon": "icon-yh",
-          "iconClass": "text-250px ts-20 scale-item-10",
+          "iconClass": "text-250px ts-20 scale-item-5",
           "class": "xyz-in rd-600px flex items-center justify-center"
         },
         "xyz": "iterate-infinite duration-30 ease-linear rotate-right-100%",
@@ -478,7 +478,7 @@
             "name": "imgtext",
             "svgProps": {
               "icon": "icon-car-tlj",
-              "class": "text-100px c-amber ts-20 scale-item-2"
+              "class": "text-80px c-amber p-10px ts-20 scale-item-2"
             },
             "textProps": {
               "text": ["home.sor3_t", "home.sor3_d"],
@@ -493,7 +493,7 @@
             "name": "imgtext",
             "svgProps": {
               "icon": "icon-gcs",
-              "class": "text-100px ts-20 scale-item-2"
+              "class": "text-80px ts-20 p-10px scale-item-2"
             },
             "textProps": {
               "text": ["home.sor4_t", "home.sor4_d"],
@@ -523,7 +523,7 @@
     },
     "boxClass": "flex justify-around mt-64px p-24px text-center",
     // "commonClass": "hover-backdrop-blur-10px hover-items hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-orange rd-8px",
-    "commonClass": "hover-backdrop-blur-10px hover-items p-24px w-20% hover-c-orange rd-8px text-16px",
+    "commonClass": "hover-items p-24px w-20% hover-c-orange rd-8px text-16px",
     "data": [
       {
         "name": "text",

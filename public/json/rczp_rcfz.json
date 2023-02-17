@@ -3,161 +3,85 @@
   "CONTENTS": ["ITEM-1", "ITEM-2"],
   "ITEM-1": {
     "name": "imgtext",
-    "class": "h-600px",
-    "bg": { "url": "/image/rczp/header.jpeg", "class": "hover-bg-cover" },
+    "class": "h-460px c-dark-200",
+    "bg": { "url": "/image/rczp/header.png", "class": "" },
     "textProps": {
-      "class": "absolute top-160px left-50%",
-      "text": ["rczp.header", "rczp.desc"],
+      "class": "absolute top-45% w-1106px m-x-auto translate-y--50%",
+      "text": ["rczp.rcfz-h", "rczp.rcfz-hd"],
       "annotation": [
         {
-          "class": "text-40px c-lime "
+          "class": ""
         },
-        { "line": 1, "class": "ml-100px mt-80px" },
-        {
-          "text": "base.zp",
-          "class": "inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
-        },
-        {
-          "text": ["base.yc"],
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slower animate__rubberBand"
-        },
-        {
-          "text": ["base.qxrk"],
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__bounce"
-        }
+        { "line": 0, "class": "text-60px pb-20px w-558px" },
+        { "line": 1, "class": "text-18px w-528px" }
+        // {
+        //   "text": "base.zp",
+        //   "class": "inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+        // },
+        // {
+        //   "text": ["base.yc"],
+        //   "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slower animate__rubberBand"
+        // },
+        // {
+        //   "text": ["base.qxrk"],
+        //   "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__slow animate__bounce"
+        // }
       ]
     }
   },
   "ITEM-2": {
-    "name": "tabs",
-    "class": "pt-100px pb-100px pl-20% pr-20%",
+    "name": "list",
+    "class": "w-100% pt-80px pb-50px",
+    "boxClass": "w-1106px m-x-auto flex justify-between",
+    "commonClass": "w-542px h-402px c-white",
     "data": [
       {
-        "label": "rczp.shzp",
-        "name": "tabs",
-        "class":"text-18px lh-32px",
-        "tabsProps": { "tabPosition": "right" },
+        "name": "list",
+        "bg": "/image/rczp/t-1.png",
+        "boxClass": "relative w-100% h-100% hover-items overflow-hidden",
         "data": [
           {
-            "label": {"text":"rczp.sz-n-1","class":""},
             "name": "text",
-            "class":"p-48px bg-light",
-            "annotation":[
-              {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
-            ],
-            "text": [
-              "rczp.sz-n-1",
-              "rczp.gwzz",
-              "rczp.n1-zz-1",
-              "rczp.n1-zz-2",
-              "rczp.n1-zz-3",
-              "rczp.n1-zz-4",
-              "rczp.n1-zz-5",
-              "rczp.rzyq",
-              "rczp.n1-rz-1",
-              "rczp.n1-rz-2",
-              "rczp.n1-rz-3",
-              "rczp.n1-rz-4"
-            ]
+            "class": "ts-5 text-20px lh-1.5rem c-white important-absolute top-100% w-100% h-100% bg-black box-border bg-op-60 pt-100px p-x-36px pb-20px to-top-0",
+            "text": ["rczp.rcfz_1-d"],
+            "annotation": [{ "line": 0, "class": " fw-800 lh-32px mb-10px " }]
           },
           {
-            "label": "rczp.sz-n-2",
-            "name": "text",
-            "class":"p-48px bg-light",
-            "annotation":[
-              {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
-            ],
-            "text": [
-              "rczp.sz-n-2",
-              "rczp.gwzz",
-              "rczp.n2-zz-1",
-              "rczp.n2-zz-2",
-              "rczp.n2-zz-3",
-              "rczp.n2-zz-4",
-              "rczp.n2-zz-5",
-              "rczp.n2-zz-6",
-              "rczp.n2-zz-7",
-              "rczp.n2-zz-8",
-              "rczp.n2-zz-9",
-              "rczp.n2-zz-10",
-              "rczp.n2-zz-11",
-              "rczp.n2-zz-12",
-              "rczp.n2-zz-13"
-            ]
-          },
-          {
-            "label": "rczp.sz-n-3",
-            "name": "text",
-            "class":"p-48px bg-light",
-            "annotation":[
-              {"line":0,"class":"mb-24px text-24px pb-10px b-b-5px b-b-light-600 b-b-solid"}
-            ],
-            "text": [
-              "rczp.sz-n-3",
-              "rczp.gwzz",
-              "rczp.n3-zz-1",
-              "rczp.n3-zz-2",
-              "rczp.n3-zz-3",
-              "rczp.n3-zz-4",
-              "rczp.n3-zz-5",
-              "rczp.n3-zz-6",
-              "rczp.n3-zz-7",
-              "rczp.n3-zz-8",
-              "rczp.n3-zz-9",
-              "rczp.rzyq",
-              "rczp.n3-rz-1",
-              "rczp.n3-rz-2",
-              "rczp.n3-rz-3"
-            ]
+            "name":"imgtext",
+            "class":"pt-38px pl-36px flex",
+            "imgProps":{
+              "class":"h-38px",
+              "src":"/image/rczp/t-1-icon.png"
+            },
+            "textProps":{
+              "class":"pl-20px text-34px lh-46px",
+              "text":"rczp.rcfz_1-t"
+            }
           }
         ]
       },
       {
-        "label":"rczp.xyzp",
-        "name":"list",
-        "class":"pt-80px pb-80px",
-        "boxClass":"flex justify-between items-center",
-        "data":[
+        "name": "list",
+        "bg": "/image/rczp/t-2.png",
+        "boxClass": "relative w-100% h-100% hover-items overflow-hidden",
+        "data": [
           {
-            "name":"imgtext",
-            "class":"text-center",
-            "svgProps":{"icon":"icon-jl-1","class":"text-100px"},
-            "textProps":{"text":"rczp.xz-1","class":""}
+            "name": "text",
+            "class": "ts-5 text-20px lh-1.5rem c-white important-absolute top-100% w-100% h-100% bg-black box-border bg-op-60 pt-100px p-x-36px pb-20px to-top-0",
+            "text": ["rczp.rcfz_2-d"],
+            "annotation": [{ "line": 0, "class": " fw-800 lh-32px mb-10px " }]
           },
-          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
           {
             "name":"imgtext",
-            "class":"text-center",
-            "svgProps":{"icon":"icon-cs-1","class":"text-100px"},
-            "textProps":{"text":"rczp.xz-2","class":""}
-          },
-          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
-          {
-            "name":"imgtext",
-            "class":"text-center",
-            "svgProps":{"icon":"icon-bs-1","class":"text-100px"},
-            "textProps":{"text":"rczp.xz-3","class":""}
-          },
-          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
-          {
-            "name":"imgtext",
-            "class":"text-center",
-            "svgProps":{"icon":"icon-ms-1","class":"text-100px"},
-            "textProps":{"text":"rczp.xz-4","class":""}
-          },
-          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
-          {
-            "name":"imgtext",
-            "class":"text-center",
-            "svgProps":{"icon":"icon-mftj-1","class":"text-100px"},
-            "textProps":{"text":"rczp.xz-5","class":""}
-          },
-          {"name":"svg","icon":"icon-a-r-1","clsss":"text-24px"},
-          {
-            "name":"imgtext",
-            "class":"text-center",
-            "svgProps":{"icon":"icon-offer-1","class":"text-100px"},
-            "textProps":{"text":"rczp.xz-6","class":""}
+            "class":"pt-38px pl-36px flex",
+            "imgProps":{
+              "class":"h-38px",
+              "src":"/image/rczp/t-2-icon.png"
+            },
+            "textProps":{
+              "class":"pl-20px text-34px lh-46px",
+              "text":"rczp.rcfz_2-t"
+            }
           }
         ]
       }
