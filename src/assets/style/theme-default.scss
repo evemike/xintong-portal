@@ -118,5 +118,11 @@
     &:hover .h-info{
       color:#909399;
     }
+    &:hover .to-top-0{
+      top:0;
+    }
+    &:hover .to-y-0{
+      transform: translateY(0);
+    }
   }
 }

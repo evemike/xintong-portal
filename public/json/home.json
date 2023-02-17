@@ -106,7 +106,7 @@
   //   ]
   // },
   // 页面显示内容的顺序 , 内容具体配置在下方
-  "CONTENTS": ["ITEM-0", "ITEM-1", "ITEM-2", "ITEM-3"],
+  "CONTENTS": ["ITEM-0", "ITEM-11","ITEM-1", "ITEM-2", "ITEM-3"],
   "ITEM-0": {
     "name": "list",
     "bg": {
@@ -221,6 +221,83 @@
             }
           }
         ]
+      }
+    ]
+  },
+  "ITEM-11":{
+    "name": "list",
+    "class": "pt-90px pb-50px c-dark-200",
+    "bg": "/image/home/bg-9.png",
+    "title": {
+      "text": ["cpfw.header","cpfw.desc"],
+      "annotation":[
+        { "line": 0, "class": "text-36px fw-700 lh-46px mb-15px h-34px" },
+        { "line": 1, "class": "text-16px fw-400 h-17px lh-22px mt-40px" }
+      ],
+      "class": "text-center  mb-60px"
+    },
+    "boxClass": "flex justify-between flex-wrap w-1200px m-x-auto pb-24px",
+    "commonClass": "w-24% h-250px hover-items text-center box-border overflow-hidden",
+    "data":[
+      {
+        "name":"imgtext",
+        "imgProps":{
+          "src":"/image/cpfw/cp-1.png",
+          "class":"bg-dark h-100%"
+        },
+        "textProps":{
+          "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
+          "text":["cpfw.cp1_t","cpfw.cp1_d","cpfw.cp1_ds"],
+          "annotation":[
+            {"line":0,"class":"text-20px fw-800 lh-32px mb-10px"},
+            {"line":[1,2,3,4,5,6,7,8],"class":"text-12px text-left indent-8"}
+          ]
+        }
+      },
+      {
+        "name":"imgtext",
+        "imgProps":{
+          "src":"/image/cpfw/cp-2.jpg",
+          "class":"bg-dark h-100%"
+        },
+        "textProps":{
+          "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
+          "text":["cpfw.cp2_t","cpfw.cp2_d","cpfw.cp2_ds"],
+          "annotation":[
+            {"line":0,"class":"text-20px fw-800 lh-32px mb-10px"},
+            {"line":[1,2,3,4,5,6,7,8],"class":"text-12px text-left indent-8"}
+          ]
+        }
+      },
+      {
+        "name":"imgtext",
+        "imgProps":{
+          "src":"/image/cpfw/cp-3.png",
+          "class":"bg-dark h-100%"
+        },
+        "textProps":{
+          "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
+          "text":["cpfw.cp3_t","cpfw.cp3_d","cpfw.cp3_ds"],
+          "annotation":[
+            {"line":0,"class":"text-20px fw-800 lh-32px mb-10px"},
+            {"line":[1,2,3,4,5,6,7,8],"class":"text-12px text-left indent-8"}
+          ]
+        }
+      },
+      {
+        "name":"imgtext",
+        "imgProps":{
+          "src":"/image/cpfw/cp-4.jpg",
+          "class":"bg-dark h-100%"
+        },
+        "textProps":{
+          "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
+          "text":["cpfw.cp4_t","cpfw.cp4_d","cpfw.cp4_ds"],
+          "annotation":[
+            {"line":0,"class":"text-20px fw-800 lh-32px mb-10px"},
+            {"line":[1,2,3,4,5,6,7,8],"class":"text-12px text-left indent-8"}
+          ]
+        }
       }
     ]
   },
@@ -433,7 +510,7 @@
   },
   "ITEM-3": {
     "name": "list",
-    // "bg": "/image/home/bg-3.jpeg",
+    "bg": "/image/home/bg-8.png",
     "class": "pt-90px pb-50px c-dark-200",
     "title": {
       "name": "text",
