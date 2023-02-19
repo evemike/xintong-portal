@@ -2,7 +2,7 @@
   <div class="layout--header z-999 flex items-center justify-between">
   <div class="flex items-center">
   <!-- logo -->
-  <div v-if="website.logo" class="logo w-150px">
+  <div v-if="website.logo" class="ml-24px logo w-150px">
       <img class="w-100% h-auto" :src="`/image/logo/${transImgName(website.logo)}`" />
     </div>
     <!-- title -->

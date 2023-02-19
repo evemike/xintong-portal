@@ -43,8 +43,8 @@ const nodeType = getType(node);
   </el-menu-item-group>
   <el-sub-menu v-else-if="nodeType == 'sub'" v-bind="attr">
     <template #title>
-      <el-icon>
-        <svg-icon v-if="icon" :id="icon"></svg-icon>
+      <el-icon v-if="icon">
+        <svg-icon  :id="icon"></svg-icon>
       </el-icon>
       <span v-if="label">{{ t(label,label) }}</span>
     </template>
@@ -58,8 +58,8 @@ const nodeType = getType(node);
     </template>
   </el-sub-menu>
   <el-menu-item v-else-if="nodeType == 'item'" v-bind="attr">
-    <el-icon>
-      <svg-icon v-if="icon" :id="icon"></svg-icon>
+    <el-icon v-if="icon">
+      <svg-icon :id="icon"></svg-icon>
     </el-icon>
     <span v-if="label">{{ t(label,label) }}</span>
   </el-menu-item>
