@@ -3,8 +3,8 @@
   "CONTENTS": ["ITEM-1","ITEM-2"],
   "ITEM-1": {
     "name": "imgtext",
-    "class": "h-800px",
-    "bg": { "url": "/image/cpfw/header.jpg", "class": "hover-bg-cover" }
+    "class": "h-720px",
+    "bg": { "url": "/image/cpfw/header.png", "class": "hover-bg-cover" }
     // "imgProps":{
     //   "src":"/image/jyzl/phone.gif",
     //   "class":"w-100px top-230px left-500px important-absolute"

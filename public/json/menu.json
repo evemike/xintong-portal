@@ -1,8 +1,13 @@
 [
     // 首页
     {"label":"menu.home","index":"/home","path":"/home"},
+    {"label":"menu.jyzl","card":true,"children":[
+        {"label":"menu.jyzl_ywjs","index":"/base/page/jyzl_ywjs","path":"/base/page/jyzl_ywjs"},
+        {"label":"menu.jyzl_cthzl","index":"/base/page/jyzl_cthzl","path":"/base/page/jyzl_cthzl"},
+        {"label":"menu.jyzl_zlfw","index":"/base/page/jyzl_zlfw","path":"/base/page/jyzl_zlfw"}
+    ]},
     {"label":"menu.cpfw","index":"/base/page/cpfw","path":"/base/page/cpfw"},
-    {"label":"menu.jyzl","index":"/base/page/jyzl","path":"/base/page/jyzl"},
+    
     {"label":"menu.gswh","index":"/base/page/gswh","path":"/base/page/gswh"},
     {"label":"menu.rczp","index":"rczp","card":true,"children":[
         {"label":"menu.rczp_rcfz","index":"/base/page/rczp_rcfz","path":"/base/page/rczp_rcfz"},

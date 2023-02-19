@@ -16,7 +16,7 @@
     },
     {
       "class": "h-720px",
-      "textClass": "top-20% text-center",
+      "textClass": "top-15% text-center",
       "bg": { "url": "/image/home/b-2.png", "class": "hover-bg-cover" },
       "text": "home.hxjzg",
       "annotation": [
@@ -31,7 +31,7 @@
     {
       "class": "h-720px",
       "bg": "/image/home/b-4.png",
-      "textClass": "top-20% text-center",
+      "textClass": "top-24px text-center",
       "text": "home.hzgy",
       "annotation": [
         {
@@ -239,7 +239,7 @@
       "class": "text-center  mb-60px"
     },
     "boxClass": "flex justify-between flex-wrap w-1200px m-x-auto pb-24px",
-    "commonClass": "w-24% h-250px hover-items text-center box-border overflow-hidden",
+    "commonClass": "w-24% h-300px hover-items text-center box-border overflow-hidden",
     "data":[
       {
         "name":"imgtext",
@@ -406,7 +406,7 @@
   "ITEM-2": {
     "name": "list",
     // "bg": "/image/home/bg-7.png",
-    "class": "pt-120px pb-90px c-dark-200 pb-50px",
+    "class": "pt-90px pb-9=50px c-dark-200 pb-50px",
     "title": {
       "text": ["home.sor_t", "home.sor_d"],
       "class": "text-center  mb-60px",
@@ -540,7 +540,7 @@
         { "line": 1, "class": "text-16px fw-400 h-17px lh-22px mt-40px" }
       ]
     },
-    "boxClass": "flex w-1200px m-x-auto justify-between mt-200px p-y-24px text-center",
+    "boxClass": "flex w-1200px m-x-auto justify-between mt-120px p-y-24px text-center",
     // "commonClass": "hover-backdrop-blur-10px hover-items hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-orange rd-8px",
     "commonClass": "hover-items p-24px w-20% rd-8px text-16px",
     "data": [
