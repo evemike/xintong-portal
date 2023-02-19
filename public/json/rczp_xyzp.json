@@ -3,23 +3,23 @@
   "CONTENTS": ["ITEM-1", "ITEM-2"],
   "ITEM-1": {
     "name": "imgtext",
-    "class": "h-600px c-dark-200",
-    "bg": { "url": "/image/rczp/xyzp.png", "class": "hover-bg-cover" },
-    "textProps": {
-      "class": "absolute top-160px left-10% w-50%",
-      "text": ["rczp.header", "menu.rczp_xyzp"],
-      "annotation": [
-        {
-          "class": "text-36px fw-800 "
-        },
-        { "line": 1, "class": "ml-100px mt-80px" },
-        {
-          "text": "base.zp",
-          "line":0,
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__heartBeat"
-        }
-      ]
-    }
+    "class": "h-680px c-dark-200",
+    "bg": { "url": "/image/rczp/xyzp.png", "class": "hover-bg-cover" }
+    // "textProps": {
+    //   "class": "absolute top-160px left-10% w-50%",
+    //   "text": ["rczp.header", "menu.rczp_xyzp"],
+    //   "annotation": [
+    //     {
+    //       "class": "text-36px fw-800 "
+    //     },
+    //     { "line": 1, "class": "ml-100px mt-80px" },
+    //     {
+    //       "text": "base.zp",
+    //       "line":0,
+    //       "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__heartBeat"
+    //     }
+    //   ]
+    // }
   },
   "ITEM-2": {
     "label":"rczp.xyzp",

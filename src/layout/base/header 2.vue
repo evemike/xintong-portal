@@ -2,11 +2,11 @@
   <div class="layout--header z-999 flex items-center justify-between">
   <div class="flex items-center">
   <!-- logo -->
-  <div v-if="website.logo" class="logo">
-      <img :src="`/image/logo/${transImgName(website.logo)}`" />
+  <div v-if="website.logo" class="logo w-150px">
+      <img class="w-100% h-auto" :src="`/image/logo/${transImgName(website.logo)}`" />
     </div>
     <!-- title -->
-    <div v-if="website.title" class="title w-200px">{{ t(website.title) }}</div>
+    <div v-if="website.title" class="_title w-300px text-14px font-bold pl-20px">{{ t(website.title) }}</div>
   </div>
     
     <!-- menu -->

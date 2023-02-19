@@ -4,34 +4,34 @@
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-800px",
-    "bg": { "url": "/image/jyzl/header.jpg", "class": "hover-bg-cover" },
+    "bg": { "url": "/image/jyzl/header.jpg", "class": "hover-bg-cover" }
     // "imgProps":{
     //   "src":"/image/jyzl/phone.gif",
     //   "class":"w-100px top-230px left-500px important-absolute"
     // },
-    "textProps": {
-      "class": "absolute top-200px left-48px",
-      "text": ["jyzl.header", "jyzl.desc"],
-      "annotation": [
-        {
-          "class": "text-40px c-white "
-        },
-        { "line": 1, "class": "ml-80px" },
-        {
-          "text":"base.zuling",
-          "line":0,
-          "class":"inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
-        },
-        {
-          "text": ["base.duozhong"],
-          "class": "inline-block text-100px animate__infinite animate__animated animate__slow animate__bounceInLeft"
-        },
-        {
-          "text": ["base.duoyuanhua"],
-          "class": "inline-block text-100px animate__infinite animate__animated animate__slow animate__zoomInDown"
-        }
-      ]
-    }
+    // "textProps": {
+    //   "class": "absolute top-200px left-48px",
+    //   "text": ["jyzl.header", "jyzl.desc"],
+    //   "annotation": [
+    //     {
+    //       "class": "text-40px c-white "
+    //     },
+    //     { "line": 1, "class": "ml-80px" },
+    //     {
+    //       "text":"base.zuling",
+    //       "line":0,
+    //       "class":"inline-block ml-24px mr-24px text-100px animate__infinite animate__animated animate__heartBeat"
+    //     },
+    //     {
+    //       "text": ["base.duozhong"],
+    //       "class": "inline-block text-100px animate__infinite animate__animated animate__slow animate__bounceInLeft"
+    //     },
+    //     {
+    //       "text": ["base.duoyuanhua"],
+    //       "class": "inline-block text-100px animate__infinite animate__animated animate__slow animate__zoomInDown"
+    //     }
+    //   ]
+    // }
   },
   "ITEM-2":{
     "name":"list",

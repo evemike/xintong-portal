@@ -4,25 +4,25 @@
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-600px",
-    "bg": { "url": "/image/gywm/header.jpg", "class": "hover-bg-cover" },
-    "imgProps": {
-      "src": "/image/gywm/h-c.png",
-      "class": "w-600px top-76px left-55% important-absolute"
-    },
-    "textProps": {
-      "class": "important-absolute top-160px left-200px w-30%",
-      "text": ["gywm.header", "menu.gywm_lxwm"],
-      "annotation": [
-        {
-          "class": "text-36px c-amber-500 fw-800"
-        },
-        { "line": 1, "class": "ml-80px mt-36px" },
-        {
-          "text": "base.xt",
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__heartBeat"
-        }
-      ]
-    }
+    "bg": { "url": "/image/gywm/lxwm.jpg", "class": "hover-bg-cover" }
+    // "imgProps": {
+    //   "src": "/image/gywm/h-c.png",
+    //   "class": "w-600px top-76px left-55% important-absolute"
+    // }
+    // "textProps": {
+    //   "class": "important-absolute top-160px left-200px w-30%",
+    //   "text": ["gywm.header", "menu.gywm_lxwm"],
+    //   "annotation": [
+    //     {
+    //       "class": "text-36px c-amber-500 fw-800"
+    //     },
+    //     { "line": 1, "class": "ml-80px mt-36px" },
+    //     {
+    //       "text": "base.xt",
+    //       "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__heartBeat"
+    //     }
+    //   ]
+    // }
   },
   "ITEM-2": {
     "name": "list",
@@ -370,12 +370,12 @@
     "data": [
       {
         "name": "img",
-        "class": "w-60%",
+        "class": "w-600px h-auto",
         "src": "/image/gywm/md-5.png"
       },
       {
         "name": "text",
-        "class": "text-18px  box-border w-35% lh-48px",
+        "class": "text-24px  box-border w-45% lh-32px",
         "text": [
           "gywm.addr",
           "gywm.yb",
@@ -387,7 +387,10 @@
           "gywm.rl_t",
           "gywm.rl_p"
         ],
-        "annotation": [{ "line": [3, 5, 7], "class": "mt-24px" }]
+        "annotation": [
+          {"class": "mt-10px" },
+          {"text":["base.addr","base.yb","base.tel","gywm.zl_t","gywm.wx_t","gywm.rl_t"],"class":"fw-800"}
+        ]
       }
     ]
   }

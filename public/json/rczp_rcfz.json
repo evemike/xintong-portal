@@ -3,7 +3,7 @@
   "CONTENTS": ["ITEM-1", "ITEM-2"],
   "ITEM-1": {
     "name": "imgtext",
-    "class": "h-460px c-dark-200",
+    "class": "h-680px c-dark-200",
     "bg": { "url": "/image/rczp/header.png", "class": "" },
     "textProps": {
       "class": "absolute top-45% w-1106px m-x-auto translate-y--50%",

@@ -4,25 +4,26 @@
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-600px",
-    "bg": { "url": "/image/gywm/gsjs.png", "class": "hover-bg-cover" },
+    "bg": { "url": "/image/gywm/gsjs.png", "class": "hover-bg-cover" }
     // "imgProps": {
     //   "src": "/image/gywm/h-c.png",
     //   "class": "w-600px top-76px left-55% important-absolute"
     // },
-    "textProps": {
-      "class": "important-absolute top-160px left-200px w-30%",
-      "text": ["gywm.header", "menu.gywm_gsjs"],
-      "annotation": [
-        {
-          "class": "text-36px c-amber-500 fw-800"
-        },
-        { "line": 1, "class": "ml-80px mt-36px" },
-        {
-          "text": "base.xt",
-          "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__heartBeat"
-        }
-      ]
-    }
+    // "textProps": {
+    //   "class": "important-absolute top-160px left-200px w-30%",
+    //   // "text": [ "menu.gywm_gsjs"],
+    //   // "text": ["gywm.header", "menu.gywm_gsjs"],
+    //   "annotation": [
+    //     {
+    //       "class": "text-36px c-amber-500 fw-800"
+    //     },
+    //     { "line": 1, "class": "ml-80px mt-36px" }
+    //     // {
+    //     //   "text": "base.xt",
+    //     //   "class": "inline-block ml-24px mr-24px text-60px animate__infinite animate__animated animate__heartBeat"
+    //     // }
+    //   ]
+    // }
   },
   "ITEM-20": {
     "name": "list",
@@ -36,12 +37,14 @@
     "data": [
       { 
         "name": "imgtext", 
-        // "imgProps": {
-        //   "src":"/image/gywm/kh-1.png"
-        // }, 
+        "class":"flex justify-between",
+        "imgProps": {
+          "src":"/image/gywm/bg-4.png",
+          "imgClass":"important-w-600px important-h-auto"
+        }, 
         "textProps": {
           "text":"gywm.jj_d",
-          "class":"indent-2em",
+          "class":"indent-2em p-x-24px lh-34px",
           "annotation":[]
         } 
       }
@@ -50,13 +53,16 @@
   },
   "ITEM-2": {
     "name": "list",
-    "class": "pt-90px pb-50px c-dark-200 text-36px",
-    "bg": "/image/gywm/bg-1.png",
+    "class": "pt-90px pb-50px c-white text-36px",
+    "bg": {
+      "url":"/image/gywm/bg-1.png",
+      "class":"important-w-1200px m-x-auto translate-x--50% important-left-50% important-h-560px important-top-200px"
+    },
     "title": {
       "text": "gywm.zzjg_t",
-      "class": "text-center fw-800 pb-40px"
+      "class": "text-center fw-800 pb-40px c-dark-200" 
     },
-    "boxClass": "w-1200px m-x-auto flex justify-between items-center",
+    "boxClass": "w-1200px m-x-auto flex justify-between",
     "data": [
       {
         "name": "list",
@@ -74,17 +80,17 @@
                 "text": "gywm.zzjg_0",
                 "annotation": [
                   {
-                    "class": "inline-flex fw-800 bg-teal items-center pl-20px pr-20px rd-8px box-border border-10px border-teal border-solid h-100% "
+                    "class": "inline-flex text-24px fw-800 bg-05519d  items-center rd-8px p-x-16px p-y-8px box-border  border-teal h-100% "
                   }
                 ]
               },
               {
                 "name": "empty",
-                "class": "line-1 w-10px h-100px left-675px bg-teal z-0"
+                "class": "line-1 w-5px h-100px left-675px bg-black z-0"
               },
               {
                 "name": "imgtext",
-                "class": "flex text-center rd-8px bg-sky items-center justify-around p-x-16px p-y-8px z-99",
+                "class": "flex text-center rd-8px bg-05519d  items-center justify-around p-x-16px p-y-8px z-99",
                 "svgProps": {
                   "icon": "icon-people",
                   "class": "text-32px"
@@ -96,11 +102,11 @@
               },
               {
                 "name": "empty",
-                "class": "line-2 w-10px h-80px bg-teal z-0"
+                "class": "line-2 w-5px h-130px bg-black z-0"
               },
               {
                 "name": "imgtext",
-                "class": "rd-8px bg-sky flex items-center justify-around z-99 p-x-16px p-y-8px",
+                "class": "rd-8px bg-05519d  flex items-center justify-around z-99 p-x-16px p-y-8px",
                 "svgProps": {
                   "icon": "icon-people",
                   "class": "text-32px"
@@ -112,18 +118,18 @@
               },
               {
                 "name": "empty",
-                "class": "line-0 w-10px h-60px bg-teal z-0"
+                "class": "line-0 w-5px h-110px bg-black z-0"
               },
               {
                 "name": "empty",
-                "class": "line-0 w-100% h-10px bg-teal z-0 rd-10px"
+                "class": "line-0 w-100% h-5px bg-black z-0 rd-5px"
               }
             ]
           },
           {
             "name": "list",
             "class": "flex justify-around",
-            "common": { "class": "w-10px  bg-teal h-40px" },
+            "common": { "class": "w-5px  bg-black h-40px" },
             "data": [
               {
                 "name": "empty",
@@ -151,7 +157,7 @@
             "name": "list",
             "class": "flex justify-around",
             "common": {
-              "class": "rd-8px bg-sky z-99 flex items-center justify-around text-18px p-x-16px p-y-8px"
+              "class": "rd-8px bg-05519d  z-99 flex items-center justify-around text-18px p-x-16px p-y-8px"
             },
             "data": [
               {
@@ -220,7 +226,7 @@
       },
       {
         "name": "list",
-        "class": "w-40% box-border lh-20px",
+        "class": "w-40% box-border lh-20px c-dark-200",
         "data": [
           {
             "name": "imgtext",
@@ -234,7 +240,7 @@
                 {
                   "text": "gywm.glb",
                   "line": 0,
-                  "class": "rd-r-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+                  "class": "rd-r-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
                 },
                 {
                   "line": 1,
@@ -256,7 +262,7 @@
                 {
                   "text": "gywm.cwb",
                   "line": 0,
-                  "class": "rd-l-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+                  "class": "rd-l-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
                 },
                 {
                   "line": 1,
@@ -277,7 +283,7 @@
                 {
                   "text": "gywm.jsb",
                   "line": 0,
-                  "class": "rd-r-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+                  "class": "rd-r-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
                 },
                 {
                   "line": 1,
@@ -299,7 +305,7 @@
                 {
                   "text": "gywm.wzb",
                   "line": 0,
-                  "class": "rd-l-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+                  "class": "rd-l-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
                 },
                 {
                   "line": 1,
@@ -320,7 +326,7 @@
                 {
                   "text": "gywm.rsb",
                   "line": 0,
-                  "class": "rd-r-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+                  "class": "rd-r-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
                 },
                 {
                   "line": 1,
@@ -356,7 +362,7 @@
             {
               "text": "gywm.glb",
               "line": 0,
-              "class": "rd-r-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+              "class": "rd-r-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
             },
             {
               "line": 1,
@@ -378,7 +384,7 @@
             {
               "text": "gywm.cwb",
               "line": 0,
-              "class": "rd-l-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+              "class": "rd-l-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
             },
             {
               "line": 1,
@@ -399,7 +405,7 @@
             {
               "text": "gywm.jsb",
               "line": 0,
-              "class": "rd-r-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+              "class": "rd-r-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
             },
             {
               "line": 1,
@@ -421,7 +427,7 @@
             {
               "text": "gywm.wzb",
               "line": 0,
-              "class": "rd-l-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+              "class": "rd-l-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
             },
             {
               "line": 1,
@@ -442,7 +448,7 @@
             {
               "text": "gywm.rsb",
               "line": 0,
-              "class": "rd-r-36px text-20px bg-blue-800 c-white p-x-50px p-y-4px"
+              "class": "rd-r-36px text-20px bg-05519d c-white p-x-50px p-y-4px"
             },
             {
               "line": 1,

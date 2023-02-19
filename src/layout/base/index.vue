@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import "@/assets/style/layout.scss";
 
-import HeaderView from "./header.vue";
-// import HeaderView from "./header 2.vue";
+// import HeaderView from "./header.vue";
+import HeaderView from "./header 2.vue";
 import FooterView from "./footer.vue";
 import ContentView from "./content.vue";
 import { ElBacktop } from "element-plus"

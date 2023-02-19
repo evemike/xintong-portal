@@ -3,7 +3,7 @@
   // 轮播图 走马灯 图片 ， 当数组长度是 0 的时候，走马灯模块将会不显示
   "CAROUSEL": [
     {
-      "class": "h-680px",
+      "class": "h-720px",
       "bg": "/image/home/b-1.jpg",
       "textClass": "top-20% text-center",
       "text": "home.desc",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "class": "h-680px",
+      "class": "h-720px",
       "textClass": "top-20% text-center",
       "bg": { "url": "/image/home/b-2.jpg", "class": "hover-bg-cover" },
       "text": "home.hxjzg",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "class": "h-680px",
+      "class": "h-720px",
       "bg": "/image/home/b-4.png",
       "textClass": "top-20% text-center",
       "text": "home.hzgy",
@@ -244,8 +244,8 @@
       {
         "name":"imgtext",
         "imgProps":{
-          "src":"/image/cpfw/cp-1.png",
-          "class":"bg-dark h-100%"
+          "src":"/image/home/zzw.png",
+          "class":"bg-white h-100%"
         },
         "textProps":{
           "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
@@ -259,8 +259,8 @@
       {
         "name":"imgtext",
         "imgProps":{
-          "src":"/image/cpfw/cp-2.jpg",
-          "class":"bg-dark h-100%"
+          "src":"/image/home/jsj.png",
+          "class":"bg-white h-100%"
         },
         "textProps":{
           "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
@@ -274,8 +274,8 @@
       {
         "name":"imgtext",
         "imgProps":{
-          "src":"/image/cpfw/cp-3.png",
-          "class":"bg-dark h-100%"
+          "src":"/image/home/cc.png",
+          "class":"bg-white h-100%"
         },
         "textProps":{
           "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
@@ -289,8 +289,8 @@
       {
         "name":"imgtext",
         "imgProps":{
-          "src":"/image/cpfw/cp-4.jpg",
-          "class":"bg-dark h-100%"
+          "src":"/image/home/qyc.png",
+          "class":"bg-white h-100%"
         },
         "textProps":{
           "class":"ts-5 c-white important-absolute top-198px w-100% h-100% bg-black box-border p-10px bg-op-60 to-top-0",
@@ -424,9 +424,13 @@
         "data": [
           {
             "name": "imgtext",
-            "svgProps": {
-              "icon": "icon-car-tc",
-              "class": "text-100px c-red ts-20 scale-item-2"
+            // "svgProps": {
+            //   "icon": "icon-car-tc",
+            //   "class": "text-100px c-red ts-20 scale-item-2"
+            // },
+            "imgProps":{
+              "src":"/image/home/cp.png",
+              "imgClass":"important-w-100px important-h-auto ts-10 scale-item-2"
             },
             "textProps": {
               "text": ["home.sor1_t", "home.sor1_d"],
@@ -439,9 +443,13 @@
           },
           {
             "name": "imgtext",
-            "svgProps": {
-              "icon": "icon-car-ttj",
-              "class": "text-100px c-orange ts-20 scale-item-2"
+            // "svgProps": {
+            //   "icon": "icon-car-ttj",
+            //   "class": "text-100px c-orange ts-20 scale-item-2"
+            // },
+            "imgProps":{
+              "src":"/image/home/zl.png",
+              "imgClass":"important-w-100px important-h-auto ts-10 scale-item-2"
             },
             "textProps": {
               "text": ["home.sor2_t", "home.sor2_d"],
@@ -478,9 +486,13 @@
         "data": [
           {
             "name": "imgtext",
-            "svgProps": {
-              "icon": "icon-car-tlj",
-              "class": "text-80px c-amber p-10px ts-20 scale-item-2"
+            // "svgProps": {
+            //   "icon": "icon-car-tlj",
+            //   "class": "text-80px c-amber p-10px ts-20 scale-item-2"
+            // },
+            "imgProps":{
+              "src":"/image/home/sc.png",
+              "imgClass":"important-w-100px important-h-auto ts-10 scale-item-2"
             },
             "textProps": {
               "text": ["home.sor3_t", "home.sor3_d"],
@@ -493,9 +505,13 @@
           },
           {
             "name": "imgtext",
-            "svgProps": {
-              "icon": "icon-gcs",
-              "class": "text-80px ts-20 p-10px scale-item-2"
+            // "svgProps": {
+            //   "icon": "icon-gcs",
+            //   "class": "text-80px ts-20 p-10px scale-item-2"
+            // },
+            "imgProps":{
+              "src":"/image/home/fw.png",
+              "imgClass":"important-w-100px important-h-auto ts-10 scale-item-2"
             },
             "textProps": {
               "text": ["home.sor4_t", "home.sor4_d"],
@@ -513,26 +529,26 @@
   "ITEM-3": {
     "name": "list",
     "bg": "/image/home/bg-8.png",
-    "class": "pt-90px pb-50px c-dark-200",
+    "class": "pt-90px pb-50px c-dark-200 h-600px",
     "title": {
       "name": "text",
       "text": ["home.tg_t", "home.tg_d"],
-      "class": "text-center  mb-60px",
+      "class": "text-center  mb-60px mt-64px",
       "annotation": [
         { "line": 0, "class": "text-36px fw-700 lh-46px mb-15px h-34px" },
         { "line": 1, "class": "text-16px fw-400 h-17px lh-22px mt-40px" }
       ]
     },
-    "boxClass": "flex w-1200px m-x-auto justify-between mt-64px p-y-24px text-center",
+    "boxClass": "flex w-1200px m-x-auto justify-between mt-200px p-y-24px text-center",
     // "commonClass": "hover-backdrop-blur-10px hover-items hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-orange rd-8px",
-    "commonClass": "hover-items p-24px w-20% hover-c-orange rd-8px text-16px",
+    "commonClass": "hover-items p-24px w-20% rd-8px text-16px",
     "data": [
       {
         "name": "text",
 
         "text": ["home.tg1_n", "home.tg1_d", "home.tg1_t"],
         "annotation": [
-          { "class": "scale-item-5 ts-5" },
+          { "class": "scale-item-5 ts-5 h-primary" },
           { "line": 0, "class": "text-36px inline-block" },
           { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
@@ -542,7 +558,7 @@
         "name": "text",
         "text": ["home.tg2_n", "home.tg2_d", "home.tg2_t"],
         "annotation": [
-          { "class": "scale-item-5 ts-5" },
+          { "class": "scale-item-5 ts-5 h-primary" },
           { "line": 0, "class": "text-36px fw-bold inline-block" },
           { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
@@ -552,7 +568,7 @@
         "name": "text",
         "text": ["home.tg3_n", "home.tg3_d", "home.tg3_t"],
         "annotation": [
-          { "class": "scale-item-5 ts-5" },
+          { "class": "scale-item-5 ts-5 h-primary" },
           { "line": 0, "class": "text-36px fw-bold inline-block" },
           { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
@@ -562,7 +578,7 @@
         "name": "text",
         "text": ["home.tg4_n", "home.tg4_d", "home.tg4_t"],
         "annotation": [
-          { "class": "scale-item-5 ts-5" },
+          { "class": "scale-item-5 ts-5 h-primary" },
           { "line": 0, "class": "text-36px fw-bold inline-block" },
           { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
