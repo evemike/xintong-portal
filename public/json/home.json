@@ -22,23 +22,25 @@
       "annotation": [
         {
           // "class": "font-700 text-48px c-white text-shadow-lg block mt-2em text-center"
-          "class": "font-700 text-62px c-white text-shadow-lg block"
-        }
-        // { "text": "base.satisfied", "class": "text-64px" }
+          // "class": "font-700 text-62px c-white text-shadow-lg block"
+          "class": "font-700 text-48px c-white text-shadow-lg block"
+        },
+        { "text": "base.satisfied", "class": "text-64px" }
       ]
     },
     {
       "class": "h-680px",
-      "bg": "/image/home/b-3.png",
+      "bg": "/image/home/b-4.png",
       "textClass": "top-20% text-center",
       "text": "home.hzgy",
       "annotation": [
         {
           // "class": "font-700 text-48px c-white text-shadow-lg block ml-2em mt-3em"
-          "class": "font-700 text-64px c-white text-shadow-lg block"
-        }
-        // { "text": ["base.cooperation", "base.tong"], "class": "text-64px" },
-        // { "text": "base.rong", "class": "text-64px" }
+          // "class": "font-700 text-64px c-white text-shadow-lg block"
+          "class": "font-700 text-48px c-white text-shadow-lg block"
+        },
+        { "text": ["base.cooperation", "base.tong"], "class": "text-64px" },
+        { "text": "base.rong", "class": "text-84px" }
       ]
     }
   ],
@@ -166,7 +168,7 @@
             "style": "background: linear-gradient(0deg, #c9d4e7 0%, #ffffff 100%);",
             "imgProps":{
               "src":"/image/home/m0-2.png",
-              "class":"h-62px p-4px scale-item-2 ts-10"
+              "class":"h-62px w-90px p-4px scale-item-2 ts-10"
             },
             // "svgProps": {
             //   "icon": "icon-wuliu",
@@ -186,7 +188,7 @@
             "style": "background: linear-gradient(0deg, #c9d4e7 0%, #ffffff 100%);",
             "imgProps":{
               "src":"/image/home/m0-3.png",
-              "class":"h-62px p-4px scale-item-2 ts-10"
+              "class":"h-62px  p-4px scale-item-2 ts-10"
             },
             // "svgProps": {
             //   "icon": "icon-cx",
@@ -229,7 +231,7 @@
     "class": "pt-90px pb-50px c-dark-200",
     "bg": "/image/home/bg-9.png",
     "title": {
-      "text": ["cpfw.header","cpfw.desc"],
+      "text": ["cpfw.header",""],
       "annotation":[
         { "line": 0, "class": "text-36px fw-700 lh-46px mb-15px h-34px" },
         { "line": 1, "class": "text-16px fw-400 h-17px lh-22px mt-40px" }
@@ -303,7 +305,7 @@
   },
   "ITEM-1": {
     "name": "list",
-    "class": "pt-90px pb-50px c-dark-200",
+    "class": "pt-90px pb-50px c-dark-200 bg-white",
     "title": {
       "text": "home.xtzl",
       "class": "text-center text-36px fw-700 mb-60px"
@@ -412,7 +414,7 @@
         { "line": 1, "class": "text-16px fw-400 h-17px lh-22px mt-40px" }
       ]
     },
-    "boxClass": "flex h-400px justify-around items-center",
+    "boxClass": "flex h-400px w-1200px m-x-auto justify-between items-center",
     "data": [
       {
         "name": "list",
@@ -521,7 +523,7 @@
         { "line": 1, "class": "text-16px fw-400 h-17px lh-22px mt-40px" }
       ]
     },
-    "boxClass": "flex justify-around mt-64px p-24px text-center",
+    "boxClass": "flex w-1200px m-x-auto justify-between mt-64px p-y-24px text-center",
     // "commonClass": "hover-backdrop-blur-10px hover-items hover-bg-op-40 hover-bg-white p-24px w-20% hover-c-orange rd-8px",
     "commonClass": "hover-items p-24px w-20% hover-c-orange rd-8px text-16px",
     "data": [
@@ -532,7 +534,7 @@
         "annotation": [
           { "class": "scale-item-5 ts-5" },
           { "line": 0, "class": "text-36px inline-block" },
-          { "line": 1, "class": "ml-32px mt-16px inline-block" },
+          { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
         ]
       },
@@ -542,7 +544,7 @@
         "annotation": [
           { "class": "scale-item-5 ts-5" },
           { "line": 0, "class": "text-36px fw-bold inline-block" },
-          { "line": 1, "class": "ml-32px mt-16px inline-block" },
+          { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
         ]
       },
@@ -552,7 +554,7 @@
         "annotation": [
           { "class": "scale-item-5 ts-5" },
           { "line": 0, "class": "text-36px fw-bold inline-block" },
-          { "line": 1, "class": "ml-32px mt-16px inline-block" },
+          { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
         ]
       },
@@ -562,7 +564,7 @@
         "annotation": [
           { "class": "scale-item-5 ts-5" },
           { "line": 0, "class": "text-36px fw-bold inline-block" },
-          { "line": 1, "class": "ml-32px mt-16px inline-block" },
+          { "line": 1, "class": "ml-16px mt-16px inline-block" },
           { "line": 2, "class": "mt-32px" }
         ]
       }

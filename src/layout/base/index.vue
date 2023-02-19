@@ -12,7 +12,7 @@ import {useRoute} from "vue-router"
 
 const route = useRoute();
 
-const isHome = computed(() => route.path == '/home')
+const isHome = computed(() => route.path == '/home' && false)
 
 console.log('..........',route.path)
 
@@ -20,8 +20,9 @@ console.log('..........',route.path)
 
 
 <template>
-  <div class="layout-base theme-default">
-    <header-view  :class="[isHome ? 'is-home fixed top-0 w-100% c-white' : 'sticky top-0 bg-white c-dark-200']"></header-view>
+  <div class="layout-base theme-default bg-white">
+    <!-- <header-view  :class="[isHome ? 'is-home fixed top-0 w-100% c-white' : 'sticky top-0 bg-white c-dark-200']"></header-view> -->
+    <header-view  class="sticky top-0 bg-white c-dark-200"></header-view>
     <!-- <card-header></card-header> -->
     <content-view></content-view>
     

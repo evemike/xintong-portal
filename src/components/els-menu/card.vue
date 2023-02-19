@@ -160,7 +160,7 @@ const handleGo = (d: any = {}) => {
   }
   > ._card {
     backdrop-filter: blur(50px);
-    // background: #ffffffb8;
+    background: #ffffffb8;
   }
 }
 </style>

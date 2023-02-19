@@ -9,5 +9,9 @@
         {"label":"menu.rczp_shzp","link":"/base/page/rczp_shzp"},
         {"label":"menu.rczp_xyzp","link":"/base/page/rczp_xyzp"}
     ]},
-    {"label":"menu.gywm","path":"/base/page/gywm"}
+    {"label":"menu.gywm","card":true,"cls":[
+        {"label":"menu.gywm_gsjs","link":"/base/page/gywm-gsjs"},
+        {"label":"menu.gywm_gsry","link":"/base/page/gywm-gsry"},
+        {"label":"menu.gywm_lxwm","link":"/base/page/gywm-lxwm"}
+    ]}
 ]

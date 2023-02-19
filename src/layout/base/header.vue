@@ -3,8 +3,8 @@
     <Card :menus="menuTree" menus-class="pl-20px">
       <template #left>
         <!-- logo -->
-        <div v-if="website.logo" class="_logo w-32px pl-20px">
-          <img :src="`/image/logo/${transImgName(website.logo)}`" />
+        <div v-if="website.logo" class="_logo w-150px pl-20px">
+          <img class="w-100%" :src="`/xintong/image/logo/${transImgName(website.logo)}`" />
         </div>
         <!-- title -->
         <div v-if="website.title" class="_title text-14px font-bold pl-20px">
