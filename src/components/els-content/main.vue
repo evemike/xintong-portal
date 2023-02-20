@@ -16,6 +16,7 @@ import CCAROUSEL from "./content/carousel.vue";
 import CLINK from "./content/link.vue";
 import CLIST from "./content/list.vue";
 import CTABS from "./content/tabs.vue"
+import CROTATE from "./content/rotate.vue"
 // effect
 import CHOVER from "./effect/hover.vue";
 import CHOVERBG from "./effect/hoverbg.vue";
@@ -58,6 +59,8 @@ const com = computed(() => {
       return CLIST;
     case "tabs":
       return CTABS;
+    case "rotate":
+      return CROTATE;
     //
     case "hover":
       return CHOVER;

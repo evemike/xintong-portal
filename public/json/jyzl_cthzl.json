@@ -1,6 +1,6 @@
 {
   "TITLE": "",
-  "CONTENTS": ["ITEM-1","ITEM-2"],
+  "CONTENTS": ["ITEM-1","ITEM-3","ITEM-4"],
   "ITEM-1": {
     "name": "imgtext",
     "class": "h-800px",
@@ -132,6 +132,39 @@
     
   },
   "ITEM-3":{
-
+    "name":"rotate",
+    "class":"pt-90px pb-50px c-dark-200 bg-gray-100",
+    "title":{
+      "text":"jyzl.cthzl",
+      "class":"text-36px fw-800 text-center"
+    },
+    "boxClass":"w-1200px h-400px m-x-auto box-border mt-90px",
+    "commonClass":"bg-sky p-x-8px p-y-4px fw-800 c-white w-200px translate--50% flex justify-between items-center",
+    "data":[
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-1"}},
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-2"}},
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-3"}},
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-4"}},
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-5"}},
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-6"}},
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-7"}},
+      {"name":"imgtext","imgProps":{"src":"/image/home/BIG-DATA.png","class":"h-60px"},"textProps":{"text":"jyzl.ct-8"}}
+    ],
+    "centerData":{
+      "name":"imgtext",
+      "class":"text-center text-20px fw-800 c-white bg-sky w-50% rd-50% b-solid b-blue-800 b-8px p-80px",
+      "imgProps":{},
+      "textProps":{
+        "text":"jyzl.ct-c"
+      }
+    }
+  },
+  "ITEM-4":{
+    "name":"imgtext",
+    "class":"pt-90px pb-50px c-dark-200 w-100% bg-gray-100",
+    "imgProps":{
+      "class":"w-1200px m-x-auto",
+      "src":"/image/jyzl/c-1.jpg"
+    }
   }
 }

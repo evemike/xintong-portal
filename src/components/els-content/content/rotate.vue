@@ -1,18 +1,15 @@
 <template>
   <div :class="['_list relative', pageClass]" @click="handleClick">
-    <div
-      v-if="bg"
-      class="_bg absolute w-100% h-100% top-0 left-0"
-      :class="bgClass"
-    >
+    <div v-if="bg" class="_bg absolute w-100% h-100% top-0 left-0" :class="bgClass">
       <img v-if="bgUrl" :src="bgUrl" class="w-100% h-100%" />
     </div>
     <CTEXT v-if="title" v-bind="textAttr" />
-    <div ref="boxRef" :class="['_list-box', boxClass]">
+    <div ref="boxRef" :class="['_list-box relative flex items-center justify-center', boxClass]">
       <div
         v-for="(c, i) in contents"
         :key="i"
-        class="absolute"
+        class="_rotate--item absolute inline-block top-0 left-0"
+        :class="[currentIndex % len == i ? currentClass : '']"
         :style="itemsStyle[i]"
       >
         <ElsContent
@@ -22,17 +19,17 @@
           @mouseleave="handleOut()"
         />
       </div>
+      <slot :scope="currentData">
+        <template v-if="centerData">
+          <ElsContent v-bind="centerData" />
+        </template>
+      </slot>
     </div>
-    <slot :scope="currentData">
-      <template v-if="centerData">
-        <ElsContent v-bind="centerData" />
-      </template>
-    </slot>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { toRefs, computed, unref, mergeProps, ref, watch } from "vue";
+import { toRefs, computed, unref, mergeProps, ref, onMounted, nextTick } from "vue";
 import { useBg } from "../lib/bg";
 import ElsContent, { ElsContentProps } from "../index";
 import CTEXT, { Props as TextProps } from "../base/text.vue";
@@ -47,8 +44,10 @@ export interface Props {
   commonClass?: string;
   hasBox?: boolean;
   boxClass?: string;
+  currentClass?:string;
   data?: ElsContentProps[];
   centerData?: ElsContentProps;
+  stopWhenHover?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -57,13 +56,13 @@ const props = withDefaults(defineProps<Props>(), {
   title: "",
   commonClass: "",
   boxClass: "",
+  currentClass: "",
   hasBox: false,
   common: () => ({}),
   data: () => [],
 });
 //
-const { pageClass, bgClass, bgUrl, hoverVal, handleOver, handleOut } =
-  useBg(props);
+const { pageClass, bgClass, bgUrl, hoverVal, handleOver, handleOut } = useBg(props);
 //
 const { data, common, title, link } = toRefs(props);
 //
@@ -76,38 +75,67 @@ const textAttr = computed(() => {
   return title.value;
 });
 //
+const getPoint = ({ a, b, p = 30, cx = 0, cy = 0 }: Record<string, number>) => {
+  const data: [number, number][] = [];
+  for (let i = 0; i < 360; i = i + p) {
+    const x = a * Math.cos((Math.PI * 2 * i) / 360);
+    const y = b * Math.sin((Math.PI * 2 * i) / 360);
+    data.push([x + cx, y + cy]);
+  }
+  console.log(a, b, p, cx, cy, data);
+  return data;
+};
+//
 const boxRef = ref<HTMLDivElement>();
 const contents = computed(() => new Array<any>().concat(data.value));
 const len = computed(() => unref(contents).length);
 const currentIndex = ref(0);
-const pos = computed(() => {
-  if (len.value == 0) {
+const pos = ref<[number, number][]>([]);
+
+const initPos = () => {
+  if (len.value == 0 || !boxRef.value) {
     return [];
   }
-  if (!boxRef.value) {
-    return [];
-  }
-  const w = boxRef.value.clientWidth;
-  const h = boxRef.value.clientHeight;
+  const w = boxRef.value.offsetWidth;
+  const h = boxRef.value.offsetHeight;
   //
   const a = w / 2;
   const b = h / 2;
   //
-  const t = (90 - 360 / unref(len)) * (Math.PI / 360);
-
+  const t = 360 / unref(len);
   //
-  for (let i = 0; i < len.value; i++) {
-    const ti = Math.tan(t * i);
-    const x = (a * a * b * b) / (b * b + a * a * ti * ti);
-    //
-    const y = ti * x;
-    console.log("..........", x, y, ti);
-  }
-  return [];
-});
+  pos.value = getPoint({ a, b, p: t, cx: a, cy: b });
+};
 const itemsStyle = computed(() => {
-  return [];
+  if (pos.value.length == 0) {
+    return [];
+  }
+  const p = pos.value;
+  const t = currentIndex.value;
+  const l = len.value;
+  const res: string[] = [];
+  //
+  for (let i = 0; i < l; i++) {
+    const j = (t + i) % l;
+    const [x, y] = p[j];
+    res.push(`left:${x}px;top:${y}px`);
+  }
+  return res;
 });
+
+onMounted(() => {
+  setTimeout(() => {
+    nextTick(() => {
+      setTimeout(() => {
+        initPos();
+      }, 0);
+    });
+  }, 0);
+});
+
+setInterval(() => {
+  currentIndex.value = currentIndex.value + 1;
+}, 4000);
 // 卡片跳转条件 ：link
 const handleClick = () => {
   handleLink(unref(link));
@@ -129,3 +157,9 @@ const linkTo = (link: string | Record<string, any>) => {
   }
 };
 </script>
+
+<style lang="scss">
+._rotate--item {
+  transition: all 0.5s ease-in-out;
+}
+</style>

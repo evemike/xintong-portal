@@ -1,0 +1,18 @@
+[{
+  "name":"rotate",
+  "boxClass":"w-800px h-600px m-x-auto",
+  "data":[
+    {"name":"text","text":"A"},
+    {"name":"text","text":"B"},
+    {"name":"text","text":"C"},
+    {"name":"text","text":"D"},
+    {"name":"text","text":"E"},
+    {"name":"text","text":"F"},
+    {"name":"text","text":"G"},
+    {"name":"text","text":"H"},
+    {"name":"text","text":"I"},
+    {"name":"text","text":"J"},
+    {"name":"text","text":"K"},
+    {"name":"text","text":"L"}
+  ]
+}]

@@ -2,7 +2,7 @@
   <div class="font-700 text-32px">
     Test
 
-    <template v-for="(d,i) in tempData" :key="i" >
+    <template v-for="(d,i) in tempData" :key="i + Math.random()" >
       <ElsContent v-bind="d" />
     </template>
 
@@ -20,7 +20,8 @@ const tempData = ref([])
 const init = async () => {
   const pageData = await getJsonFileData('test')
   console.log('=========ccc=======',pageData)
-  tempData.value = pageData.template;
+  tempData.value = pageData;
+
 }
 
 init();
